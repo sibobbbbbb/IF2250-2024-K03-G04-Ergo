@@ -1,4 +1,4 @@
-from databases import Board, Project, Task
+from src.data.databases import Board, Project, Task
 
 class DatabaseManager:
     def __init__(self, database):
@@ -22,7 +22,8 @@ class DatabaseManager:
     def get_board(self, idBoard):
         query = '''SELECT * FROM Boards WHERE idBoard = ?'''
         params = (idBoard,)
-        return self.database.execute_query(query, params).fetchone()
+        board = self.database.execute_query(query, params).fetchone()
+        return Board(*board) if board else None
 
     def update_board(self, board):
         query = '''UPDATE Boards SET namaBoard = ?, isFavorite = ? WHERE idBoard = ?'''
@@ -55,7 +56,8 @@ class DatabaseManager:
     def get_project(self, idProject):
         query = '''SELECT * FROM Projects WHERE idProject = ?'''
         params = (idProject,)
-        return self.database.execute_query(query, params).fetchone()
+        project = self.database.execute_query(query, params).fetchone()
+        return Project(*project) if project else None
 
     def get_projects_by_board(self, idBoard):
         query = '''SELECT * FROM Projects WHERE idBoard = ?'''
@@ -95,7 +97,8 @@ class DatabaseManager:
     def get_task(self, idTask):
         query = '''SELECT * FROM Tasks WHERE idTask = ?'''
         params = (idTask,)
-        return self.database.execute_query(query, params).fetchone()
+        task = self.database.execute_query(query, params).fetchone()
+        return Task(*task) if task else None
 
     def get_tasks_by_project(self, idProject):
         query = '''SELECT * FROM Tasks WHERE idProject = ?'''
