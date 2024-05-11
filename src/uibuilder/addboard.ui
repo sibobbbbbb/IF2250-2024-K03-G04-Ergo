@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddingBoardUI</class>
+ <widget class="QDialog" name="AddingBoardUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="AddingBoard" native="true">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>100</y>
+     <width>161</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#AddingBoard{
+	border: 2px solid #052659;
+	background-color: #D0E3FF;
+	border-radius: 17px;
+}</string>
+   </property>
+   <widget class="QLabel" name="BoardTitle">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#BoardTitle{
+	font-family: Rubik;
+    font-size: 11px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+    </property>
+    <property name="text">
+     <string>Board Title</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="inputBoardtitle">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>141</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#inputBoardtitle{
+	border-radius : 10px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="BoardTitle_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#BoardTitle_2{
+	font-family: Rubik;
+    font-size: 11px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+    </property>
+    <property name="text">
+     <string>Board Title is required</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="CreateBoard">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>141</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#CreateBoard{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+    </property>
+    <property name="text">
+     <string>Create</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
