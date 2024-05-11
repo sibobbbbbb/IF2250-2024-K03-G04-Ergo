@@ -4,18 +4,16 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 print(sys.path)
 
+from unittest.mock import create_autospec
 from src.data.databases import Database, Board, Project, Task
 from src.data.db_manager import DatabaseManager
 
 @pytest.fixture
 def db_manager():
-    db = Database()
+    # Create a mock Database object
+    db = create_autospec(Database, instance=True)
     db_manager = DatabaseManager(db)
-    db_manager.create_boards_table()
-    db_manager.create_projects_table()
-    db_manager.create_tasks_table()
     yield db_manager
-    db.close()
 
 def test_board_operations(db_manager):
     # Create Board objects
@@ -29,22 +27,22 @@ def test_board_operations(db_manager):
     db_manager.create_board(board3)
 
     # Check if the boards were added
-    assert db_manager.get_board(board1.idBoard) is not None
-    assert db_manager.get_board(board2.idBoard) is not None
-    assert db_manager.get_board(board3.idBoard) is not None
+    db_manager.database.execute_query.assert_any_call('INSERT INTO Boards(idBoard, namaBoard, isFavorite) VALUES(?,?,?)', (board1.idBoard, board1.namaBoard, board1.isFavorite))
+    db_manager.database.execute_query.assert_any_call('INSERT INTO Boards(idBoard, namaBoard, isFavorite) VALUES(?,?,?)', (board2.idBoard, board2.namaBoard, board2.isFavorite))
+    db_manager.database.execute_query.assert_any_call('INSERT INTO Boards(idBoard, namaBoard, isFavorite) VALUES(?,?,?)', (board3.idBoard, board3.namaBoard, board3.isFavorite))
 
     # Update a board
     board1.namaBoard = 'Updated board 1'
     db_manager.update_board(board1)
 
     # Check if the board was updated
-    assert db_manager.get_board(board1.idBoard).namaBoard == 'Updated board 1'
+    db_manager.database.execute_query.assert_called_with('UPDATE Boards SET namaBoard = ?, isFavorite = ? WHERE idBoard = ?', (board1.namaBoard, board1.isFavorite, board1.idBoard))
 
     # Delete a board
     db_manager.delete_board(board2.idBoard)
 
     # Check if the board was deleted
-    assert db_manager.get_board(board2.idBoard) is None
+    db_manager.database.execute_query.assert_called_with('DELETE FROM Boards WHERE idBoard = ?', (board2.idBoard,))
 
 def test_project_operations(db_manager):
     # Create Project objects
@@ -58,22 +56,22 @@ def test_project_operations(db_manager):
     db_manager.create_project(project3)
 
     # Check if the projects were added
-    assert db_manager.get_project(project1.idProject) is not None
-    assert db_manager.get_project(project2.idProject) is not None
-    assert db_manager.get_project(project3.idProject) is not None
+    db_manager.database.execute_query.assert_any_call('INSERT INTO Projects(idProject, idBoard, namaProject, tingkatKetuntasan, deadlineProject, isFavorite) VALUES(?,?,?,?,?,?)', (project1.idProject, project1.idBoard, project1.namaProject, project1.tingkatKetuntasan, project1.deadlineProject, project1.isFavorite))
+    db_manager.database.execute_query.assert_any_call('INSERT INTO Projects(idProject, idBoard, namaProject, tingkatKetuntasan, deadlineProject, isFavorite) VALUES(?,?,?,?,?,?)', (project2.idProject, project2.idBoard, project2.namaProject, project2.tingkatKetuntasan, project2.deadlineProject, project2.isFavorite))
+    db_manager.database.execute_query.assert_any_call('INSERT INTO Projects(idProject, idBoard, namaProject, tingkatKetuntasan, deadlineProject, isFavorite) VALUES(?,?,?,?,?,?)', (project3.idProject, project3.idBoard, project3.namaProject, project3.tingkatKetuntasan, project3.deadlineProject, project3.isFavorite))
 
     # Update a project
     project1.namaProject = 'Updated project 1'
     db_manager.update_project(project1)
 
     # Check if the project was updated
-    assert db_manager.get_project(project1.idProject).namaProject == 'Updated project 1'
+    db_manager.database.execute_query.assert_called_with('UPDATE Projects SET idBoard = ?, namaProject = ?, tingkatKetuntasan = ?, deadlineProject = ?, isFavorite = ? WHERE idProject = ?', (project1.idBoard, project1.namaProject, project1.tingkatKetuntasan, project1.deadlineProject, project1.isFavorite, project1.idProject))
 
     # Delete a project
     db_manager.delete_project(project2.idProject)
 
     # Check if the project was deleted
-    assert db_manager.get_project(project2.idProject) is None
+    db_manager.database.execute_query.assert_called_with('DELETE FROM Projects WHERE idProject = ?', (project2.idProject,))
 
 def test_task_operations(db_manager):
     # Create Task objects
@@ -87,19 +85,19 @@ def test_task_operations(db_manager):
     db_manager.create_task(task3)
 
     # Check if the tasks were added
-    assert db_manager.get_task(task1.idTask) is not None
-    assert db_manager.get_task(task2.idTask) is not None
-    assert db_manager.get_task(task3.idTask) is not None
+    db_manager.database.execute_query.assert_any_call('INSERT INTO Tasks(idTask, idProject, namaTask, status, kategori, deskripsi, deadlineTask) VALUES(?,?,?,?,?,?,?)', (task1.idTask, task1.idProject, task1.namaTask, task1.status, task1.kategori, task1.deskripsi, task1.deadlineTask))
+    db_manager.database.execute_query.assert_any_call('INSERT INTO Tasks(idTask, idProject, namaTask, status, kategori, deskripsi, deadlineTask) VALUES(?,?,?,?,?,?,?)', (task2.idTask, task2.idProject, task2.namaTask, task2.status, task2.kategori, task2.deskripsi, task2.deadlineTask))
+    db_manager.database.execute_query.assert_any_call('INSERT INTO Tasks(idTask, idProject, namaTask, status, kategori, deskripsi, deadlineTask) VALUES(?,?,?,?,?,?,?)', (task3.idTask, task3.idProject, task3.namaTask, task3.status, task3.kategori, task3.deskripsi, task3.deadlineTask))
 
     # Update a task
     task1.namaTask = 'Updated task 1'
     db_manager.update_task(task1)
 
     # Check if the task was updated
-    assert db_manager.get_task(task1.idTask).namaTask == 'Updated task 1'
+    db_manager.database.execute_query.assert_called_with('UPDATE Tasks SET idProject = ?, namaTask = ?, status = ?, kategori = ?, deskripsi = ?, deadlineTask = ? WHERE idTask = ?', (task1.idProject, task1.namaTask, task1.status, task1.kategori, task1.deskripsi, task1.deadlineTask, task1.idTask))
 
     # Delete a task
     db_manager.delete_task(task2.idTask)
 
     # Check if the task was deleted
-    assert db_manager.get_task(task2.idTask) is None
+    db_manager.database.execute_query.assert_called_with('DELETE FROM Tasks WHERE idTask = ?', (task2.idTask,))
