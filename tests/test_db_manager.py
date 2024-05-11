@@ -1,4 +1,9 @@
 import pytest
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+print(sys.path)
+
 from src.data.databases import Database, Board, Project, Task
 from src.data.db_manager import DatabaseManager
 
