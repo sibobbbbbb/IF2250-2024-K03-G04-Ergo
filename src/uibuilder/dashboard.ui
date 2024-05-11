@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Ergo</class>
+ <widget class="QWidget" name="Ergo">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>586</width>
+    <height>442</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Ergo</string>
+  </property>
+  <widget class="QWidget" name="Navbar" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>111</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#Navbar{
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #5483B3, stop:1 #24384D);
+}</string>
+   </property>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>-20</x>
+      <y>10</y>
+      <width>141</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>C:/Users/Kristian/Downloads/ego2.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="MainSection" native="true">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>40</y>
+     <width>491</width>
+     <height>421</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#MainSection{
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #DAD9D8, stop:1 #97C9ED);
+}</string>
+   </property>
+   <widget class="QLabel" name="Greetings">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#Greetings{
+	font: 30px &quot;Roboto&quot;;
+	color: #5483B3;
+	font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>Hi User</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="Containerforwords" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>211</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#Containerforwords{
+	border: 2px solid #9FB0CC;
+	background-color: #ECECF3;
+	border-radius: 17px;
+}</string>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#label {
+	font: bold 15px &quot;Roboto&quot;;
+	color: #7DA0CA;
+}</string>
+     </property>
+     <property name="text">
+      <string>Welcome!</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>211</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#label_2 {
+	font: bold 10px &quot;Roboto&quot;;
+	color: #7DA0CA;
+}</string>
+     </property>
+     <property name="text">
+      <string>Choose a board to begin your journey</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="Greetings_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#Greetings_2{
+	font: 20px &quot;Roboto&quot;;
+	color: #5483B3;
+	font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>Your Boards</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>160</y>
+      <width>111</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton{
+	border: 2px solid #9FB0CC;
+	background-color: #ECECF3;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 11px;
+    font-weight: bold;
+    color: #5483B3;
+}</string>
+    </property>
+    <property name="text">
+     <string>+ Add New Board</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>190</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton_2{
+	background-color: #F6F6F6;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 10px;
+    font-weight: bold;
+   color: #5483B3;
+}</string>
+    </property>
+    <property name="text">
+     <string>Mobile Development</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Greetings_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>260</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#Greetings_3{
+	font: 20px &quot;Roboto&quot;;
+	color: #5483B3;
+	font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>Favorite Boards</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Greetings_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>290</y>
+      <width>351</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#Greetings_4
+{
+	font: 10px &quot;Roboto&quot;;
+	color: #5483B3;
+	font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>Get quick access to your favorite boards by giving a star on them</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>320</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton_4{
+	background-color: #F6F6F6;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 10px;
+    font-weight: bold;
+   color: #5483B3;
+}</string>
+    </property>
+    <property name="text">
+     <string>Mobile Development</string>
+    </property>
+   </widget>
+   <zorder>Containerforwords</zorder>
+   <zorder>Greetings_2</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>Greetings_3</zorder>
+   <zorder>Greetings_4</zorder>
+   <zorder>Greetings</zorder>
+   <zorder>pushButton_4</zorder>
+  </widget>
+  <widget class="QWidget" name="Searchbar" native="true">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>0</y>
+     <width>551</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#Searchbar{
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #5483B3, stop:1 #4D6D8F);
+}</string>
+   </property>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>371</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lineEdit{
+	border-radius : 10px;
+	font-family : Rubik;
+	color : #6C6C6C;
+	font-size : 10px;
+}</string>
+    </property>
+    <property name="text">
+     <string>              Search Your Board</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>10</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>C:/Users/Kristian/Downloads/smileyface.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>10</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#label_5{
+	font-family : Rubik;
+	font-size : 9px;
+}</string>
+    </property>
+    <property name="text">
+     <string>  User Ergo</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton_3{
+	border : none;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>C:/Users/Kristian/Downloads/search.png</normaloff>C:/Users/Kristian/Downloads/search.png</iconset>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
