@@ -1,4 +1,4 @@
-from data.databases import Board, Project, Task
+from .databases import Database, Board, Project, Task
 
 class DatabaseManager:
     def __init__(self, database):
