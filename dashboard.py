@@ -1,7 +1,7 @@
 import src.uibuilder.full as full
 import src.data.db_manager as db_manager
 import src.data.databases as db
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QIcon
 
@@ -20,13 +20,25 @@ class Dashboard(QtWidgets.QMainWindow):
         self.ui.CreateBoard.clicked.connect(self.add_new_board)
         
         # DISPLAY BOARDS LOGIC
-        self.displayBoards()
+        self.displayBoards(self.dbm.get_all_boards())
 
         # DISPLAY FAV BOARDS LOGIC
-        self.displayFavBoards()
+        self.displayFavBoards(self.dbm.get_all_boards())
+        
+        # SEARCH BAR LOGIC
+        self.ui.SearchButton.clicked.connect(self.search_boards)
 
-    def displayBoards(self):
-        boards = self.dbm.get_all_boards()
+    def search_boards(self):
+        search_text = self.ui.SearchBoard.text()
+        if search_text and not search_text == "Search Your Board":
+            boards = [board for board in self.dbm.get_all_boards() if search_text.lower() in board.namaBoard.lower()] 
+            self.displayBoards(boards)
+            self.displayFavBoards(boards)
+        else:
+            self.displayBoards(self.dbm.get_all_boards())
+            self.displayFavBoards(self.dbm.get_all_boards())
+    
+    def displayBoards(self,boards):
         self.clear_board_buttons()
 
         board_container = QtWidgets.QWidget()
@@ -52,8 +64,7 @@ class Dashboard(QtWidgets.QMainWindow):
         
         self.ui.ContainerForBoards.setWidget(board_container)
         
-    def displayFavBoards(self):
-        boards = self.dbm.get_all_boards()
+    def displayFavBoards(self,boards):
         self.clear_fav_board_buttons()
 
         fav_board_container = QtWidgets.QWidget()
@@ -106,7 +117,8 @@ class Dashboard(QtWidgets.QMainWindow):
         if board_title and not self.dbm.isInDatabase(board_title):
             self.dbm.create_board(new_board)
             self.ui.AddingBoard.setVisible(False)
-            self.displayBoards()
+            self.displayBoards(self.dbm.get_all_boards())
+            self.displayFavBoards(self.dbm.get_all_boards())
             
 if __name__ == "__main__":
     import sys
