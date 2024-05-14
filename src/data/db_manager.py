@@ -33,6 +33,15 @@ class DatabaseManager:
             boards.append(board)
         return boards
     
+    def get_all_projects(self):
+        query = '''SELECT * FROM Projects'''
+        projects_data = self.database.execute_query(query).fetchall()
+        projects = []
+        for project_data in projects_data:
+            project = Project(*project_data)
+            projects.append(project)
+        return projects
+    
     def update_board(self, board):
         query = '''UPDATE Boards SET namaBoard = ?, isFavorite = ? WHERE idBoard = ?'''
         params = (board.namaBoard, board.isFavorite, board.idBoard)
@@ -144,3 +153,10 @@ class DatabaseManager:
         if boards:
             return boards[-1].idBoard
         return 0
+    
+    def getLastIdProject(self):
+        projects = self.get_all_projects()
+        if projects:
+            return projects[-1].idProject
+        return 0
+    
