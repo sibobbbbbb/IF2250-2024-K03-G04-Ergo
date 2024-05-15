@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'dashboard.ui'
+# Form implementation generated from reading ui file 'full.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.10
 #
@@ -25,7 +25,7 @@ class Ui_Ergo(object):
         self.LogoErgo.setGeometry(QtCore.QRect(-40, 30, 201, 191))
         self.LogoErgo.setStyleSheet("")
         self.LogoErgo.setText("")
-        self.LogoErgo.setPixmap(QtGui.QPixmap("../../img/logoergo.png"))
+        self.LogoErgo.setPixmap(QtGui.QPixmap("assets/ERGO.png"))
         self.LogoErgo.setScaledContents(True)
         self.LogoErgo.setObjectName("LogoErgo")
         self.MainSection = QtWidgets.QWidget(Ergo)
@@ -249,7 +249,7 @@ class Ui_Ergo(object):
         self.SmileyFace = QtWidgets.QLabel(self.Searchbar)
         self.SmileyFace.setGeometry(QtCore.QRect(1620, 10, 41, 41))
         self.SmileyFace.setText("")
-        self.SmileyFace.setPixmap(QtGui.QPixmap("../../img/smileyface.png"))
+        self.SmileyFace.setPixmap(QtGui.QPixmap("assets/SMILE.png"))
         self.SmileyFace.setScaledContents(True)
         self.SmileyFace.setObjectName("SmileyFace")
         self.UserErgo = QtWidgets.QLabel(self.Searchbar)
@@ -260,13 +260,13 @@ class Ui_Ergo(object):
 "}")
         self.UserErgo.setObjectName("UserErgo")
         self.SearchButton = QtWidgets.QPushButton(self.Searchbar)
-        self.SearchButton.setGeometry(QtCore.QRect(20, 20, 41, 31))
+        self.SearchButton.setGeometry(QtCore.QRect(830, 20, 41, 31))
         self.SearchButton.setStyleSheet("#SearchButton{\n"
 "    border : none;\n"
 "}")
         self.SearchButton.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../img/search.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("assets/SEARCH.jpeg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.SearchButton.setIcon(icon)
         self.SearchButton.setObjectName("SearchButton")
 
@@ -291,15 +291,5 @@ class Ui_Ergo(object):
         self.Board3.setText(_translate("Ergo", "Mobile Development"))
         self.Board4.setText(_translate("Ergo", "Mobile Development"))
         self.Favboard1.setText(_translate("Ergo", "Mobile Development"))
-        self.SearchBoard.setText(_translate("Ergo", "          Search Your Board"))
+        self.SearchBoard.setText(_translate("Ergo", "Search Your Board"))
         self.UserErgo.setText(_translate("Ergo", "  User Ergo"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Ergo = QtWidgets.QWidget()
-    ui = Ui_Ergo()
-    ui.setupUi(Ergo)
-    Ergo.show()
-    sys.exit(app.exec_())

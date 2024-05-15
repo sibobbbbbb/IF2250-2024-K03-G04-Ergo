@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>BoardPage</class>
- <widget class="QWidget" name="BoardPage">
+ <class>Ergo</class>
+ <widget class="QWidget" name="Ergo">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>586</width>
-    <height>442</height>
+    <width>1920</width>
+    <height>1080</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Ergo</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true"/>
   </property>
   <widget class="QWidget" name="Navbar" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>111</width>
-     <height>451</height>
+     <width>131</width>
+     <height>1081</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -33,10 +30,10 @@
    <widget class="QLabel" name="LogoErgo">
     <property name="geometry">
      <rect>
-      <x>-20</x>
-      <y>10</y>
-      <width>141</width>
-      <height>141</height>
+      <x>-40</x>
+      <y>30</y>
+      <width>201</width>
+      <height>191</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -46,24 +43,24 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>C:/Users/Kristian/Downloads/ego2.png</pixmap>
+     <pixmap>../../../../../../../../Kristian/Downloads/ego2.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
   </widget>
-  <widget class="QWidget" name="Mainsection" native="true">
+  <widget class="QWidget" name="MainSection" native="true">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>40</y>
-     <width>491</width>
-     <height>421</height>
+     <x>130</x>
+     <y>60</y>
+     <width>1811</width>
+     <height>1031</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">#Mainsection{
+    <string notr="true">#MainSection{
 	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #DAD9D8, stop:1 #97C9ED);
 }</string>
    </property>
@@ -71,33 +68,33 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>10</y>
-      <width>311</width>
-      <height>31</height>
+      <y>20</y>
+      <width>561</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">#BoardName{
-	font: 30px &quot;Roboto&quot;;
+	font: 50px &quot;Roboto&quot;;
 	color: #5483B3;
 	font-weight: bold;
 }</string>
     </property>
     <property name="text">
-     <string>Mobile Development</string>
+     <string>Mobile Developement</string>
     </property>
    </widget>
-   <widget class="QWidget" name="ContainerWords" native="true">
+   <widget class="QWidget" name="Containerforwords" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>50</y>
-      <width>351</width>
-      <height>61</height>
+      <y>100</y>
+      <width>621</width>
+      <height>121</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#ContainerWords{
+     <string notr="true">#Containerforwords{
 	border: 2px solid #9FB0CC;
 	background-color: #ECECF3;
 	border-radius: 17px;
@@ -107,33 +104,33 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>10</y>
-       <width>311</width>
-       <height>21</height>
+       <y>20</y>
+       <width>171</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">#Welcome {
-	font: bold 15px &quot;Roboto&quot;;
+	font: bold 30px &quot;Roboto&quot;;
 	color: #7DA0CA;
 }</string>
      </property>
      <property name="text">
-      <string>Welcome to Mobile Development Board !</string>
+      <string>Welcome!</string>
      </property>
     </widget>
-    <widget class="QLabel" name="Greetings">
+    <widget class="QLabel" name="WelcomeProject">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>40</y>
-       <width>341</width>
-       <height>16</height>
+       <y>70</y>
+       <width>591</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#Greetings{
-	font: bold 10px &quot;Roboto&quot;;
+      <string notr="true">#WelcomeProject {
+	font: bold 18px &quot;Roboto&quot;;
 	color: #7DA0CA;
 }</string>
      </property>
@@ -142,18 +139,18 @@
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="ProjectsOnBoard">
+   <widget class="QLabel" name="YourProject">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>130</y>
-      <width>151</width>
-      <height>31</height>
+      <y>240</y>
+      <width>341</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#ProjectsOnBoard{
-	font: 20px &quot;Roboto&quot;;
+     <string notr="true">#YourProject{
+	font: 45px &quot;Roboto&quot;;
 	color: #5483B3;
 	font-weight: bold;
 }</string>
@@ -162,133 +159,22 @@
      <string>Your Projects</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="SortOption">
+   <widget class="QPushButton" name="AddProjectButton">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>180</y>
-      <width>111</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#SortOption{
-	border: 2px solid #9FB0CC;
-	background-color: #ECECF3;
-	border-radius: 10px;
-	font-family: &quot;Roboto&quot;;
-    font-size: 11px;
-    font-weight: bold;
-    color: #5483B3;
-}</string>
-    </property>
-    <property name="text">
-     <string>Select an option</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Project1">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>210</y>
-      <width>131</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#Project1{
-	background-color: #F6F6F6;
-	border-radius: 10px;
-	font-family: &quot;Roboto&quot;;
-    font-size: 10px;
-    font-weight: bold;
-   color: #5483B3;
-}</string>
-    </property>
-    <property name="text">
-     <string>Mobile Development</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="FavoriteBoards">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>280</y>
-      <width>171</width>
+      <x>200</x>
+      <y>330</y>
+      <width>151</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#FavoriteBoards{
-	font: 20px &quot;Roboto&quot;;
-	color: #5483B3;
-	font-weight: bold;
-}</string>
-    </property>
-    <property name="text">
-     <string>Favorite Boards</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="DescFav">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>310</y>
-      <width>351</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#DescFav
-{
-	font: 10px &quot;Roboto&quot;;
-	color: #5483B3;
-	font-weight: bold;
-}</string>
-    </property>
-    <property name="text">
-     <string>Get quick access to your favorite boards by giving a star on them</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="FavProject1">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>340</y>
-      <width>131</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#FavProject1{
-	background-color: #F6F6F6;
-	border-radius: 10px;
-	font-family: &quot;Roboto&quot;;
-    font-size: 10px;
-    font-weight: bold;
-   color: #5483B3;
-}</string>
-    </property>
-    <property name="text">
-     <string>Mobile Development</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="AddingProjects">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>180</y>
-      <width>121</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#AddingProjects{
+     <string notr="true">#AddProjectButton{
 	border: 2px solid #9FB0CC;
 	background-color: #ECECF3;
 	border-radius: 10px;
 	font-family: &quot;Roboto&quot;;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: bold;
     color: #5483B3;
 }</string>
@@ -297,37 +183,82 @@
      <string>+ Add New Project</string>
     </property>
    </widget>
-   <widget class="QLabel" name="SortBy">
+   <widget class="QLabel" name="FavoriteProject">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>160</y>
-      <width>51</width>
-      <height>20</height>
+      <x>20</x>
+      <y>620</y>
+      <width>401</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#SortBy{
-	font: 10px &quot;Roboto&quot;;
+     <string notr="true">#FavoriteProject{
+	font: 45px &quot;Roboto&quot;;
 	color: #5483B3;
 	font-weight: bold;
 }</string>
     </property>
     <property name="text">
-     <string>Sort by</string>
+     <string>Favorite Projects</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="SettingsForBoard">
+   <widget class="QLabel" name="QuickAccess">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>10</y>
-      <width>31</width>
-      <height>24</height>
+      <x>20</x>
+      <y>700</y>
+      <width>661</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#SettingsForBoard{
+     <string notr="true">#QuickAccess
+{
+	font: 20px &quot;Roboto&quot;;
+	color: #5483B3;
+	font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>Get quick access to your favorite project by giving a star on them</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Sorting">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>330</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#Sorting{
+	border: 2px solid #9FB0CC;
+	background-color: #ECECF3;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #5483B3;
+}</string>
+    </property>
+    <property name="text">
+     <string>Sort By</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="MainSettings">
+    <property name="geometry">
+     <rect>
+      <x>1710</x>
+      <y>20</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#MainSettings{
 	border : none;
 }</string>
     </property>
@@ -336,70 +267,781 @@
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>C:/Users/Kristian/Downloads/settings.png</normaloff>C:/Users/Kristian/Downloads/settings.png</iconset>
+      <normaloff>../../../../../../../../Kristian/Downloads/settings.png</normaloff>../../../../../../../../Kristian/Downloads/settings.png</iconset>
     </property>
    </widget>
-   <zorder>ContainerWords</zorder>
-   <zorder>ProjectsOnBoard</zorder>
-   <zorder>SortOption</zorder>
-   <zorder>Project1</zorder>
-   <zorder>FavoriteBoards</zorder>
-   <zorder>DescFav</zorder>
+   <widget class="QWidget" name="Actions_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1490</x>
+      <y>60</y>
+      <width>271</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#Actions_2{
+	border: 2px solid #052659;
+	background-color: #D0E3FF;
+	border-radius: 17px;
+}</string>
+    </property>
+    <widget class="QLabel" name="BoardTitle_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#BoardTitle_4{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Actions</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Favorite_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Favorite_2{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string> Add to Favorite</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../../../../../../Kristian/Downloads/star.png</normaloff>../../../../../../../../Kristian/Downloads/star.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="DeleteProject_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#DeleteProject_2{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string> Delete Board</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../../../../../../Kristian/Downloads/trashcan.png</normaloff>../../../../../../../../Kristian/Downloads/trashcan.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>370</y>
+      <width>831</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#scrollArea, QScrollArea QWidget{
+    border-radius: 10px;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #5F84A2, stop:1 #91AEC4);
+}</string>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>831</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <widget class="QFrame" name="Project1f">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>241</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="Project1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>231</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#Project1{
+	background-color: #F6F6F6;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 20px;
+    font-weight: bold;
+	padding-bottom:15 px;
+   color: #5483B3;
+}</string>
+       </property>
+       <property name="text">
+        <string>Build UI</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>0</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#pushButton{
+	background-color: #F6F6F6;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 20px;
+    font-weight: bold;
+   color: #5483B3;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset theme="3dot"/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label1">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>201</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#label1{
+	background-color: #F6F6F6;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+   color: #5483B3;
+}</string>
+       </property>
+       <property name="text">
+        <string>Due to :</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="SortingOption" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>360</y>
+      <width>271</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#SortingOption
+{
+	border: 2px solid #052659;
+	background-color: #D0E3FF;
+	border-radius: 17px;
+}</string>
+    </property>
+    <widget class="QPushButton" name="Sort1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Sort1{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Sort Descending</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Sort2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Sort2{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Sort Ascending</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Actions" native="true">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>360</y>
+      <width>271</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#Actions{
+	border: 2px solid #052659;
+	background-color: #D0E3FF;
+	border-radius: 17px;
+}</string>
+    </property>
+    <widget class="QLabel" name="BoardTitle_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#BoardTitle_3{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Actions</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Favorite">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Favorite{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string> Add to Favorite</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../../../../../../Kristian/Downloads/star.png</normaloff>../../../../../../../../Kristian/Downloads/star.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="DeleteProject">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#DeleteProject{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string> Delete Project</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../../../../../../Kristian/Downloads/trashcan.png</normaloff>../../../../../../../../Kristian/Downloads/trashcan.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="AddingProject" native="true">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>300</y>
+      <width>271</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#AddingProject{
+	border: 2px solid #052659;
+	background-color: #D0E3FF;
+	border-radius: 17px;
+}</string>
+    </property>
+    <widget class="QLabel" name="BoardTitle">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#BoardTitle{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Project Title</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="BoardTitle_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>181</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#BoardTitle_2{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Project Title is required</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="inputBoardtitle">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>251</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#inputBoardtitle{
+	border-radius : 10px;
+}</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="CreateBoard">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>250</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#CreateBoard{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Create Project</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="BoardTitle_5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#BoardTitle_5{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Deadline</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="dateEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>170</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#dateEdit { 
+	border-radius : 10px;
+}</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>810</y>
+      <width>241</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="Project1f_3">
+    <property name="geometry">
+     <rect>
+      <x>1320</x>
+      <y>710</y>
+      <width>241</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="Project1f_5">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>630</y>
+      <width>241</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>740</y>
+      <width>831</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#scrollArea, QScrollArea QWidget{
+    border-radius: 10px;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #5F84A2, stop:1 #91AEC4);
+}</string>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>829</width>
+       <height>269</height>
+      </rect>
+     </property>
+     <widget class="QFrame" name="Project1f_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>241</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="Project1_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>231</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#Project1_2{
+	background-color: #F6F6F6;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 20px;
+    font-weight: bold;
+	padding-bottom:15 px;
+   color: #5483B3;
+}</string>
+       </property>
+       <property name="text">
+        <string>Build UI</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>0</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#pushButton_2{
+	background-color: #F6F6F6;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 20px;
+    font-weight: bold;
+   color: #5483B3;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset theme="3dot">
+         <normaloff>.</normaloff>.</iconset>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label1_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>201</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#label1_2{
+	background-color: #F6F6F6;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+   color: #5483B3;
+}</string>
+       </property>
+       <property name="text">
+        <string>Due to :</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="namaboard">
+    <property name="geometry">
+     <rect>
+      <x>104</x>
+      <y>5</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#namaboard {
+	color : #5483B3
+}</string>
+    </property>
+    <property name="text">
+     <string>&gt; board name</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="back">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>0</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#back {
+	border: none;
+    background-color: transparent;
+    color: #5483B3;
+}</string>
+    </property>
+    <property name="text">
+     <string>Dashboard</string>
+    </property>
+   </widget>
+   <zorder>Containerforwords</zorder>
+   <zorder>YourProject</zorder>
+   <zorder>AddProjectButton</zorder>
+   <zorder>FavoriteProject</zorder>
+   <zorder>QuickAccess</zorder>
    <zorder>BoardName</zorder>
-   <zorder>FavProject1</zorder>
-   <zorder>AddingProjects</zorder>
-   <zorder>SortBy</zorder>
-   <zorder>SettingsForBoard</zorder>
+   <zorder>Sorting</zorder>
+   <zorder>MainSettings</zorder>
+   <zorder>Actions_2</zorder>
+   <zorder>scrollArea</zorder>
+   <zorder>SortingOption</zorder>
+   <zorder>Actions</zorder>
+   <zorder>AddingProject</zorder>
+   <zorder>frame_2</zorder>
+   <zorder>Project1f_3</zorder>
+   <zorder>Project1f_5</zorder>
+   <zorder>scrollArea_2</zorder>
+   <zorder>namaboard</zorder>
+   <zorder>back</zorder>
   </widget>
   <widget class="QWidget" name="Searchbar" native="true">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>130</x>
      <y>0</y>
-     <width>551</width>
-     <height>41</height>
+     <width>1851</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">#Searchbar{
 	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #5483B3, stop:1 #4D6D8F);
+	border : none;
 }</string>
    </property>
-   <widget class="QLineEdit" name="SearchingInput">
+   <widget class="QLineEdit" name="SearchBoard">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>371</width>
-      <height>22</height>
+      <x>20</x>
+      <y>20</y>
+      <width>811</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#SearchingInput{
+     <string notr="true">#SearchBoard{
 	border-radius : 10px;
 	font-family : Rubik;
 	color : #6C6C6C;
-	font-size : 10px;
+	font-size : 15px;
 }</string>
     </property>
     <property name="text">
-     <string>              Search Your Board</string>
+     <string>          Search Your Board</string>
     </property>
    </widget>
-   <widget class="QLabel" name="LogoUser">
+   <widget class="QLabel" name="SmileyFace">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>1620</x>
       <y>10</y>
-      <width>21</width>
-      <height>21</height>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>C:/Users/Kristian/Downloads/smileyface.png</pixmap>
+     <pixmap>../../../../../../../../Kristian/Downloads/smileyface.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -408,16 +1050,16 @@
    <widget class="QLabel" name="UserErgo">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>10</y>
-      <width>51</width>
-      <height>16</height>
+      <x>1660</x>
+      <y>20</y>
+      <width>71</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">#UserErgo{
 	font-family : Rubik;
-	font-size : 9px;
+	font-size : 13px;
 }</string>
     </property>
     <property name="text">
@@ -427,10 +1069,10 @@
    <widget class="QPushButton" name="SearchButton">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>31</width>
-      <height>21</height>
+      <x>840</x>
+      <y>20</y>
+      <width>41</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -443,10 +1085,30 @@
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>C:/Users/Kristian/Downloads/search.png</normaloff>C:/Users/Kristian/Downloads/search.png</iconset>
+      <normaloff>assets/search.png</normaloff>assets/search.png</iconset>
     </property>
    </widget>
   </widget>
+  <widget class="QFrame" name="Project1f_2">
+   <property name="geometry">
+    <rect>
+     <x>1610</x>
+     <y>1000</y>
+     <width>241</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <zorder>Navbar</zorder>
+  <zorder>Searchbar</zorder>
+  <zorder>MainSection</zorder>
+  <zorder>Project1f_2</zorder>
  </widget>
  <resources/>
  <connections/>

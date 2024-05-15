@@ -1,4 +1,4 @@
-from src.data.databases import Board, Project, Task
+from .databases import Database, Board, Project, Task
 
 class DatabaseManager:
     def __init__(self, database):
@@ -32,6 +32,15 @@ class DatabaseManager:
             board = Board(*board_data)
             boards.append(board)
         return boards
+    
+    def get_all_projects(self):
+        query = '''SELECT * FROM Projects'''
+        projects_data = self.database.execute_query(query).fetchall()
+        projects = []
+        for project_data in projects_data:
+            project = Project(*project_data)
+            projects.append(project)
+        return projects
     
     def update_board(self, board):
         query = '''UPDATE Boards SET namaBoard = ?, isFavorite = ? WHERE idBoard = ?'''
