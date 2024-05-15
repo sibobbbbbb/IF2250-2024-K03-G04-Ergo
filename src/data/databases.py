@@ -1,8 +1,10 @@
+import os
 import sqlite3
 
 class Database:
-    def __init__(self, db_name):
-        self.conn = sqlite3.connect(db_name)
+    def __init__(self):
+        db_path = os.path.join(os.path.dirname(__file__), "ergo.db")
+        self.conn = sqlite3.connect(db_path)
         self.cursor = self.conn.cursor()
 
     def execute_query(self, query, params=None):
