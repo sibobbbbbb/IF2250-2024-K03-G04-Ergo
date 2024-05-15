@@ -22,7 +22,7 @@ class Task(QtWidgets.QMainWindow):
         self.ui.tambahTask.setVisible(False)
         self.ui.pushButton.clicked.connect(self.show_widget)
         self.ui.editTask.setVisible(False)
-        
+
         # Display task logic
         self.displayTask(self.dbm.get_tasks_by_project(1))
         
@@ -59,8 +59,32 @@ class Task(QtWidgets.QMainWindow):
         # Search board logic
         self.ui.lineEdit.textChanged.connect(self.search_bar_task)
 
+
+        #cari idBoard dari idProject yang dimiliki
+        self.idBoard = self.dbm.get_board_by_project(self.data)
+        print(self.idBoard)
+
+        #kalo namaboard dipencet
+        self.ui.namaboard.setText(f"> Board {self.dbm.get_projectName_by_id(self.data)}")
+        #set agar namaboard geometry sesuai dengan ukuran text nya tetapi tetap di x dan y yang sama
+        self.ui.namaboard.setGeometry(100, 0, self.ui.namaboard.fontMetrics().boundingRect(self.ui.namaboard.text()).width(), 31)
+
+        
+        
         #kalo back dipencet
         # Tambahkan ini di __init__ method
+        self.ui.namaproject.setText(f"> Project {self.dbm.get_projectName_by_id(self.data)}")
+        # Dapatkan posisi x dan lebar dari namaboard
+        namaboard_x = self.ui.namaboard.geometry().x()
+        namaboard_width = self.ui.namaboard.geometry().width()
+
+        # Hitung posisi x baru untuk namaproject
+        namaproject_x = namaboard_x + namaboard_width
+
+        # Set geometry untuk namaproject
+        self.ui.namaproject.setGeometry(namaproject_x + 10, 0, self.ui.namaboard.fontMetrics().boundingRect(self.ui.namaboard.text()).width(), 31)
+        self.ui.namaproject.clicked.connect(lambda _, idProject=self.idBoard : self.switch_scene(1, idProject))
+
         self.ui.back.clicked.connect(lambda _, kosong=0 : self.switch_scene(0, kosong))
 
     def show_tambahTask(self):

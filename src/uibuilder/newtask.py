@@ -41,6 +41,23 @@ class Ui_Ergo(object):
 "    color: #5483B3;\n"
 "}")
         self.back.setObjectName("back")
+        self.namaboard = QtWidgets.QPushButton(self.MainSection)
+        self.namaboard.setGeometry(QtCore.QRect(100, 0, 120, 31))
+        self.namaboard.setStyleSheet("#namaboard {\n"
+"    border: none;\n"
+"    background-color: transparent;\n"
+"    color : #5483B3\n"
+"}")
+        self.namaboard.setObjectName("namaboard")
+        self.namaproject = QtWidgets.QPushButton(self.MainSection)
+        #ditaruh 10 pixel setelah namaboard berakhir
+        self.namaproject.setGeometry(QtCore.QRect(220, 0, 120, 31))
+        self.namaproject.setStyleSheet("#namaboard {\n"
+"    border: none;\n"
+"    background-color: transparent;\n"
+"    color : #5483B3\n"
+"}")
+        self.namaproject.setObjectName("namaboard")
         self.Greetings = QtWidgets.QLabel(self.MainSection)
         self.Greetings.setGeometry(QtCore.QRect(20, 16, 581, 71))
         self.Greetings.setStyleSheet("#Greetings{\n"
@@ -553,6 +570,8 @@ class Ui_Ergo(object):
         self.comboBox_5.setItemText(2, _translate("Ergo", "Completed"))
         self.label_34.setText(_translate("Ergo", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600; color:#0a3675;\">Status</span></p></body></html>"))
         self.lineEdit.setText(_translate("Ergo", ""))
+        self.namaboard.setText(_translate("Ergo", "> board name"))
+        self.namaproject.setText(_translate("Ergo", "> project name"))
         self.back.setText(_translate("Ergo", "Dashboard"))
         self.label_5.setText(_translate("Ergo", "  User Ergo"))
 
