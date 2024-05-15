@@ -7,10 +7,10 @@ from PyQt5.QtGui import QIcon
 from datetime import datetime
 
 class Board(QtWidgets.QMainWindow):
-    def __init__(self,switch_scene):
+    def __init__(self, switch_scene):
         super(Board,self).__init__()
-        self.switch_scene = switch_scene
         self.ui = board_ui.Ui_Ergo()
+        self.switch_scene = switch_scene
         self.ui.setupUi(self)
         icon = (QIcon("img\\logoergo.png"))
         self.setWindowIcon(icon)
@@ -33,13 +33,13 @@ class Board(QtWidgets.QMainWindow):
 
         self.ui.SearchBoard.textChanged.connect(self.search_project)
         
-        self.ui.back.clicked.connect(self.back_to_dashboard)
+        self.ui.back.clicked.connect(lambda: self.switch_scene(0, self))  # Modifikasi ini
 
         # DISPLAY PROJECTS LOGIC 
         self.displayProjects(self.dbm.get_projects_by_board(1))
         self.displayFavProjects(self.dbm.get_projects_by_board(1))
 
-        # SORT PROJECTS LOGIC
+    # SORT PROJECTS LOGIC
         self.ui.Sort2.clicked.connect(self.sort_ascending)
         self.ui.Sort1.clicked.connect(self.sort_descending)
         
@@ -100,7 +100,8 @@ class Board(QtWidgets.QMainWindow):
                 "    color: #5483B3;"
                 "}"
             )
-            project_button.setObjectName(f"Project{i+1}")
+            project_button.setObjectName(f"Project{project.idProject}")
+            project_button.clicked.connect(self.switch_scene, 2)
             
             more_button = QtWidgets.QPushButton(parent=project_frame)
             more_button.setGeometry(QtCore.QRect(200, 0, 41, 31))
@@ -168,7 +169,8 @@ class Board(QtWidgets.QMainWindow):
                 "    color: #5483B3;"
                 "}"
             )
-            fav_project_button.setObjectName(f"Project{i+1}")
+            fav_project_button.setObjectName(f"Projectf{project.idProject}")
+            
             
             more_button = QtWidgets.QPushButton(parent=fav_project_frame)
             more_button.setGeometry(QtCore.QRect(200, 0, 41, 31))
@@ -183,7 +185,7 @@ class Board(QtWidgets.QMainWindow):
                 "}"
             )
             more_button.setIcon(QtGui.QIcon("img//3dot.png"))
-            more_button.setObjectName(f"MoreButton{i+1}")
+            more_button.setObjectName(f"MoreButton{project.idProject}")
 
             label = QtWidgets.QLabel(f"Due to: {project.deadlineProject}", parent=fav_project_frame)
             label.setGeometry(QtCore.QRect(20, 40, 201, 20))
