@@ -60,7 +60,7 @@ class Dashboard(QtWidgets.QMainWindow):
                 "}"
             )
             board_button.setMinimumSize(QtCore.QSize(221, 61))
-            board_button.clicked.connect(lambda: self.switch_scene(1)) 
+            board_button.clicked.connect(lambda _, board_id=board.idBoard: self.switch_scene(1, board_id)) 
             row = i // 3
             col = i % 3
             board_layout.addWidget(board_button, row, col)

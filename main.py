@@ -17,15 +17,29 @@ class MainWindow(QtWidgets.QMainWindow):
         icon = (QIcon("img\\logoergo.png")) 
         self.setWindowIcon(icon)
 
+        self.data = None
+        
         self.dashboard_scene = dashboard.Dashboard(self.switch_scene)
-        self.project_scene = board.Board(self.switch_scene)
-        self.task_scene = task.Task(self.switch_scene)
-
+        self.board_scene = None 
+        self.task_scene = None
         self.stack.addWidget(self.dashboard_scene)
-        self.stack.addWidget(self.project_scene)
-        self.stack.addWidget(self.task_scene)
 
-    def switch_scene(self, index):
+    def switch_scene(self, index, data):
+        self.data = data
+        if index == 0:
+            self.stack.removeWidget(self.board_scene)
+            self.stack.removeWidget(self.task_scene)
+        if index == 1:
+            if self.board_scene is not None:
+                self.stack.removeWidget(self.board_scene)
+            self.board_scene = board.Board(self.switch_scene, self.data)
+            self.stack.addWidget(self.board_scene)
+        elif index == 2:
+            if self.task_scene is not None:
+                self.stack.removeWidget(self.task_scene)
+            self.task_scene = task.Task(self.switch_scene, self.data)
+            self.stack.addWidget(self.task_scene)
+        
         self.stack.setCurrentIndex(index)
 
 if __name__ == "__main__":

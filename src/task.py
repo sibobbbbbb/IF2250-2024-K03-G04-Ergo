@@ -7,9 +7,10 @@ from PyQt5.QtGui import QIcon
 
 class Task(QtWidgets.QMainWindow):
     # memunculkan task
-    def __init__(self, switch_scene):
+    def __init__(self, switch_scene, data):
         super(Task,self).__init__()
         #self.switch_scene = switch_scene
+        self.data = data
         self.ui = task_ui.Ui_Ergo()
         self.ui.setupUi(self)
         self.switch_scene = switch_scene
@@ -60,7 +61,7 @@ class Task(QtWidgets.QMainWindow):
 
         #kalo back dipencet
         # Tambahkan ini di __init__ method
-        self.ui.back.clicked.connect(lambda: self.switch_scene(0)) 
+        self.ui.back.clicked.connect(lambda _, kosong=0 : self.switch_scene(0, kosong))
 
     def show_tambahTask(self):
         self.ui.tambahTask.setVisible(True)

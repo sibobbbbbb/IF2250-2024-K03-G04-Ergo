@@ -7,14 +7,18 @@ from PyQt5.QtGui import QIcon
 from datetime import datetime
 
 class Board(QtWidgets.QMainWindow):
-    def __init__(self, switch_scene):
+    def __init__(self, switch_scene ,data):
         super(Board,self).__init__()
+        self.data = data
         self.ui = board_ui.Ui_Ergo()
         self.switch_scene = switch_scene
         self.ui.setupUi(self)
         icon = (QIcon("img\\logoergo.png"))
         self.setWindowIcon(icon)
         self.dbm = db_manager.DatabaseManager(db.Database())
+
+        # Set label nama board
+        self.ui.BoardName.setText(self.dbm.get_board(self.data)[1])
 
         # ADD BOARD LOGIC
         self.ui.AddingProject.setVisible(False)
@@ -39,9 +43,10 @@ class Board(QtWidgets.QMainWindow):
         self.displayProjects(self.dbm.get_projects_by_board(1))
         self.displayFavProjects(self.dbm.get_projects_by_board(1))
 
-    # SORT PROJECTS LOGIC
+        # SORT PROJECTS LOGIC
         self.ui.Sort2.clicked.connect(self.sort_ascending)
         self.ui.Sort1.clicked.connect(self.sort_descending)
+        
         
         
     def sort_ascending(self):
@@ -101,7 +106,7 @@ class Board(QtWidgets.QMainWindow):
                 "}"
             )
             project_button.setObjectName(f"Project{project.idProject}")
-            project_button.clicked.connect(self.switch_scene, 2)
+            project_button.clicked.connect(lambda _, project_id=project.idProject : self.switch_scene(2, project_id))
             
             more_button = QtWidgets.QPushButton(parent=project_frame)
             more_button.setGeometry(QtCore.QRect(200, 0, 41, 31))
