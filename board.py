@@ -11,9 +11,9 @@ class Board(QtWidgets.QMainWindow):
         super(Board,self).__init__()
         self.ui = board_ui.Ui_Ergo()
         self.ui.setupUi(self)
-        icon = (QIcon("assets\\logoergo.png"))
+        icon = (QIcon("img\\logoergo.png"))
         self.setWindowIcon(icon)
-        self.dbm = db_manager.DatabaseManager(db.Database('ergo.db'))
+        self.dbm = db_manager.DatabaseManager(db.Database())
 
         # ADD BOARD LOGIC
         self.ui.AddingProject.setVisible(False)
@@ -29,6 +29,8 @@ class Board(QtWidgets.QMainWindow):
         self.ui.DeleteProject.clicked.connect(self.delete_project)
         self.ui.Favorite_2.clicked.connect(self.add_favorite)
         self.ui.DeleteProject_2.clicked.connect(self.delete_board)
+
+        self.ui.SearchBoard.textChanged.connect(self.search_project)
         
         self.ui.back.clicked.connect(self.back_to_dashboard)
 
@@ -111,7 +113,7 @@ class Board(QtWidgets.QMainWindow):
                 "    color: #5483B3;"
                 "}"
             )
-            more_button.setIcon(QtGui.QIcon("assets/3dot.png"))
+            more_button.setIcon(QtGui.QIcon("img//3dot.png"))
             more_button.setObjectName(f"{project.idProject}")
 
             label = QtWidgets.QLabel(f"Due to: {project.deadlineProject}", parent=project_frame)
@@ -179,7 +181,7 @@ class Board(QtWidgets.QMainWindow):
                 "    color: #5483B3;"
                 "}"
             )
-            more_button.setIcon(QtGui.QIcon("assets/3dot.png"))
+            more_button.setIcon(QtGui.QIcon("img//3dot.png"))
             more_button.setObjectName(f"MoreButton{i+1}")
 
             label = QtWidgets.QLabel(f"Due to: {project.deadlineProject}", parent=fav_project_frame)
@@ -201,6 +203,16 @@ class Board(QtWidgets.QMainWindow):
         fav_project_container.setLayout(fav_project_layout)
         self.ui.scrollArea_2.setWidget(fav_project_container)
 
+
+    def search_project(self):
+        search_text = self.ui.SearchBoard.text()
+        if search_text and not search_text == "Search Your Board":
+            projects = [project for project in self.dbm.get_all_projects() if search_text.lower() in project.namaProject.lower()] 
+            self.displayProjects(projects)
+            self.displayFavProjects(projects)
+        else:
+            self.displayProjects(self.dbm.get_all_projects())
+            self.displayFavProjects(self.dbm.get_all_projects())
 
     def clear_fav_project_frames(self):
         contents = self.ui.scrollArea_2.widget()

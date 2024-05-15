@@ -527,7 +527,7 @@ class Ui_Ergo(object):
         self.label1_2.setText(_translate("Ergo", "Due to :"))
         self.namaboard.setText(_translate("Ergo", "> board name"))
         self.back.setText(_translate("Ergo", "Dashboard"))
-        self.SearchBoard.setText(_translate("Ergo", "          Search Your Board"))
+        self.SearchBoard.setText(_translate("Ergo",""))
         self.UserErgo.setText(_translate("Ergo", "  User Ergo"))
 
 

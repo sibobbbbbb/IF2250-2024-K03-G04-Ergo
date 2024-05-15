@@ -153,6 +153,12 @@ class DatabaseManager:
         if boards:
             return boards[-1].idBoard
         return 0
+    
+    def getLastIdProject(self):
+        projects = self.get_all_projects()
+        if projects:
+            return projects[-1].idProject
+        return 0
 
     def getLastIdTask(self, idProject):
         tasks = self.get_tasks_by_project(idProject)
