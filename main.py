@@ -34,6 +34,8 @@ class MainWindow(QtWidgets.QMainWindow):
             self.stack.removeWidget(self.board_scene)
             self.stack.removeWidget(self.task_scene)
         if index == 1:
+            if self.task_scene is not None:
+                self.stack.removeWidget(self.task_scene)
             if self.board_scene is not None:
                 self.stack.removeWidget(self.board_scene)
             self.board_scene = board.Board(self.switch_scene, self.data)

@@ -160,8 +160,8 @@ class DatabaseManager:
             return projects[-1].idProject
         return 0
 
-    def getLastIdTask(self, idProject):
-        tasks = self.get_tasks_by_project(idProject)
+    def getLastIdTask(self):
+        tasks = self.get_all_tasks()
         if tasks:
             return tasks[-1].idTask
         return 0
@@ -188,6 +188,15 @@ class DatabaseManager:
     def get_projectName_by_id(self, idproject):
         query = '''SELECT namaProject FROM Projects WHERE idProject = ?'''
         params = (idproject,)
+        result = self.database.execute_query(query, params).fetchone()
+        if result:
+            return result[0]
+        else:
+            return None
+        
+    def get_boardName_by_id(self, idboard):
+        query = '''SELECT namaBoard FROM Boards WHERE idBoard = ?'''
+        params = (idboard,)
         result = self.database.execute_query(query, params).fetchone()
         if result:
             return result[0]

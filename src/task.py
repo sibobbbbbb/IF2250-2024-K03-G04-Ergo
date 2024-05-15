@@ -24,7 +24,7 @@ class Task(QtWidgets.QMainWindow):
         self.ui.editTask.setVisible(False)
 
         # Display task logic
-        self.displayTask(self.dbm.get_tasks_by_project(data), data)
+        self.displayTask(self.dbm.get_tasks_by_project(self.data))
         
         # Sort task logic
         self.ui.comboBox_2.currentIndexChanged.connect(self.sort_task)
@@ -54,18 +54,16 @@ class Task(QtWidgets.QMainWindow):
         self.ui.pushButton_5.clicked.connect(self.edit_selected_task)
         
         # Inisialisasi progress bar
-        self.update_progress_bar(data)
+        self.update_progress_bar()
         
         # Search board logic
         self.ui.lineEdit.textChanged.connect(self.search_bar_task)
 
-
         #cari idBoard dari idProject yang dimiliki
         self.idBoard = self.dbm.get_board_by_project(self.data)
-        print(self.idBoard)
 
         #kalo namaboard dipencet
-        self.ui.namaboard.setText(f"> Board {self.dbm.get_projectName_by_id(self.data)}")
+        self.ui.namaboard.setText(f"> {self.dbm.get_board(self.idBoard)[1]}")
         #set agar namaboard geometry sesuai dengan ukuran text nya tetapi tetap di x dan y yang sama
         self.ui.namaboard.setGeometry(100, 0, self.ui.namaboard.fontMetrics().boundingRect(self.ui.namaboard.text()).width(), 31)
 
@@ -73,7 +71,7 @@ class Task(QtWidgets.QMainWindow):
         
         #kalo back dipencet
         # Tambahkan ini di __init__ method
-        self.ui.namaproject.setText(f"> Project {self.dbm.get_projectName_by_id(self.data)}")
+        self.ui.namaproject.setText(f"> {self.dbm.get_projectName_by_id(self.data)}")
         # Dapatkan posisi x dan lebar dari namaboard
         namaboard_x = self.ui.namaboard.geometry().x()
         namaboard_width = self.ui.namaboard.geometry().width()
@@ -83,9 +81,11 @@ class Task(QtWidgets.QMainWindow):
 
         # Set geometry untuk namaproject
         self.ui.namaproject.setGeometry(namaproject_x + 10, 0, self.ui.namaboard.fontMetrics().boundingRect(self.ui.namaboard.text()).width(), 31)
-        self.ui.namaproject.clicked.connect(lambda _, idProject=self.idBoard : self.switch_scene(1, idProject))
 
         self.ui.back.clicked.connect(lambda _, kosong=0 : self.switch_scene(0, kosong))
+        self.ui.namaboard.clicked.connect(lambda _ : self.switch_scene(1, self.dbm.get_board_by_project(self.data)))
+
+        self.ui.Greetings.setText(f"{self.dbm.get_projectName_by_id(self.data)}")
 
     def show_tambahTask(self):
         self.ui.tambahTask.setVisible(True)
@@ -99,7 +99,7 @@ class Task(QtWidgets.QMainWindow):
     def dontshow_editTask(self):
         self.ui.editTask.setVisible(False)
 
-    def add_new_task(self, data):
+    def add_new_task(self):
         #cek apakah textEdit_2 kosong
         if self.ui.textEdit.toPlainText() == "":
             self.ui.label_25.setVisible(True)
@@ -112,11 +112,11 @@ class Task(QtWidgets.QMainWindow):
             desc = self.ui.textEdit_2.toPlainText()
             category = self.ui.comboBox_3.currentText()
             status = "Not Yet Started"
-            new_task = db.Task(self.dbm.getLastIdTask(data)+1, 1 ,task_title,status ,category, desc,deadline)
+            new_task = db.Task(self.dbm.getLastIdTask()+1, self.data ,task_title,status ,category, desc,deadline)
             self.dbm.create_task(new_task)
-            self.displayTask(self.dbm.get_tasks_by_project(data), data)
+            self.displayTask(self.dbm.get_tasks_by_project(self.data))
 
-    def edit_selected_task(self, data):
+    def edit_selected_task(self):
         #cek apakah textEdit_2 kosong
         if self.ui.textEdit_3.toPlainText() == "":
             self.ui.label_31.setVisible(True)
@@ -127,22 +127,22 @@ class Task(QtWidgets.QMainWindow):
             desc = self.ui.textEdit_4.toPlainText()
             category = self.ui.comboBox_4.currentText()
             status = self.ui.comboBox_5.currentText()
-            edited_task = db.Task(int(self.idTask), data, task_title, status, category, desc, deadline)
+            edited_task = db.Task(int(self.idTask), self.data, task_title, status, category, desc, deadline)
             self.dbm.update_task(edited_task)
-            self.displayTask(self.dbm.get_tasks_by_project(data), data)
-            self.update_progress_bar(data)
+            self.displayTask(self.dbm.get_tasks_by_project(self.data))
+            self.update_progress_bar()
         
-    def sort_task(self, data):
+    def sort_task(self):
         sort_by = self.ui.comboBox_2.currentText()
-        tasks = self.dbm.get_tasks_by_project(data)
+        tasks = self.dbm.get_tasks_by_project()
         if sort_by == "Ascending":
-            self.displayTask(sorted(tasks, key=lambda x: x.deadlineTask), data)
+            self.displayTask(sorted(tasks, key=lambda x: x.deadlineTask))
         else:
-            self.displayTask(sorted(tasks, key=lambda x: x.deadlineTask, reverse=True), data)
+            self.displayTask(sorted(tasks, key=lambda x: x.deadlineTask, reverse=True))
     
-    def group_by_task(self, data):
+    def group_by_task(self):
         group_by = self.ui.comboBox.currentText()
-        tasks = self.dbm.get_tasks_by_project(data)
+        tasks = self.dbm.get_tasks_by_project()
         if group_by == "Category":
             urutan = ["Low", "Medium", "High"]
             grouped_tasks = {kategori: [] for kategori in urutan}
@@ -160,9 +160,8 @@ class Task(QtWidgets.QMainWindow):
                 
             result = [task for status in urutan for task in grouped_tasks[status]]
         
-        self.displayTask(result, data)
+        self.displayTask(result)
 
-     
     def show_widget(self):
         self.ui.tambahTask.setVisible(not self.ui.tambahTask.isVisible())
 
@@ -177,20 +176,20 @@ class Task(QtWidgets.QMainWindow):
         self.ui.comboBox_4.setCurrentText(task[4])
         
         
-    def displayTask(self, tasks, data):
+    def displayTask(self, tasks):
         # Bersihkan isi scroll area sebelum menampilkan task baru
         self.clear_layout(self.ui.verticalLayout)
 
         # Tampilkan setiap task
         for task in tasks:
-            self.add_task_to_layout(task, data)
+            self.add_task_to_layout(task)
 
         # Set minimum height of the scroll area content to allow scrolling
         self.ui.scrollAreaWidgetContents.setMinimumHeight(len(tasks) * 144)
 
-        self.update_progress_bar(data)
+        self.update_progress_bar()
 
-    def add_task_to_layout(self, task, data):
+    def add_task_to_layout(self, task):
         widget = QtWidgets.QWidget(self.ui.scrollAreaWidgetContents)
         widget.setFixedSize(1655, 144)  # Set the fixed size for each task widget
         widget.setStyleSheet("")
@@ -206,7 +205,7 @@ class Task(QtWidgets.QMainWindow):
         checkBox.setText("")
         checkBox.setObjectName("checkBox")
         checkBox.setChecked(task.status == "Completed")
-        checkBox.stateChanged.connect(lambda state: self.update_task_status(task, state, data))
+        checkBox.stateChanged.connect(lambda state: self.update_task_status(task, state))
         horizontalLayout.addWidget(checkBox)
 
         label_10 = QtWidgets.QLabel(widget)
@@ -259,18 +258,18 @@ class Task(QtWidgets.QMainWindow):
             child = layout.takeAt(0)
             if child.widget():
                 child.widget().deleteLater()
-      
-    def update_task_status(self, task, state, data):
+
+    def update_task_status(self, task, state):
         if state == QtCore.Qt.Checked:
             task.status = "Completed"
         else:
             task.status = "Not Yet Started"
         self.dbm.update_task(task)
-        self.displayTask(self.dbm.get_tasks_by_project(data), data)
+        self.displayTask(self.dbm.get_tasks_by_project(self.data))
         self.update_progress_bar()
 
-    def update_progress_bar(self, data):
-        tasks = self.dbm.get_tasks_by_project(data)
+    def update_progress_bar(self):
+        tasks = self.dbm.get_tasks_by_project(self.data)
         if tasks:
             completed_tasks = [task for task in tasks if task.status == "Completed"]
             on_progress_tasks = [task for task in tasks if task.status == "On Progress"]
@@ -280,13 +279,13 @@ class Task(QtWidgets.QMainWindow):
         else:
             self.ui.progressBar.setValue(0)
             
-    def search_bar_task(self, data):
+    def search_bar_task(self):
         search_text = self.ui.lineEdit.text()
         if search_text and not search_text == "Search Your Board":
-            tasks = [task for task in self.dbm.get_tasks_by_project(data) if search_text.lower() in task.namaTask.lower()] 
-            self.displayTask(tasks, data)
+            tasks = [task for task in self.dbm.get_tasks_by_project(self.data) if search_text.lower() in task.namaTask.lower()] 
+            self.displayTask(tasks)
         else:
-            self.displayTask(self.dbm.get_tasks_by_project(data), data)
+            self.displayTask(self.dbm.get_tasks_by_project(self.data))
             
     
 if __name__ == "__main__":
