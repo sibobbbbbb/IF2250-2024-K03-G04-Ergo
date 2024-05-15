@@ -19,7 +19,7 @@ class Board(QtWidgets.QMainWindow):
 
         # Set label nama board
         self.ui.BoardName.setText(self.dbm.get_board(self.data)[1])
-
+        self.ui.namaboard.setText("> " + self.dbm.get_board(self.data)[1])
         # ADD BOARD LOGIC
         self.ui.AddingProject.setVisible(False)
         self.ui.SortingOption.setVisible(False)
