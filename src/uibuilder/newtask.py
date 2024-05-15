@@ -543,5 +543,5 @@ class Ui_Ergo(object):
         self.comboBox_5.setItemText(1, _translate("Ergo", "On Progress"))
         self.comboBox_5.setItemText(2, _translate("Ergo", "Completed"))
         self.label_34.setText(_translate("Ergo", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600; color:#0a3675;\">Status</span></p></body></html>"))
-        self.lineEdit.setText(_translate("Ergo", "Search Your Board"))
+        self.lineEdit.setText(_translate("Ergo", ""))
         self.label_5.setText(_translate("Ergo", "  User Ergo"))

@@ -13,7 +13,7 @@ class Task(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         icon = (QIcon("assets\\ERGO.png"))
         self.setWindowIcon(icon)
-        self.dbm = db_manager.DatabaseManager(db.Database('ergo.db'))
+        self.dbm = db_manager.DatabaseManager(db.Database())
 
         self.ui.tambahTask.setVisible(False)
         self.ui.pushButton.clicked.connect(self.show_widget)
@@ -53,7 +53,7 @@ class Task(QtWidgets.QMainWindow):
         self.update_progress_bar()
         
         # Search board logic
-        self.ui.pushButton_3.clicked.connect(self.search_bar_task)
+        self.ui.lineEdit.textChanged.connect(self.search_bar_task)
         
     def show_tambahTask(self):
         self.ui.tambahTask.setVisible(True)
