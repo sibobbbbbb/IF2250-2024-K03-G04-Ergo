@@ -22,9 +22,17 @@ class DatabaseManager:
     def get_board(self, idBoard):
         query = '''SELECT * FROM Boards WHERE idBoard = ?'''
         params = (idBoard,)
-        board = self.database.execute_query(query, params).fetchone()
-        return Board(*board) if board else None
-
+        return self.database.execute_query(query, params).fetchone()
+    
+    def get_all_boards(self):
+        query = '''SELECT * FROM Boards'''
+        boards_data = self.database.execute_query(query).fetchall()
+        boards = []
+        for board_data in boards_data:
+            board = Board(*board_data)
+            boards.append(board)
+        return boards
+    
     def update_board(self, board):
         query = '''UPDATE Boards SET namaBoard = ?, isFavorite = ? WHERE idBoard = ?'''
         params = (board.namaBoard, board.isFavorite, board.idBoard)
@@ -56,8 +64,7 @@ class DatabaseManager:
     def get_project(self, idProject):
         query = '''SELECT * FROM Projects WHERE idProject = ?'''
         params = (idProject,)
-        project = self.database.execute_query(query, params).fetchone()
-        return Project(*project) if project else None
+        return self.database.execute_query(query, params).fetchone()
 
     def get_projects_by_board(self, idBoard):
         query = '''SELECT * FROM Projects WHERE idBoard = ?'''
@@ -97,8 +104,7 @@ class DatabaseManager:
     def get_task(self, idTask):
         query = '''SELECT * FROM Tasks WHERE idTask = ?'''
         params = (idTask,)
-        task = self.database.execute_query(query, params).fetchone()
-        return Task(*task) if task else None
+        return self.database.execute_query(query, params).fetchone()
 
     def get_tasks_by_project(self, idProject):
         query = '''SELECT * FROM Tasks WHERE idProject = ?'''
@@ -116,5 +122,25 @@ class DatabaseManager:
         params = (idTask,)
         self.database.execute_query(query, params)
     
-
-    
+    def print_all_boards(self):
+        boards = self.get_all_boards()
+        if boards:
+            print("Daftar Boards:")
+            for board in boards:
+                print(board.idBoard)
+                print(board.namaBoard) 
+        else:
+            print("Tidak ada board yang tersimpan di database.")
+            
+    def isInDatabase(self, namaBoard):
+        boards = self.get_all_boards()
+        for board in boards:
+            if board.namaBoard == namaBoard:
+                return True
+        return False
+        
+    def getLastIdBoard(self):
+        boards = self.get_all_boards()
+        if boards:
+            return boards[-1].idBoard
+        return 0
