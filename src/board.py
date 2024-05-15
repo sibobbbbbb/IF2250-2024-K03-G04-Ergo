@@ -7,8 +7,9 @@ from PyQt5.QtGui import QIcon
 from datetime import datetime
 
 class Board(QtWidgets.QMainWindow):
-    def __init__(self):
+    def __init__(self,switch_scene):
         super(Board,self).__init__()
+        self.switch_scene = switch_scene
         self.ui = board_ui.Ui_Ergo()
         self.ui.setupUi(self)
         icon = (QIcon("img\\logoergo.png"))
@@ -38,7 +39,7 @@ class Board(QtWidgets.QMainWindow):
         self.displayProjects(self.dbm.get_projects_by_board(1))
         self.displayFavProjects(self.dbm.get_projects_by_board(1))
 
-    # SORT PROJECTS LOGIC
+        # SORT PROJECTS LOGIC
         self.ui.Sort2.clicked.connect(self.sort_ascending)
         self.ui.Sort1.clicked.connect(self.sort_descending)
         

@@ -7,8 +7,9 @@ from PyQt5.QtGui import QIcon
 
 class Task(QtWidgets.QMainWindow):
     # memunculkan task
-    def __init__(self):
+    def __init__(self,switch_scene):
         super(Task,self).__init__()
+        self.switch_scene = switch_scene
         self.ui = task_ui.Ui_Ergo()
         self.ui.setupUi(self)
         icon = (QIcon("assets\\ERGO.png"))

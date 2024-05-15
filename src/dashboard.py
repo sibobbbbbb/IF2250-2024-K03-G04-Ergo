@@ -6,8 +6,9 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QIcon
 
 class Dashboard(QtWidgets.QMainWindow):
-    def __init__(self):
+    def __init__(self,switch_scene):
         super(Dashboard,self).__init__()
+        self.switch_scene = switch_scene 
         self.ui = full.Ui_Ergo()
         self.ui.setupUi(self)
         icon = (QIcon("assets\\ERGO.png"))
@@ -27,6 +28,7 @@ class Dashboard(QtWidgets.QMainWindow):
         
         # SEARCH BAR LOGIC
         self.ui.SearchButton.clicked.connect(self.search_boards)
+        self.ui.SearchBoard.textChanged.connect(self.search_boards)
 
     def search_boards(self):
         search_text = self.ui.SearchBoard.text()
@@ -58,6 +60,7 @@ class Dashboard(QtWidgets.QMainWindow):
                 "}"
             )
             board_button.setMinimumSize(QtCore.QSize(221, 61))
+            board_button.clicked.connect(lambda: self.switch_scene(1)) 
             row = i // 3
             col = i % 3
             board_layout.addWidget(board_button, row, col)

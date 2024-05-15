@@ -291,5 +291,4 @@ class Ui_Ergo(object):
         self.Board3.setText(_translate("Ergo", "Mobile Development"))
         self.Board4.setText(_translate("Ergo", "Mobile Development"))
         self.Favboard1.setText(_translate("Ergo", "Mobile Development"))
-        self.SearchBoard.setText(_translate("Ergo", "Search Your Board"))
         self.UserErgo.setText(_translate("Ergo", "  User Ergo"))
