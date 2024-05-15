@@ -12,7 +12,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         icon = (QIcon("assets\\ERGO.png"))
         self.setWindowIcon(icon)
-        self.dbm = db_manager.DatabaseManager(db.Database('ergo.db'))
+        self.dbm = db_manager.DatabaseManager(db.Database())
         
         # ADD BOARD LOGIC
         self.ui.AddingBoard.setVisible(False)
