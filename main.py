@@ -27,6 +27,10 @@ class MainWindow(QtWidgets.QMainWindow):
     def switch_scene(self, index, data):
         self.data = data
         if index == 0:
+            if self.dashboard_scene is not None:
+                self.stack.removeWidget(self.dashboard_scene)
+            self.dashboard_scene = dashboard.Dashboard(self.switch_scene)
+            self.stack.addWidget(self.dashboard_scene)
             self.stack.removeWidget(self.board_scene)
             self.stack.removeWidget(self.task_scene)
         if index == 1:
