@@ -92,6 +92,7 @@ class Dashboard(QtWidgets.QMainWindow):
                 "}"
             )
             fav_board_button.setMinimumSize(QtCore.QSize(221, 61))
+            fav_board_button.clicked.connect(lambda _, board_id=board.idBoard: self.switch_scene(1, board_id)) 
             row = i // 3
             col = i % 3
             fav_board_layout.addWidget(fav_board_button, row, col)

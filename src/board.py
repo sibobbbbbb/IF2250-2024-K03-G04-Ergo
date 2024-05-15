@@ -191,8 +191,8 @@ class Board(QtWidgets.QMainWindow):
                 "}"
             )
             more_button.setIcon(QtGui.QIcon("img//3dot.png"))
-            more_button.setObjectName(f"MoreButton{project.idProject}")
-
+            more_button.setObjectName(f"{project.idProject}")
+            more_button.clicked.connect(self.showActions)
             label = QtWidgets.QLabel(f"Due to: {project.deadlineProject}", parent=fav_project_frame)
             label.setGeometry(QtCore.QRect(20, 40, 201, 20))
             label.setStyleSheet(
