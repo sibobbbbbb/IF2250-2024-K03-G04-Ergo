@@ -1,16 +1,17 @@
 import src.data.db_manager as db_manager
 import src.data.databases as db
 import src.uibuilder.newtask as task_ui
-from PyQt5 import QtWidgets, QtGui, QtCore
+from PyQt5 import QtWidgets , QtGui , QtCore
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QIcon
 
 class Task(QtWidgets.QMainWindow):
+    # memunculkan task
     def __init__(self):
-        super(Task, self).__init__()
+        super(Task,self).__init__()
         self.ui = task_ui.Ui_Ergo()
         self.ui.setupUi(self)
-        icon = QIcon("assets\\ERGO.png")
+        icon = (QIcon("assets\\ERGO.png"))
         self.setWindowIcon(icon)
         self.dbm = db_manager.DatabaseManager(db.Database('ergo.db'))
 
@@ -24,30 +25,33 @@ class Task(QtWidgets.QMainWindow):
         # Sort task logic
         self.ui.comboBox_2.currentIndexChanged.connect(self.sort_task)
         
-        # buat tambah task
+        # Group By Task Logic
+        self.ui.comboBox.currentIndexChanged.connect(self.group_by_task)
+        
+        #buat tambah task
         self.ui.tambahTask.setVisible(False)
         self.ui.pushButton.clicked.connect(self.show_tambahTask)
 
-        # buat edit task
+        #buat edit task
         self.ui.editTask.setVisible(False)
 
-        # buat tombol cancel
+        #buat tombol cancel
         self.ui.pushButton_4.clicked.connect(self.dontshow_tambahTask)
         self.ui.pushButton_6.clicked.connect(self.dontshow_editTask)
 
-        # buat label "task name required"
+        #buat label "task name required"
         self.ui.label_25.setVisible(False)
         self.ui.label_31.setVisible(False)
 
-        # buat tombol create ditekan
+        #buat tombol create ditekan
         self.ui.pushButton_2.clicked.connect(self.add_new_task)
 
-        # buat tombol apply ditekan
+        #buat tombol apply ditekan
         self.ui.pushButton_5.clicked.connect(self.edit_selected_task)
         
         # Inisialisasi progress bar
         self.update_progress_bar()
-
+        
         # Search board logic
         self.ui.pushButton_3.clicked.connect(self.search_bar_task)
         
@@ -95,7 +99,7 @@ class Task(QtWidgets.QMainWindow):
             self.dbm.update_task(edited_task)
             self.displayTask(self.dbm.get_tasks_by_project(1))
             self.update_progress_bar()
-
+        
     def sort_task(self):
         sort_by = self.ui.comboBox_2.currentText()
         tasks = self.dbm.get_tasks_by_project(1)
@@ -103,7 +107,7 @@ class Task(QtWidgets.QMainWindow):
             self.displayTask(sorted(tasks, key=lambda x: x.deadlineTask))
         else:
             self.displayTask(sorted(tasks, key=lambda x: x.deadlineTask, reverse=True))
-
+    
     def group_by_task(self):
         group_by = self.ui.comboBox.currentText()
         tasks = self.dbm.get_tasks_by_project(1)
@@ -126,6 +130,7 @@ class Task(QtWidgets.QMainWindow):
         
         self.displayTask(result)
 
+     
     def show_widget(self):
         self.ui.tambahTask.setVisible(not self.ui.tambahTask.isVisible())
 
@@ -138,7 +143,8 @@ class Task(QtWidgets.QMainWindow):
         self.ui.textEdit_4.setPlainText(task[5])
         self.ui.comboBox_5.setCurrentText(task[3])
         self.ui.comboBox_4.setCurrentText(task[4])
-
+        
+        
     def displayTask(self, tasks):
         # Bersihkan isi scroll area sebelum menampilkan task baru
         self.clear_layout(self.ui.verticalLayout)
@@ -150,7 +156,6 @@ class Task(QtWidgets.QMainWindow):
         # Set minimum height of the scroll area content to allow scrolling
         self.ui.scrollAreaWidgetContents.setMinimumHeight(len(tasks) * 144)
 
-        # Update progress bar
         self.update_progress_bar()
 
     def add_task_to_layout(self, task):
@@ -169,13 +174,13 @@ class Task(QtWidgets.QMainWindow):
         checkBox.setText("")
         checkBox.setObjectName("checkBox")
         checkBox.setChecked(task.status == "Completed")
-        checkBox.stateChanged.connect(lambda state, task=task: self.update_task_status(task, state))
+        checkBox.stateChanged.connect(lambda state: self.update_task_status(task, state))
         horizontalLayout.addWidget(checkBox)
 
         label_10 = QtWidgets.QLabel(widget)
         label_10.setObjectName("label_10")
         label_10.setText(task.namaTask)  # Set nama task
-        label_10.setFont(QtGui.QFont("Arial", 12))
+        label_10.setFont(QtGui.QFont("Arial", 12))  
         horizontalLayout.addWidget(label_10)
 
         spacerItem = QtWidgets.QSpacerItem(83, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -184,7 +189,7 @@ class Task(QtWidgets.QMainWindow):
         label_11 = QtWidgets.QLabel(widget)
         label_11.setObjectName("label_11")
         label_11.setText(task.status)  # Set status task
-        label_11.setFont(QtGui.QFont("Arial", 12))
+        label_11.setFont(QtGui.QFont("Arial", 12))  
         horizontalLayout.addWidget(label_11)
 
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -215,13 +220,14 @@ class Task(QtWidgets.QMainWindow):
         horizontalLayout.addWidget(label_14)
 
         self.ui.verticalLayout.addWidget(widget)
-
+        
+    
     def clear_layout(self, layout):
         while layout.count():
             child = layout.takeAt(0)
             if child.widget():
                 child.widget().deleteLater()
-
+      
     def update_task_status(self, task, state):
         if state == QtCore.Qt.Checked:
             task.status = "Completed"
@@ -241,7 +247,7 @@ class Task(QtWidgets.QMainWindow):
             self.ui.progressBar.setValue(int(complete + progressing))
         else:
             self.ui.progressBar.setValue(0)
-
+            
     def search_bar_task(self):
         search_text = self.ui.lineEdit.text()
         if search_text and not search_text == "Search Your Board":
@@ -249,7 +255,8 @@ class Task(QtWidgets.QMainWindow):
             self.displayTask(tasks)
         else:
             self.displayTask(self.dbm.get_tasks_by_project(1))
-
+            
+    
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
