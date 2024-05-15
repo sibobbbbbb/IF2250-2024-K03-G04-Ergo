@@ -19,7 +19,7 @@ class Board(QtWidgets.QMainWindow):
 
         # Set label nama board
         self.ui.BoardName.setText(self.dbm.get_board(self.data)[1])
-
+        self.ui.namaboard.setText("> " + self.dbm.get_board(self.data)[1])
         # ADD BOARD LOGIC
         self.ui.AddingProject.setVisible(False)
         self.ui.SortingOption.setVisible(False)
@@ -40,8 +40,8 @@ class Board(QtWidgets.QMainWindow):
         self.ui.back.clicked.connect(lambda: self.switch_scene(0, self))  # Modifikasi ini
 
         # DISPLAY PROJECTS LOGIC 
-        self.displayProjects(self.dbm.get_projects_by_board(1))
-        self.displayFavProjects(self.dbm.get_projects_by_board(1))
+        self.displayProjects(self.dbm.get_projects_by_board(self.data))
+        self.displayFavProjects(self.dbm.get_projects_by_board(self.data))
 
         # SORT PROJECTS LOGIC
         self.ui.Sort2.clicked.connect(self.sort_ascending)
@@ -51,7 +51,7 @@ class Board(QtWidgets.QMainWindow):
         
     def sort_ascending(self):
         self.ui.SortingOption.setVisible(False)
-        projects = self.dbm.get_projects_by_board(1)
+        projects = self.dbm.get_projects_by_board(self.data)
 
         def parse_date(date_string):
             for fmt in ("%Y-%m-%d", "%d/%m/%Y"):
@@ -66,7 +66,7 @@ class Board(QtWidgets.QMainWindow):
         
     def sort_descending(self):
         self.ui.SortingOption.setVisible(False)
-        projects = self.dbm.get_projects_by_board(1)
+        projects = self.dbm.get_projects_by_board(self.data)
 
         def parse_date(date_string):
             for fmt in ("%Y-%m-%d", "%d/%m/%Y"):
@@ -175,6 +175,7 @@ class Board(QtWidgets.QMainWindow):
                 "}"
             )
             fav_project_button.setObjectName(f"Projectf{project.idProject}")
+            fav_project_button.clicked.connect(lambda _, project_id=project.idProject : self.switch_scene(2, project_id))
             
             
             more_button = QtWidgets.QPushButton(parent=fav_project_frame)
@@ -234,21 +235,18 @@ class Board(QtWidgets.QMainWindow):
             for frame in contents.findChildren(QtWidgets.QFrame):
                 frame.deleteLater()
 
-    def back_to_dashboard(self):
-        ## back to dashboard
-        return
-
     def delete_board(self):
-        self.dbm.delete_board(self.dbm.get_board().idBoard)
-        self.back_to_dashboard()
+        self.dbm.delete_board(self.data)
+        self.ui.Actions_2.setVisible(False)
+        self.switch_scene(0,0)
         # kedashboard
 
     def delete_project(self):
         idProject = self.senderf.objectName()
         self.dbm.delete_project(idProject)
         self.ui.Actions.setVisible(False)
-        self.displayProjects(self.dbm.get_projects_by_board(1))
-        self.displayFavProjects(self.dbm.get_projects_by_board(1))
+        self.displayProjects(self.dbm.get_projects_by_board(self.data))
+        self.displayFavProjects(self.dbm.get_projects_by_board(self.data))
 
     def favorite_project(self):
         idProject = int(self.senderf.objectName())
@@ -256,20 +254,22 @@ class Board(QtWidgets.QMainWindow):
         newProject = db.Project(idProject, project[1], project[2], project[3], project[4], 1)
         self.dbm.update_project(newProject)
         self.ui.Actions.setVisible(False)
-        self.displayFavProjects(self.dbm.get_projects_by_board(1))
+        self.displayFavProjects(self.dbm.get_projects_by_board(self.data))
 
     def add_favorite(self):
         ## mengubah board
-        newBoard = db.Board(self.dbm.get_board().idBoard, self.dbm.get_board().namaBoard, 1)
+        board = self.dbm.get_board(self.data)
+        newBoard = db.Board(board[0], board[1], 1)
         self.dbm.update_board(newBoard)
+        self.ui.Actions_2.setVisible(False)
 
     def add_new_project(self):
         namaProject = self.ui.inputBoardtitle.text()
         dateProject = self.ui.dateEdit.text()
-        newProject = db.Project(self.dbm.getLastIdProject()+1,1, namaProject, 0, dateProject, 0)
+        newProject = db.Project(self.dbm.getLastIdProject()+1,self.data, namaProject, 0, dateProject, 0)
         self.dbm.create_project(newProject)
         self.ui.AddingProject.setVisible(False)
-        self.displayProjects(self.dbm.get_projects_by_board(1))
+        self.displayProjects(self.dbm.get_projects_by_board(self.data))
 
     def showAddProject(self):
         self.ui.AddingProject.setVisible(not self.ui.AddingProject.isVisible())
