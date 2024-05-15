@@ -174,3 +174,22 @@ class DatabaseManager:
             task = Task(*task_data)
             tasks.append(task)
         return tasks
+    
+    def get_board_by_project(self, idproject):
+        #dari idproject yang diberi, dicari idboardnya
+        query = '''SELECT idBoard FROM Projects WHERE idProject = ?'''
+        params = (idproject,)
+        result = self.database.execute_query(query, params).fetchone()
+        if result:
+            return result[0]
+        else:
+            return None
+        
+    def get_projectName_by_id(self, idproject):
+        query = '''SELECT namaProject FROM Projects WHERE idProject = ?'''
+        params = (idproject,)
+        result = self.database.execute_query(query, params).fetchone()
+        if result:
+            return result[0]
+        else:
+            return None
