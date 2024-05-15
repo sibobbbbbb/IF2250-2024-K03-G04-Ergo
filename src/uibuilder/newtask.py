@@ -33,6 +33,14 @@ class Ui_Ergo(object):
 "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #DAD9D8, stop:1 #97C9ED);\n"
 "}")
         self.MainSection.setObjectName("MainSection")
+        self.back = QtWidgets.QPushButton(self.MainSection)
+        self.back.setGeometry(QtCore.QRect(0, 0, 100, 31))
+        self.back.setStyleSheet("#back {\n"
+"    border: none;\n"
+"    background-color: transparent;\n"
+"    color: #5483B3;\n"
+"}")
+        self.back.setObjectName("back")
         self.Greetings = QtWidgets.QLabel(self.MainSection)
         self.Greetings.setGeometry(QtCore.QRect(20, 16, 581, 71))
         self.Greetings.setStyleSheet("#Greetings{\n"
@@ -401,6 +409,7 @@ class Ui_Ergo(object):
         self.label_34 = QtWidgets.QLabel(self.editTask)
         self.label_34.setGeometry(QtCore.QRect(500, 10, 101, 41))
         self.label_34.setObjectName("label_34")
+        self.back.raise_()
         self.Containerforwords_2.raise_()
         self.Containerforwords.raise_()
         self.Greetings_2.raise_()
@@ -544,4 +553,14 @@ class Ui_Ergo(object):
         self.comboBox_5.setItemText(2, _translate("Ergo", "Completed"))
         self.label_34.setText(_translate("Ergo", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600; color:#0a3675;\">Status</span></p></body></html>"))
         self.lineEdit.setText(_translate("Ergo", ""))
+        self.back.setText(_translate("Ergo", "Dashboard"))
         self.label_5.setText(_translate("Ergo", "  User Ergo"))
+
+if __name__ == "__main__":
+        import sys
+        app = QtWidgets.QApplication(sys.argv)
+        Ergo = QtWidgets.QWidget()
+        ui = Ui_Ergo()
+        ui.setupUi(Ergo)
+        Ergo.show()
+        sys.exit(app.exec_())

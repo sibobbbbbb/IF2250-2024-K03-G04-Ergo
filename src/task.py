@@ -7,14 +7,16 @@ from PyQt5.QtGui import QIcon
 
 class Task(QtWidgets.QMainWindow):
     # memunculkan task
-    def __init__(self,switch_scene):
+    def __init__(self, switch_scene):
         super(Task,self).__init__()
-        self.switch_scene = switch_scene
+        #self.switch_scene = switch_scene
         self.ui = task_ui.Ui_Ergo()
         self.ui.setupUi(self)
+        self.switch_scene = switch_scene
         icon = (QIcon("assets\\ERGO.png"))
         self.setWindowIcon(icon)
         self.dbm = db_manager.DatabaseManager(db.Database())
+        self.stack = QtWidgets.QStackedWidget()
 
         self.ui.tambahTask.setVisible(False)
         self.ui.pushButton.clicked.connect(self.show_widget)
@@ -55,7 +57,11 @@ class Task(QtWidgets.QMainWindow):
         
         # Search board logic
         self.ui.lineEdit.textChanged.connect(self.search_bar_task)
-        
+
+        #kalo back dipencet
+        # Tambahkan ini di __init__ method
+        self.ui.back.clicked.connect(lambda: self.switch_scene(0)) 
+
     def show_tambahTask(self):
         self.ui.tambahTask.setVisible(True)
     
