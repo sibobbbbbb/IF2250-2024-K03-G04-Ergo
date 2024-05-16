@@ -134,7 +134,7 @@ class Task(QtWidgets.QMainWindow):
         
     def sort_task(self):
         sort_by = self.ui.comboBox_2.currentText()
-        tasks = self.dbm.get_tasks_by_project()
+        tasks = self.dbm.get_tasks_by_project(self.data)
         if sort_by == "Ascending":
             self.displayTask(sorted(tasks, key=lambda x: x.deadlineTask))
         else:
@@ -142,7 +142,7 @@ class Task(QtWidgets.QMainWindow):
     
     def group_by_task(self):
         group_by = self.ui.comboBox.currentText()
-        tasks = self.dbm.get_tasks_by_project()
+        tasks = self.dbm.get_tasks_by_project(self.data)
         if group_by == "Category":
             urutan = ["Low", "Medium", "High"]
             grouped_tasks = {kategori: [] for kategori in urutan}
