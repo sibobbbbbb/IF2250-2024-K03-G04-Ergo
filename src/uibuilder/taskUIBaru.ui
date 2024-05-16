@@ -49,7 +49,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="back_2">
+   <widget class="QPushButton" name="BackToDashboard">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -59,7 +59,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#back_2
+     <string notr="true">#BackToDashboard
  {
 	font: 15px &quot;Roboto&quot;;
 	font-weight: bold;
@@ -72,7 +72,7 @@
      <string>Dashboard</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="back_3">
+   <widget class="QPushButton" name="BackToYourBoard">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -82,7 +82,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#back_3
+     <string notr="true">#BackToYourBoard
  {
 	font: 15px &quot;Roboto&quot;;
 	font-weight: bold;
@@ -110,7 +110,7 @@
 	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #FFFFFF, stop:1 #97C9ED);
 }</string>
    </property>
-   <widget class="QLabel" name="BoardName">
+   <widget class="QLabel" name="TaskNameTitle">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -120,7 +120,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#BoardName{
+     <string notr="true">#TaskNameTitle{
 	font: 45px &quot;Roboto&quot;;
 	color: #0E49B5;
 	font-weight: bold;
@@ -164,7 +164,7 @@
       <string>Welcome!</string>
      </property>
     </widget>
-    <widget class="QLabel" name="WelcomeProject">
+    <widget class="QLabel" name="WelcomingTitle">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -174,7 +174,7 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#WelcomeProject {
+      <string notr="true">#WelcomingTitle{
 	font: bold 18px &quot;Roboto&quot;;
 	color: #FFFFFF
 }</string>
@@ -184,7 +184,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="YourProject">
+   <widget class="QLabel" name="YourTask">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -194,7 +194,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#YourProject{
+     <string notr="true">#YourTask{
 	font: 40px &quot;Roboto&quot;;
 	color: #0E49B5;
 	font-weight: bold;
@@ -204,7 +204,7 @@
      <string>Your Task</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="AddProjectButton">
+   <widget class="QPushButton" name="AddNewTaskButton">
     <property name="geometry">
      <rect>
       <x>450</x>
@@ -214,7 +214,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#AddProjectButton{
+     <string notr="true">#AddNewTaskButton{
 	border : 1px solid #0047ab;
 	background-color: #FFFFFF;
 	border-radius: 10px;
@@ -252,7 +252,7 @@
      <string>Sort By</string>
     </property>
    </widget>
-   <widget class="QLabel" name="namaboard">
+   <widget class="QLabel" name="BackToBoardUpper">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -262,7 +262,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#namaboard {
+     <string notr="true">#BackToBoardUpper{
 	color : #5483B3
 }</string>
     </property>
@@ -270,7 +270,7 @@
      <string>&gt; Mobile Development</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="back">
+   <widget class="QPushButton" name="BackToDashboardUpper">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -280,7 +280,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#back {
+     <string notr="true">#BackToDashboardUpper{
 	border: none;
     background-color: transparent;
     color:  #0E49B5;;
@@ -290,7 +290,7 @@
      <string>Dashboard</string>
     </property>
    </widget>
-   <widget class="QWidget" name="widget" native="true">
+   <widget class="QWidget" name="widgetContainerTask" native="true">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -300,12 +300,12 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#widget{
+     <string notr="true">#widgetContainerTask{
 	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);
 	border-radius : 10px;
 }</string>
     </property>
-    <widget class="QScrollArea" name="scrollArea">
+    <widget class="QScrollArea" name="ContainerForTask">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -315,7 +315,7 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#scrollArea, QScrollArea QWidget{
+      <string notr="true">#ContainerForTask, QScrollArea QWidget{
     border-radius: 10px;
  	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);
 }</string>
@@ -323,7 +323,7 @@
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents_3">
+     <widget class="QWidget" name="scrollAreaWidgetContents">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -332,7 +332,7 @@
         <height>511</height>
        </rect>
       </property>
-      <widget class="QWidget" name="widget_2" native="true">
+      <widget class="QWidget" name="ContainerForSingleTask" native="true">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -342,11 +342,11 @@
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">#widget_2{
+        <string notr="true">#ContainerForSingleTask{
 	background-color : #FFFFFF
 }</string>
        </property>
-       <widget class="QLabel" name="label_6">
+       <widget class="QLabel" name="Task1Name">
         <property name="geometry">
          <rect>
           <x>40</x>
@@ -356,7 +356,7 @@
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">#label_6{
+         <string notr="true">#Task1Name{
 	background-color : none;
 font-family: &quot;Roboto&quot;;
     font-size: 15px;
@@ -368,7 +368,7 @@ font-family: &quot;Roboto&quot;;
          <string>Inserting Image</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_7">
+       <widget class="QLabel" name="Task1Status">
         <property name="geometry">
          <rect>
           <x>260</x>
@@ -378,7 +378,7 @@ font-family: &quot;Roboto&quot;;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">#label_7{
+         <string notr="true">#Task1Status{
 	background-color : none;
 font-family: &quot;Roboto&quot;;
     font-size: 15px;
@@ -390,7 +390,7 @@ font-family: &quot;Roboto&quot;;
          <string>Not Started</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_8">
+       <widget class="QLabel" name="Task1Category">
         <property name="geometry">
          <rect>
           <x>450</x>
@@ -400,7 +400,7 @@ font-family: &quot;Roboto&quot;;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">#label_8{
+         <string notr="true">#Task1Category{
 	background-color : none;
 font-family: &quot;Roboto&quot;;
     font-size: 15px;
@@ -412,7 +412,7 @@ font-family: &quot;Roboto&quot;;
          <string>High</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_9">
+       <widget class="QLabel" name="Task1Deadline">
         <property name="geometry">
          <rect>
           <x>620</x>
@@ -422,7 +422,7 @@ font-family: &quot;Roboto&quot;;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">#label_9{
+         <string notr="true">#Task1Deadline{
 	background-color : none;
 font-family: &quot;Roboto&quot;;
     font-size: 15px;
@@ -434,7 +434,7 @@ font-family: &quot;Roboto&quot;;
          <string>2023-01-01 / 07.00</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="checkBox">
+       <widget class="QCheckBox" name="checkBoxTask1">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -444,7 +444,7 @@ font-family: &quot;Roboto&quot;;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">#checkBox{
+         <string notr="true">#checkBoxTask1{
 	background-color : none;
 }</string>
         </property>
@@ -452,7 +452,7 @@ font-family: &quot;Roboto&quot;;
          <string/>
         </property>
        </widget>
-       <widget class="QTextBrowser" name="textBrowser">
+       <widget class="QTextBrowser" name="Task1Description">
         <property name="geometry">
          <rect>
           <x>825</x>
@@ -462,7 +462,7 @@ font-family: &quot;Roboto&quot;;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">#textBrowser{
+         <string notr="true">#Task1Description{
 	background-color : none;
 font-family: &quot;Roboto&quot;;
     font-size: 13px;
@@ -482,7 +482,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="widget_8" native="true">
+      <widget class="QWidget" name="ContainerForSingleTask_2" native="true">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -492,11 +492,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">#widget_8{
+        <string notr="true">#ContainerForSingleTask_2{
 	background-color : #FFFFFF
 }</string>
        </property>
-       <widget class="QLabel" name="label_11">
+       <widget class="QLabel" name="Task2Name">
         <property name="geometry">
          <rect>
           <x>40</x>
@@ -506,7 +506,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">#label_11{
+         <string notr="true">#Task2Name{
 	background-color : none;
 font-family: &quot;Roboto&quot;;
     font-size: 15px;
@@ -518,7 +518,7 @@ font-family: &quot;Roboto&quot;;
          <string>Inserting Image</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_12">
+       <widget class="QLabel" name="Task2Status">
         <property name="geometry">
          <rect>
           <x>260</x>
@@ -528,7 +528,7 @@ font-family: &quot;Roboto&quot;;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">#label_12{
+         <string notr="true">#Task2Status{
 	background-color : none;
 font-family: &quot;Roboto&quot;;
     font-size: 15px;
@@ -540,7 +540,7 @@ font-family: &quot;Roboto&quot;;
          <string>Not Started</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_13">
+       <widget class="QLabel" name="Task2Category">
         <property name="geometry">
          <rect>
           <x>450</x>
@@ -550,7 +550,7 @@ font-family: &quot;Roboto&quot;;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">#label_13{
+         <string notr="true">#Task2Category{
 	background-color : none;
 font-family: &quot;Roboto&quot;;
     font-size: 15px;
@@ -562,7 +562,7 @@ font-family: &quot;Roboto&quot;;
          <string>High</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_14">
+       <widget class="QLabel" name="Task2Deadline">
         <property name="geometry">
          <rect>
           <x>620</x>
@@ -572,7 +572,7 @@ font-family: &quot;Roboto&quot;;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">#label_14{
+         <string notr="true">#Task2Deadline{
 	background-color : none;
 font-family: &quot;Roboto&quot;;
     font-size: 15px;
@@ -584,7 +584,7 @@ font-family: &quot;Roboto&quot;;
          <string>2023-01-01 / 07.00</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="checkBox_2">
+       <widget class="QCheckBox" name="checkBoxTask2">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -594,7 +594,7 @@ font-family: &quot;Roboto&quot;;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">#checkBox_2{
+         <string notr="true">#checkBoxTask2{
 	background-color : none;
 }</string>
         </property>
@@ -602,7 +602,7 @@ font-family: &quot;Roboto&quot;;
          <string/>
         </property>
        </widget>
-       <widget class="QTextBrowser" name="textBrowser_2">
+       <widget class="QTextBrowser" name="Task2Description">
         <property name="geometry">
          <rect>
           <x>830</x>
@@ -612,7 +612,7 @@ font-family: &quot;Roboto&quot;;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">#textBrowser_2{
+         <string notr="true">#Task2Description{
 	background-color : none;
 font-family: &quot;Roboto&quot;;
     font-size: 13px;
@@ -635,7 +635,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </widget>
     </widget>
    </widget>
-   <widget class="QLabel" name="namaboard_2">
+   <widget class="QLabel" name="CurrentTaskUpper">
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -645,7 +645,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#namaboard_2 {
+     <string notr="true">#CurrentTaskUpper{
 	color : #5483B3
 }</string>
     </property>
@@ -653,7 +653,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>&gt; Build UI</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Sorting_2">
+   <widget class="QPushButton" name="Grouping">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -663,7 +663,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#Sorting_2{
+     <string notr="true">#Grouping{
 	border : 1px solid #0047ab;
 	background-color: #FFFFFF;
 	border-radius: 10px;
@@ -677,7 +677,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>Group By</string>
     </property>
    </widget>
-   <widget class="QWidget" name="SortingOption_2" native="true">
+   <widget class="QWidget" name="GroupingOption" native="true">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -687,14 +687,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#SortingOption_2
+     <string notr="true">#GroupingOption
 {
 	border: 0.5px solid #052659;
 	background-color: #87ceeb;
 	border-radius: 17px;
 }</string>
     </property>
-    <widget class="QPushButton" name="Sort1_2">
+    <widget class="QPushButton" name="GroupByCategory">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -704,7 +704,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#Sort1_2{
+      <string notr="true">#GroupByCategory{
 	font-family: Rubik;
     font-size: 12px;
     font-weight: bold;
@@ -715,7 +715,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <string>Group by Category</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="Sort2_2">
+    <widget class="QPushButton" name="GroupByStatus">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -725,7 +725,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#Sort2_2{
+      <string notr="true">#GroupByStatus{
 	font-family: Rubik;
     font-size: 12px;
     font-weight: bold;
@@ -737,7 +737,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="widget_3" native="true">
+   <widget class="QWidget" name="KolomNameTask" native="true">
     <property name="geometry">
      <rect>
       <x>39</x>
@@ -747,11 +747,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#widget_3{
+     <string notr="true">#KolomNameTask{
 	border : 1px solid #0047ab;
 }</string>
     </property>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="LabelNamaTask">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -761,7 +761,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#label{
+      <string notr="true">#LabelNamaTask{
 font-family: &quot;Roboto&quot;;
     font-size: 15px;
     font-weight: bold;
@@ -773,7 +773,7 @@ font-family: &quot;Roboto&quot;;
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="widget_4" native="true">
+   <widget class="QWidget" name="KolomStatusTask" native="true">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -783,11 +783,11 @@ font-family: &quot;Roboto&quot;;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#widget_4{
+     <string notr="true">#KolomStatusTask{
 	border : 1px solid #0047ab;
 }</string>
     </property>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="LabelStatus">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -797,7 +797,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#label_2{
+      <string notr="true">#LabelStatus{
 font-family: &quot;Roboto&quot;;
     font-size: 15px;
     font-weight: bold;
@@ -809,7 +809,7 @@ font-family: &quot;Roboto&quot;;
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="widget_5" native="true">
+   <widget class="QWidget" name="KolomCategory" native="true">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -819,11 +819,11 @@ font-family: &quot;Roboto&quot;;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#widget_5{
+     <string notr="true">#KolomCategory{
 	border : 1px solid #0047ab;
 }</string>
     </property>
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="LabelCategory">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -833,7 +833,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#label_3{
+      <string notr="true">#LabelCategory{
 font-family: &quot;Roboto&quot;;
     font-size: 15px;
     font-weight: bold;
@@ -845,7 +845,7 @@ font-family: &quot;Roboto&quot;;
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="widget_6" native="true">
+   <widget class="QWidget" name="KolomDeadlineTask" native="true">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -855,11 +855,11 @@ font-family: &quot;Roboto&quot;;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#widget_6{
+     <string notr="true">#KolomDeadlineTask{
 	border : 1px solid #0047ab;
 }</string>
     </property>
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="LabelDeadline">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -869,7 +869,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#label_4{
+      <string notr="true">#LabelDeadline{
 font-family: &quot;Roboto&quot;;
     font-size: 15px;
     font-weight: bold;
@@ -881,7 +881,7 @@ font-family: &quot;Roboto&quot;;
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="widget_7" native="true">
+   <widget class="QWidget" name="KolomDescriptionTask" native="true">
     <property name="geometry">
      <rect>
       <x>880</x>
@@ -891,11 +891,11 @@ font-family: &quot;Roboto&quot;;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#widget_7{
+     <string notr="true">#KolomDescriptionTask{
 	border : 1px solid #0047ab;
 }</string>
     </property>
-    <widget class="QLabel" name="label_5">
+    <widget class="QLabel" name="LabelDescription">
      <property name="geometry">
       <rect>
        <x>90</x>
@@ -905,7 +905,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#label_5{
+      <string notr="true">#LabelDescription{
 font-family: &quot;Roboto&quot;;
     font-size: 15px;
     font-weight: bold;
@@ -917,7 +917,7 @@ font-family: &quot;Roboto&quot;;
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="AddingProject" native="true">
+   <widget class="QWidget" name="AddingNewTask" native="true">
     <property name="geometry">
      <rect>
       <x>625</x>
@@ -927,13 +927,13 @@ font-family: &quot;Roboto&quot;;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#AddingProject{
+     <string notr="true">#AddingNewTask{
 	border: 0.5px solid #052659;
 	background-color: #87ceeb;
 	border-radius: 17px;
 }</string>
     </property>
-    <widget class="QLabel" name="BoardTitle">
+    <widget class="QLabel" name="TaskTitle">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -943,7 +943,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#BoardTitle{
+      <string notr="true">#TaskTitle{
 	font-family: Rubik;
     font-size: 15px;
     font-weight: bold;
@@ -954,7 +954,7 @@ font-family: &quot;Roboto&quot;;
       <string>Task Title</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="inputBoardtitle">
+    <widget class="QLineEdit" name="inputTasktitle">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -964,14 +964,14 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#inputBoardtitle{
+      <string notr="true">#inputTasktitle{
 	border-radius : 10px;
 	font-family : Roboto;
 	 color: #052659;
 }</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="CreateBoard">
+    <widget class="QPushButton" name="CreateTask">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -981,7 +981,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#CreateBoard{
+      <string notr="true">#CreateTask{
 	font-family: Rubik;
     font-size: 12px;
     font-weight: bold;
@@ -992,7 +992,7 @@ font-family: &quot;Roboto&quot;;
       <string>Create Task</string>
      </property>
     </widget>
-    <widget class="QLabel" name="BoardTitle_5">
+    <widget class="QLabel" name="DeadlineInputTask">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1002,7 +1002,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#BoardTitle_5{
+      <string notr="true">#DeadlineInputTask{
 	font-family: Rubik;
     font-size: 15px;
     font-weight: bold;
@@ -1013,7 +1013,7 @@ font-family: &quot;Roboto&quot;;
       <string>Deadline</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="dateEdit">
+    <widget class="QDateEdit" name="dateEditDeadlineInput">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1023,13 +1023,13 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#dateEdit { 
+      <string notr="true">#dateEditDeadlineInput{ 
 	font-family : Roboto;
 	 color: #052659;
 }</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="CreateBoard_2">
+    <widget class="QPushButton" name="CancelCreationTask">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1039,7 +1039,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#CreateBoard_2{
+      <string notr="true">#CancelCreationTask{
 	font-family: Rubik;
     font-size: 12px;
     font-weight: bold;
@@ -1050,7 +1050,7 @@ font-family: &quot;Roboto&quot;;
       <string>Cancel</string>
      </property>
     </widget>
-    <widget class="QLabel" name="BoardTitle_6">
+    <widget class="QLabel" name="DescriptionInputTask">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1060,7 +1060,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#BoardTitle_6{
+      <string notr="true">#DescriptionInputTask{
 	font-family: Rubik;
     font-size: 15px;
     font-weight: bold;
@@ -1071,7 +1071,7 @@ font-family: &quot;Roboto&quot;;
       <string>Description</string>
      </property>
     </widget>
-    <widget class="QLabel" name="BoardTitle_7">
+    <widget class="QLabel" name="CategoryInputTask">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -1081,7 +1081,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#BoardTitle_7{
+      <string notr="true">#CategoryInputTask{
 	font-family: Rubik;
     font-size: 15px;
     font-weight: bold;
@@ -1092,7 +1092,7 @@ font-family: &quot;Roboto&quot;;
       <string>Category</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox">
+    <widget class="QComboBox" name="CategoryInputBox">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -1102,12 +1102,12 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#comboBox{
+      <string notr="true">#CategoryInputBox{
 	font-family : Roboto;
 	 color: #052659; }</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit">
+    <widget class="QTextEdit" name="BoxInputDescription">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -1117,7 +1117,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#textEdit{
+      <string notr="true">#BoxInputDescription{
 	border-radius : 10px;
 	font-family : Roboto;
 	 color: #052659;
@@ -1142,7 +1142,7 @@ font-family: &quot;Roboto&quot;;
 	border-radius: 17px;
 }</string>
     </property>
-    <widget class="QPushButton" name="Sort1">
+    <widget class="QPushButton" name="SortDescending">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -1152,7 +1152,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#Sort1{
+      <string notr="true">#SortDescending{
 	font-family: Rubik;
     font-size: 12px;
     font-weight: bold;
@@ -1167,7 +1167,7 @@ font-family: &quot;Roboto&quot;;
        <normaloff>../../../Downloads/down (1).png</normaloff>../../../Downloads/down (1).png</iconset>
      </property>
     </widget>
-    <widget class="QPushButton" name="Sort2">
+    <widget class="QPushButton" name="SortAscending">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -1177,7 +1177,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#Sort2{
+      <string notr="true">#SortAscending{
 	font-family: Rubik;
     font-size: 12px;
     font-weight: bold;
@@ -1193,7 +1193,7 @@ font-family: &quot;Roboto&quot;;
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="BoardName_2">
+   <widget class="QLabel" name="ProgressBar">
     <property name="geometry">
      <rect>
       <x>840</x>
@@ -1203,7 +1203,7 @@ font-family: &quot;Roboto&quot;;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#BoardName_2{
+     <string notr="true">#ProgressBar{
 	font: 45px &quot;Roboto&quot;;
 	color: #0E49B5;
 	font-weight: bold;
@@ -1213,7 +1213,7 @@ font-family: &quot;Roboto&quot;;
      <string>Progress Bar</string>
     </property>
    </widget>
-   <widget class="QLabel" name="WelcomeProject_2">
+   <widget class="QLabel" name="SemangatTitle">
     <property name="geometry">
      <rect>
       <x>840</x>
@@ -1223,7 +1223,7 @@ font-family: &quot;Roboto&quot;;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#WelcomeProject_2 {
+     <string notr="true">#SemangatTitle{
 	font: bold 18px &quot;Roboto&quot;;
 	color: #0E49B5;
 }</string>
@@ -1253,7 +1253,7 @@ font-family: &quot;Roboto&quot;;
      <number>24</number>
     </property>
    </widget>
-   <widget class="QWidget" name="AddingProject_2" native="true">
+   <widget class="QWidget" name="EditTask" native="true">
     <property name="geometry">
      <rect>
       <x>1190</x>
@@ -1263,13 +1263,13 @@ font-family: &quot;Roboto&quot;;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#AddingProject_2{
+     <string notr="true">#EditTask{
 	border: 0.5px solid #052659;
 	background-color: #87ceeb;
 	border-radius: 17px;
 }</string>
     </property>
-    <widget class="QLabel" name="BoardTitle_3">
+    <widget class="QLabel" name="TaskTitleEdit">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1279,7 +1279,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#BoardTitle_3{
+      <string notr="true">#TaskTitleEdit{
 	font-family: Rubik;
     font-size: 15px;
     font-weight: bold;
@@ -1290,7 +1290,7 @@ font-family: &quot;Roboto&quot;;
       <string>Task Title</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="inputBoardtitle_3">
+    <widget class="QLineEdit" name="InputEditTaskBox">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -1300,14 +1300,14 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#inputBoardtitle_3{
+      <string notr="true">#InputEditTaskBox{
 	border-radius : 10px;
 	font-family : Roboto;
 	 color: #052659;
 }</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="CreateBoard_5">
+    <widget class="QPushButton" name="ApplyChangesButton">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1317,7 +1317,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#CreateBoard_5{
+      <string notr="true">#ApplyChangesButton{
 	font-family: Rubik;
     font-size: 12px;
     font-weight: bold;
@@ -1328,7 +1328,7 @@ font-family: &quot;Roboto&quot;;
       <string>Apply Changes</string>
      </property>
     </widget>
-    <widget class="QLabel" name="BoardTitle_11">
+    <widget class="QLabel" name="DeadlineEditInput">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1338,7 +1338,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#BoardTitle_11{
+      <string notr="true">#DeadlineEditInput{
 	font-family: Rubik;
     font-size: 15px;
     font-weight: bold;
@@ -1349,7 +1349,7 @@ font-family: &quot;Roboto&quot;;
       <string>Deadline</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="dateEdit_3">
+    <widget class="QDateEdit" name="DateEditDeadline">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1359,13 +1359,13 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#dateEdit_3 { 
+      <string notr="true">#DateEditDeadline{ 
 	font-family : Roboto;
 	 color: #052659;
 }</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="CreateBoard_6">
+    <widget class="QPushButton" name="CancelingEdit">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1375,7 +1375,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#CreateBoard_6{
+      <string notr="true">#CancelingEdit{
 	font-family: Rubik;
     font-size: 12px;
     font-weight: bold;
@@ -1386,7 +1386,7 @@ font-family: &quot;Roboto&quot;;
       <string>Cancel</string>
      </property>
     </widget>
-    <widget class="QLabel" name="BoardTitle_12">
+    <widget class="QLabel" name="DescriptionTitle">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1396,7 +1396,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#BoardTitle_12{
+      <string notr="true">#DescriptionTitle{
 	font-family: Rubik;
     font-size: 15px;
     font-weight: bold;
@@ -1407,7 +1407,7 @@ font-family: &quot;Roboto&quot;;
       <string>Description</string>
      </property>
     </widget>
-    <widget class="QLabel" name="BoardTitle_13">
+    <widget class="QLabel" name="CategoryTitle">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -1417,7 +1417,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#BoardTitle_13{
+      <string notr="true">#CategoryTitle{
 	font-family: Rubik;
     font-size: 15px;
     font-weight: bold;
@@ -1428,7 +1428,7 @@ font-family: &quot;Roboto&quot;;
       <string>Category</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox_3">
+    <widget class="QComboBox" name="CategoryEditComboBox">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -1438,12 +1438,12 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#comboBox_3{
+      <string notr="true">#CategoryEditComboBox{
 	font-family : Roboto;
 	 color: #052659; }</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_3">
+    <widget class="QTextEdit" name="DescriptionEditBox">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -1453,14 +1453,14 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#textEdit_3{
+      <string notr="true">#DescriptionEditBox{
 	border-radius : 10px;
 	font-family : Roboto;
 	 color: #052659;
 }</string>
      </property>
     </widget>
-    <widget class="QLabel" name="BoardTitle_14">
+    <widget class="QLabel" name="StatusTitle">
      <property name="geometry">
       <rect>
        <x>290</x>
@@ -1470,7 +1470,7 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#BoardTitle_14{
+      <string notr="true">#StatusTitle{
 	font-family: Rubik;
     font-size: 15px;
     font-weight: bold;
@@ -1481,7 +1481,7 @@ font-family: &quot;Roboto&quot;;
       <string>Status</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox_4">
+    <widget class="QComboBox" name="StatusComboBox">
      <property name="geometry">
       <rect>
        <x>290</x>
@@ -1491,34 +1491,34 @@ font-family: &quot;Roboto&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#comboBox_4{
+      <string notr="true">#StatusComboBox{
 	font-family : Roboto;
 	 color: #052659; }</string>
      </property>
     </widget>
    </widget>
    <zorder>Containerforwords</zorder>
-   <zorder>YourProject</zorder>
-   <zorder>AddProjectButton</zorder>
-   <zorder>BoardName</zorder>
+   <zorder>YourTask</zorder>
+   <zorder>AddNewTaskButton</zorder>
+   <zorder>TaskNameTitle</zorder>
    <zorder>Sorting</zorder>
-   <zorder>namaboard</zorder>
-   <zorder>back</zorder>
-   <zorder>widget</zorder>
-   <zorder>namaboard_2</zorder>
-   <zorder>Sorting_2</zorder>
-   <zorder>widget_3</zorder>
-   <zorder>widget_4</zorder>
-   <zorder>widget_5</zorder>
-   <zorder>widget_6</zorder>
-   <zorder>widget_7</zorder>
-   <zorder>SortingOption_2</zorder>
-   <zorder>AddingProject</zorder>
+   <zorder>BackToBoardUpper</zorder>
+   <zorder>BackToDashboardUpper</zorder>
+   <zorder>widgetContainerTask</zorder>
+   <zorder>CurrentTaskUpper</zorder>
+   <zorder>Grouping</zorder>
+   <zorder>KolomNameTask</zorder>
+   <zorder>KolomStatusTask</zorder>
+   <zorder>KolomCategory</zorder>
+   <zorder>KolomDeadlineTask</zorder>
+   <zorder>KolomDescriptionTask</zorder>
+   <zorder>GroupingOption</zorder>
+   <zorder>AddingNewTask</zorder>
    <zorder>SortingOption</zorder>
-   <zorder>BoardName_2</zorder>
-   <zorder>WelcomeProject_2</zorder>
+   <zorder>ProgressBar</zorder>
+   <zorder>SemangatTitle</zorder>
    <zorder>progressBar</zorder>
-   <zorder>AddingProject_2</zorder>
+   <zorder>EditTask</zorder>
   </widget>
   <widget class="QWidget" name="Searchbar" native="true">
    <property name="geometry">

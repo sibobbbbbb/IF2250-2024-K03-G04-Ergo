@@ -28,9 +28,9 @@ class Ui_Ergo(object):
         self.LogoErgo.setPixmap(QtGui.QPixmap("../if2250-2024-k03-g04-ergo/img/logoergo.png"))
         self.LogoErgo.setScaledContents(True)
         self.LogoErgo.setObjectName("LogoErgo")
-        self.back_2 = QtWidgets.QPushButton(self.Navbar)
-        self.back_2.setGeometry(QtCore.QRect(50, 230, 91, 31))
-        self.back_2.setStyleSheet("#back_2\n"
+        self.BackToDashboard = QtWidgets.QPushButton(self.Navbar)
+        self.BackToDashboard.setGeometry(QtCore.QRect(50, 230, 91, 31))
+        self.BackToDashboard.setStyleSheet("#BackToDashboard\n"
 " {\n"
 "    font: 15px \"Roboto\";\n"
 "    font-weight: bold;\n"
@@ -38,10 +38,10 @@ class Ui_Ergo(object):
 "    background-color: transparent;\n"
 "    color:  #FFFFFF;\n"
 "}")
-        self.back_2.setObjectName("back_2")
-        self.back_3 = QtWidgets.QPushButton(self.Navbar)
-        self.back_3.setGeometry(QtCore.QRect(50, 270, 91, 31))
-        self.back_3.setStyleSheet("#back_3\n"
+        self.BackToDashboard.setObjectName("BackToDashboard")
+        self.BackToYourBoard = QtWidgets.QPushButton(self.Navbar)
+        self.BackToYourBoard.setGeometry(QtCore.QRect(50, 270, 91, 31))
+        self.BackToYourBoard.setStyleSheet("#BackToYourBoard\n"
 " {\n"
 "    font: 15px \"Roboto\";\n"
 "    font-weight: bold;\n"
@@ -49,21 +49,21 @@ class Ui_Ergo(object):
 "    background-color: transparent;\n"
 "    color:  #FFFFFF;\n"
 "}")
-        self.back_3.setObjectName("back_3")
+        self.BackToYourBoard.setObjectName("BackToYourBoard")
         self.MainSection = QtWidgets.QWidget(Ergo)
         self.MainSection.setGeometry(QtCore.QRect(200, 60, 1811, 1031))
         self.MainSection.setStyleSheet("#MainSection{\n"
 "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #FFFFFF, stop:1 #97C9ED);\n"
 "}")
         self.MainSection.setObjectName("MainSection")
-        self.BoardName = QtWidgets.QLabel(self.MainSection)
-        self.BoardName.setGeometry(QtCore.QRect(40, 40, 201, 71))
-        self.BoardName.setStyleSheet("#BoardName{\n"
+        self.TaskNameTitle = QtWidgets.QLabel(self.MainSection)
+        self.TaskNameTitle.setGeometry(QtCore.QRect(40, 40, 201, 71))
+        self.TaskNameTitle.setStyleSheet("#TaskNameTitle{\n"
 "    font: 45px \"Roboto\";\n"
 "    color: #0E49B5;\n"
 "    font-weight: bold;\n"
 "}")
-        self.BoardName.setObjectName("BoardName")
+        self.TaskNameTitle.setObjectName("TaskNameTitle")
         self.Containerforwords = QtWidgets.QWidget(self.MainSection)
         self.Containerforwords.setGeometry(QtCore.QRect(30, 130, 621, 111))
         self.Containerforwords.setStyleSheet("#Containerforwords{\n"
@@ -78,24 +78,24 @@ class Ui_Ergo(object):
 "    color: #FFFFFF;\n"
 "}")
         self.Welcome.setObjectName("Welcome")
-        self.WelcomeProject = QtWidgets.QLabel(self.Containerforwords)
-        self.WelcomeProject.setGeometry(QtCore.QRect(20, 70, 591, 31))
-        self.WelcomeProject.setStyleSheet("#WelcomeProject {\n"
+        self.WelcomingTitle = QtWidgets.QLabel(self.Containerforwords)
+        self.WelcomingTitle.setGeometry(QtCore.QRect(20, 70, 591, 31))
+        self.WelcomingTitle.setStyleSheet("#WelcomingTitle{\n"
 "    font: bold 18px \"Roboto\";\n"
 "    color: #FFFFFF\n"
 "}")
-        self.WelcomeProject.setObjectName("WelcomeProject")
-        self.YourProject = QtWidgets.QLabel(self.MainSection)
-        self.YourProject.setGeometry(QtCore.QRect(50, 300, 291, 51))
-        self.YourProject.setStyleSheet("#YourProject{\n"
+        self.WelcomingTitle.setObjectName("WelcomingTitle")
+        self.YourTask = QtWidgets.QLabel(self.MainSection)
+        self.YourTask.setGeometry(QtCore.QRect(50, 300, 291, 51))
+        self.YourTask.setStyleSheet("#YourTask{\n"
 "    font: 40px \"Roboto\";\n"
 "    color: #0E49B5;\n"
 "    font-weight: bold;\n"
 "}")
-        self.YourProject.setObjectName("YourProject")
-        self.AddProjectButton = QtWidgets.QPushButton(self.MainSection)
-        self.AddProjectButton.setGeometry(QtCore.QRect(450, 370, 171, 31))
-        self.AddProjectButton.setStyleSheet("#AddProjectButton{\n"
+        self.YourTask.setObjectName("YourTask")
+        self.AddNewTaskButton = QtWidgets.QPushButton(self.MainSection)
+        self.AddNewTaskButton.setGeometry(QtCore.QRect(450, 370, 171, 31))
+        self.AddNewTaskButton.setStyleSheet("#AddNewTaskButton{\n"
 "    border : 1px solid #0047ab;\n"
 "    background-color: #FFFFFF;\n"
 "    border-radius: 10px;\n"
@@ -104,7 +104,7 @@ class Ui_Ergo(object):
 "    font-weight: bold;\n"
 "    color: #0197F6;\n"
 "}")
-        self.AddProjectButton.setObjectName("AddProjectButton")
+        self.AddNewTaskButton.setObjectName("AddNewTaskButton")
         self.Sorting = QtWidgets.QPushButton(self.MainSection)
         self.Sorting.setGeometry(QtCore.QRect(50, 370, 171, 31))
         self.Sorting.setStyleSheet("#Sorting{\n"
@@ -117,174 +117,174 @@ class Ui_Ergo(object):
 "    color: #0197F6;\n"
 "}")
         self.Sorting.setObjectName("Sorting")
-        self.namaboard = QtWidgets.QLabel(self.MainSection)
-        self.namaboard.setGeometry(QtCore.QRect(130, 5, 161, 21))
-        self.namaboard.setStyleSheet("#namaboard {\n"
+        self.BackToBoardUpper = QtWidgets.QLabel(self.MainSection)
+        self.BackToBoardUpper.setGeometry(QtCore.QRect(130, 5, 161, 21))
+        self.BackToBoardUpper.setStyleSheet("#BackToBoardUpper{\n"
 "    color : #5483B3\n"
 "}")
-        self.namaboard.setObjectName("namaboard")
-        self.back = QtWidgets.QPushButton(self.MainSection)
-        self.back.setGeometry(QtCore.QRect(50, 0, 71, 31))
-        self.back.setStyleSheet("#back {\n"
+        self.BackToBoardUpper.setObjectName("BackToBoardUpper")
+        self.BackToDashboardUpper = QtWidgets.QPushButton(self.MainSection)
+        self.BackToDashboardUpper.setGeometry(QtCore.QRect(50, 0, 71, 31))
+        self.BackToDashboardUpper.setStyleSheet("#BackToDashboardUpper{\n"
 "    border: none;\n"
 "    background-color: transparent;\n"
 "    color:  #0E49B5;;\n"
 "}")
-        self.back.setObjectName("back")
-        self.widget = QtWidgets.QWidget(self.MainSection)
-        self.widget.setGeometry(QtCore.QRect(40, 460, 1121, 531))
-        self.widget.setStyleSheet("#widget{\n"
+        self.BackToDashboardUpper.setObjectName("BackToDashboardUpper")
+        self.widgetContainerTask = QtWidgets.QWidget(self.MainSection)
+        self.widgetContainerTask.setGeometry(QtCore.QRect(40, 460, 1121, 531))
+        self.widgetContainerTask.setStyleSheet("#widgetContainerTask{\n"
 "    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);\n"
 "    border-radius : 10px;\n"
 "}")
-        self.widget.setObjectName("widget")
-        self.scrollArea = QtWidgets.QScrollArea(self.widget)
-        self.scrollArea.setGeometry(QtCore.QRect(10, 10, 1101, 511))
-        self.scrollArea.setStyleSheet("#scrollArea, QScrollArea QWidget{\n"
+        self.widgetContainerTask.setObjectName("widgetContainerTask")
+        self.ContainerForTask = QtWidgets.QScrollArea(self.widgetContainerTask)
+        self.ContainerForTask.setGeometry(QtCore.QRect(10, 10, 1101, 511))
+        self.ContainerForTask.setStyleSheet("#ContainerForTask, QScrollArea QWidget{\n"
 "    border-radius: 10px;\n"
 "     background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);\n"
 "}")
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setObjectName("scrollArea")
-        self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 1101, 511))
-        self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
-        self.widget_2 = QtWidgets.QWidget(self.scrollAreaWidgetContents_3)
-        self.widget_2.setGeometry(QtCore.QRect(0, 10, 1101, 71))
-        self.widget_2.setStyleSheet("#widget_2{\n"
+        self.ContainerForTask.setWidgetResizable(True)
+        self.ContainerForTask.setObjectName("ContainerForTask")
+        self.scrollAreaWidgetContents = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1101, 511))
+        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
+        self.ContainerForSingleTask = QtWidgets.QWidget(self.scrollAreaWidgetContents)
+        self.ContainerForSingleTask.setGeometry(QtCore.QRect(0, 10, 1101, 71))
+        self.ContainerForSingleTask.setStyleSheet("#ContainerForSingleTask{\n"
 "    background-color : #FFFFFF\n"
 "}")
-        self.widget_2.setObjectName("widget_2")
-        self.label_6 = QtWidgets.QLabel(self.widget_2)
-        self.label_6.setGeometry(QtCore.QRect(40, 25, 191, 20))
-        self.label_6.setStyleSheet("#label_6{\n"
+        self.ContainerForSingleTask.setObjectName("ContainerForSingleTask")
+        self.Task1Name = QtWidgets.QLabel(self.ContainerForSingleTask)
+        self.Task1Name.setGeometry(QtCore.QRect(40, 25, 191, 20))
+        self.Task1Name.setStyleSheet("#Task1Name{\n"
 "    background-color : none;\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.label_6.setObjectName("label_6")
-        self.label_7 = QtWidgets.QLabel(self.widget_2)
-        self.label_7.setGeometry(QtCore.QRect(260, 25, 181, 20))
-        self.label_7.setStyleSheet("#label_7{\n"
+        self.Task1Name.setObjectName("Task1Name")
+        self.Task1Status = QtWidgets.QLabel(self.ContainerForSingleTask)
+        self.Task1Status.setGeometry(QtCore.QRect(260, 25, 181, 20))
+        self.Task1Status.setStyleSheet("#Task1Status{\n"
 "    background-color : none;\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.label_7.setObjectName("label_7")
-        self.label_8 = QtWidgets.QLabel(self.widget_2)
-        self.label_8.setGeometry(QtCore.QRect(450, 25, 161, 20))
-        self.label_8.setStyleSheet("#label_8{\n"
+        self.Task1Status.setObjectName("Task1Status")
+        self.Task1Category = QtWidgets.QLabel(self.ContainerForSingleTask)
+        self.Task1Category.setGeometry(QtCore.QRect(450, 25, 161, 20))
+        self.Task1Category.setStyleSheet("#Task1Category{\n"
 "    background-color : none;\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.label_8.setObjectName("label_8")
-        self.label_9 = QtWidgets.QLabel(self.widget_2)
-        self.label_9.setGeometry(QtCore.QRect(620, 25, 221, 20))
-        self.label_9.setStyleSheet("#label_9{\n"
+        self.Task1Category.setObjectName("Task1Category")
+        self.Task1Deadline = QtWidgets.QLabel(self.ContainerForSingleTask)
+        self.Task1Deadline.setGeometry(QtCore.QRect(620, 25, 221, 20))
+        self.Task1Deadline.setStyleSheet("#Task1Deadline{\n"
 "    background-color : none;\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.label_9.setObjectName("label_9")
-        self.checkBox = QtWidgets.QCheckBox(self.widget_2)
-        self.checkBox.setGeometry(QtCore.QRect(10, 25, 21, 24))
-        self.checkBox.setStyleSheet("#checkBox{\n"
+        self.Task1Deadline.setObjectName("Task1Deadline")
+        self.checkBoxTask1 = QtWidgets.QCheckBox(self.ContainerForSingleTask)
+        self.checkBoxTask1.setGeometry(QtCore.QRect(10, 25, 21, 24))
+        self.checkBoxTask1.setStyleSheet("#checkBoxTask1{\n"
 "    background-color : none;\n"
 "}")
-        self.checkBox.setText("")
-        self.checkBox.setObjectName("checkBox")
-        self.textBrowser = QtWidgets.QTextBrowser(self.widget_2)
-        self.textBrowser.setGeometry(QtCore.QRect(825, 0, 261, 71))
-        self.textBrowser.setStyleSheet("#textBrowser{\n"
+        self.checkBoxTask1.setText("")
+        self.checkBoxTask1.setObjectName("checkBoxTask1")
+        self.Task1Description = QtWidgets.QTextBrowser(self.ContainerForSingleTask)
+        self.Task1Description.setGeometry(QtCore.QRect(825, 0, 261, 71))
+        self.Task1Description.setStyleSheet("#Task1Description{\n"
 "    background-color : none;\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 13px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.textBrowser.setObjectName("textBrowser")
-        self.widget_8 = QtWidgets.QWidget(self.scrollAreaWidgetContents_3)
-        self.widget_8.setGeometry(QtCore.QRect(0, 90, 1101, 71))
-        self.widget_8.setStyleSheet("#widget_8{\n"
+        self.Task1Description.setObjectName("Task1Description")
+        self.ContainerForSingleTask_2 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
+        self.ContainerForSingleTask_2.setGeometry(QtCore.QRect(0, 90, 1101, 71))
+        self.ContainerForSingleTask_2.setStyleSheet("#ContainerForSingleTask_2{\n"
 "    background-color : #FFFFFF\n"
 "}")
-        self.widget_8.setObjectName("widget_8")
-        self.label_11 = QtWidgets.QLabel(self.widget_8)
-        self.label_11.setGeometry(QtCore.QRect(40, 25, 181, 20))
-        self.label_11.setStyleSheet("#label_11{\n"
+        self.ContainerForSingleTask_2.setObjectName("ContainerForSingleTask_2")
+        self.Task2Name = QtWidgets.QLabel(self.ContainerForSingleTask_2)
+        self.Task2Name.setGeometry(QtCore.QRect(40, 25, 181, 20))
+        self.Task2Name.setStyleSheet("#Task2Name{\n"
 "    background-color : none;\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.label_11.setObjectName("label_11")
-        self.label_12 = QtWidgets.QLabel(self.widget_8)
-        self.label_12.setGeometry(QtCore.QRect(260, 25, 181, 20))
-        self.label_12.setStyleSheet("#label_12{\n"
+        self.Task2Name.setObjectName("Task2Name")
+        self.Task2Status = QtWidgets.QLabel(self.ContainerForSingleTask_2)
+        self.Task2Status.setGeometry(QtCore.QRect(260, 25, 181, 20))
+        self.Task2Status.setStyleSheet("#Task2Status{\n"
 "    background-color : none;\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.label_12.setObjectName("label_12")
-        self.label_13 = QtWidgets.QLabel(self.widget_8)
-        self.label_13.setGeometry(QtCore.QRect(450, 25, 161, 20))
-        self.label_13.setStyleSheet("#label_13{\n"
+        self.Task2Status.setObjectName("Task2Status")
+        self.Task2Category = QtWidgets.QLabel(self.ContainerForSingleTask_2)
+        self.Task2Category.setGeometry(QtCore.QRect(450, 25, 161, 20))
+        self.Task2Category.setStyleSheet("#Task2Category{\n"
 "    background-color : none;\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.label_13.setObjectName("label_13")
-        self.label_14 = QtWidgets.QLabel(self.widget_8)
-        self.label_14.setGeometry(QtCore.QRect(620, 25, 221, 20))
-        self.label_14.setStyleSheet("#label_14{\n"
+        self.Task2Category.setObjectName("Task2Category")
+        self.Task2Deadline = QtWidgets.QLabel(self.ContainerForSingleTask_2)
+        self.Task2Deadline.setGeometry(QtCore.QRect(620, 25, 221, 20))
+        self.Task2Deadline.setStyleSheet("#Task2Deadline{\n"
 "    background-color : none;\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.label_14.setObjectName("label_14")
-        self.checkBox_2 = QtWidgets.QCheckBox(self.widget_8)
-        self.checkBox_2.setGeometry(QtCore.QRect(10, 25, 21, 24))
-        self.checkBox_2.setStyleSheet("#checkBox_2{\n"
+        self.Task2Deadline.setObjectName("Task2Deadline")
+        self.checkBoxTask2 = QtWidgets.QCheckBox(self.ContainerForSingleTask_2)
+        self.checkBoxTask2.setGeometry(QtCore.QRect(10, 25, 21, 24))
+        self.checkBoxTask2.setStyleSheet("#checkBoxTask2{\n"
 "    background-color : none;\n"
 "}")
-        self.checkBox_2.setText("")
-        self.checkBox_2.setObjectName("checkBox_2")
-        self.textBrowser_2 = QtWidgets.QTextBrowser(self.widget_8)
-        self.textBrowser_2.setGeometry(QtCore.QRect(830, 0, 261, 71))
-        self.textBrowser_2.setStyleSheet("#textBrowser_2{\n"
+        self.checkBoxTask2.setText("")
+        self.checkBoxTask2.setObjectName("checkBoxTask2")
+        self.Task2Description = QtWidgets.QTextBrowser(self.ContainerForSingleTask_2)
+        self.Task2Description.setGeometry(QtCore.QRect(830, 0, 261, 71))
+        self.Task2Description.setStyleSheet("#Task2Description{\n"
 "    background-color : none;\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 13px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.textBrowser_2.setObjectName("textBrowser_2")
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents_3)
-        self.namaboard_2 = QtWidgets.QLabel(self.MainSection)
-        self.namaboard_2.setGeometry(QtCore.QRect(290, 5, 71, 21))
-        self.namaboard_2.setStyleSheet("#namaboard_2 {\n"
+        self.Task2Description.setObjectName("Task2Description")
+        self.ContainerForTask.setWidget(self.scrollAreaWidgetContents)
+        self.CurrentTaskUpper = QtWidgets.QLabel(self.MainSection)
+        self.CurrentTaskUpper.setGeometry(QtCore.QRect(290, 5, 71, 21))
+        self.CurrentTaskUpper.setStyleSheet("#CurrentTaskUpper{\n"
 "    color : #5483B3\n"
 "}")
-        self.namaboard_2.setObjectName("namaboard_2")
-        self.Sorting_2 = QtWidgets.QPushButton(self.MainSection)
-        self.Sorting_2.setGeometry(QtCore.QRect(250, 370, 171, 31))
-        self.Sorting_2.setStyleSheet("#Sorting_2{\n"
+        self.CurrentTaskUpper.setObjectName("CurrentTaskUpper")
+        self.Grouping = QtWidgets.QPushButton(self.MainSection)
+        self.Grouping.setGeometry(QtCore.QRect(250, 370, 171, 31))
+        self.Grouping.setStyleSheet("#Grouping{\n"
 "    border : 1px solid #0047ab;\n"
 "    background-color: #FFFFFF;\n"
 "    border-radius: 10px;\n"
@@ -293,200 +293,200 @@ class Ui_Ergo(object):
 "    font-weight: bold;\n"
 "    color: #0197F6;\n"
 "}")
-        self.Sorting_2.setObjectName("Sorting_2")
-        self.SortingOption_2 = QtWidgets.QWidget(self.MainSection)
-        self.SortingOption_2.setGeometry(QtCore.QRect(250, 405, 271, 121))
-        self.SortingOption_2.setStyleSheet("#SortingOption_2\n"
+        self.Grouping.setObjectName("Grouping")
+        self.GroupingOption = QtWidgets.QWidget(self.MainSection)
+        self.GroupingOption.setGeometry(QtCore.QRect(250, 405, 271, 121))
+        self.GroupingOption.setStyleSheet("#GroupingOption\n"
 "{\n"
 "    border: 0.5px solid #052659;\n"
 "    background-color: #87ceeb;\n"
 "    border-radius: 17px;\n"
 "}")
-        self.SortingOption_2.setObjectName("SortingOption_2")
-        self.Sort1_2 = QtWidgets.QPushButton(self.SortingOption_2)
-        self.Sort1_2.setGeometry(QtCore.QRect(10, 60, 251, 41))
-        self.Sort1_2.setStyleSheet("#Sort1_2{\n"
+        self.GroupingOption.setObjectName("GroupingOption")
+        self.GroupByCategory = QtWidgets.QPushButton(self.GroupingOption)
+        self.GroupByCategory.setGeometry(QtCore.QRect(10, 60, 251, 41))
+        self.GroupByCategory.setStyleSheet("#GroupByCategory{\n"
 "    font-family: Rubik;\n"
 "    font-size: 12px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.Sort1_2.setObjectName("Sort1_2")
-        self.Sort2_2 = QtWidgets.QPushButton(self.SortingOption_2)
-        self.Sort2_2.setGeometry(QtCore.QRect(10, 10, 251, 41))
-        self.Sort2_2.setStyleSheet("#Sort2_2{\n"
+        self.GroupByCategory.setObjectName("GroupByCategory")
+        self.GroupByStatus = QtWidgets.QPushButton(self.GroupingOption)
+        self.GroupByStatus.setGeometry(QtCore.QRect(10, 10, 251, 41))
+        self.GroupByStatus.setStyleSheet("#GroupByStatus{\n"
 "    font-family: Rubik;\n"
 "    font-size: 12px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.Sort2_2.setObjectName("Sort2_2")
-        self.widget_3 = QtWidgets.QWidget(self.MainSection)
-        self.widget_3.setGeometry(QtCore.QRect(39, 430, 261, 31))
-        self.widget_3.setStyleSheet("#widget_3{\n"
+        self.GroupByStatus.setObjectName("GroupByStatus")
+        self.KolomNameTask = QtWidgets.QWidget(self.MainSection)
+        self.KolomNameTask.setGeometry(QtCore.QRect(39, 430, 261, 31))
+        self.KolomNameTask.setStyleSheet("#KolomNameTask{\n"
 "    border : 1px solid #0047ab;\n"
 "}")
-        self.widget_3.setObjectName("widget_3")
-        self.label = QtWidgets.QLabel(self.widget_3)
-        self.label.setGeometry(QtCore.QRect(80, 5, 81, 20))
-        self.label.setStyleSheet("#label{\n"
+        self.KolomNameTask.setObjectName("KolomNameTask")
+        self.LabelNamaTask = QtWidgets.QLabel(self.KolomNameTask)
+        self.LabelNamaTask.setGeometry(QtCore.QRect(80, 5, 81, 20))
+        self.LabelNamaTask.setStyleSheet("#LabelNamaTask{\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.label.setObjectName("label")
-        self.widget_4 = QtWidgets.QWidget(self.MainSection)
-        self.widget_4.setGeometry(QtCore.QRect(300, 430, 181, 31))
-        self.widget_4.setStyleSheet("#widget_4{\n"
+        self.LabelNamaTask.setObjectName("LabelNamaTask")
+        self.KolomStatusTask = QtWidgets.QWidget(self.MainSection)
+        self.KolomStatusTask.setGeometry(QtCore.QRect(300, 430, 181, 31))
+        self.KolomStatusTask.setStyleSheet("#KolomStatusTask{\n"
 "    border : 1px solid #0047ab;\n"
 "}")
-        self.widget_4.setObjectName("widget_4")
-        self.label_2 = QtWidgets.QLabel(self.widget_4)
-        self.label_2.setGeometry(QtCore.QRect(70, 5, 51, 20))
-        self.label_2.setStyleSheet("#label_2{\n"
+        self.KolomStatusTask.setObjectName("KolomStatusTask")
+        self.LabelStatus = QtWidgets.QLabel(self.KolomStatusTask)
+        self.LabelStatus.setGeometry(QtCore.QRect(70, 5, 51, 20))
+        self.LabelStatus.setStyleSheet("#LabelStatus{\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.label_2.setObjectName("label_2")
-        self.widget_5 = QtWidgets.QWidget(self.MainSection)
-        self.widget_5.setGeometry(QtCore.QRect(480, 430, 181, 31))
-        self.widget_5.setStyleSheet("#widget_5{\n"
+        self.LabelStatus.setObjectName("LabelStatus")
+        self.KolomCategory = QtWidgets.QWidget(self.MainSection)
+        self.KolomCategory.setGeometry(QtCore.QRect(480, 430, 181, 31))
+        self.KolomCategory.setStyleSheet("#KolomCategory{\n"
 "    border : 1px solid #0047ab;\n"
 "}")
-        self.widget_5.setObjectName("widget_5")
-        self.label_3 = QtWidgets.QLabel(self.widget_5)
-        self.label_3.setGeometry(QtCore.QRect(60, 5, 71, 20))
-        self.label_3.setStyleSheet("#label_3{\n"
+        self.KolomCategory.setObjectName("KolomCategory")
+        self.LabelCategory = QtWidgets.QLabel(self.KolomCategory)
+        self.LabelCategory.setGeometry(QtCore.QRect(60, 5, 71, 20))
+        self.LabelCategory.setStyleSheet("#LabelCategory{\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.label_3.setObjectName("label_3")
-        self.widget_6 = QtWidgets.QWidget(self.MainSection)
-        self.widget_6.setGeometry(QtCore.QRect(660, 430, 221, 31))
-        self.widget_6.setStyleSheet("#widget_6{\n"
+        self.LabelCategory.setObjectName("LabelCategory")
+        self.KolomDeadlineTask = QtWidgets.QWidget(self.MainSection)
+        self.KolomDeadlineTask.setGeometry(QtCore.QRect(660, 430, 221, 31))
+        self.KolomDeadlineTask.setStyleSheet("#KolomDeadlineTask{\n"
 "    border : 1px solid #0047ab;\n"
 "}")
-        self.widget_6.setObjectName("widget_6")
-        self.label_4 = QtWidgets.QLabel(self.widget_6)
-        self.label_4.setGeometry(QtCore.QRect(50, 5, 121, 20))
-        self.label_4.setStyleSheet("#label_4{\n"
+        self.KolomDeadlineTask.setObjectName("KolomDeadlineTask")
+        self.LabelDeadline = QtWidgets.QLabel(self.KolomDeadlineTask)
+        self.LabelDeadline.setGeometry(QtCore.QRect(50, 5, 121, 20))
+        self.LabelDeadline.setStyleSheet("#LabelDeadline{\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.label_4.setObjectName("label_4")
-        self.widget_7 = QtWidgets.QWidget(self.MainSection)
-        self.widget_7.setGeometry(QtCore.QRect(880, 430, 281, 31))
-        self.widget_7.setStyleSheet("#widget_7{\n"
+        self.LabelDeadline.setObjectName("LabelDeadline")
+        self.KolomDescriptionTask = QtWidgets.QWidget(self.MainSection)
+        self.KolomDescriptionTask.setGeometry(QtCore.QRect(880, 430, 281, 31))
+        self.KolomDescriptionTask.setStyleSheet("#KolomDescriptionTask{\n"
 "    border : 1px solid #0047ab;\n"
 "}")
-        self.widget_7.setObjectName("widget_7")
-        self.label_5 = QtWidgets.QLabel(self.widget_7)
-        self.label_5.setGeometry(QtCore.QRect(90, 5, 91, 20))
-        self.label_5.setStyleSheet("#label_5{\n"
+        self.KolomDescriptionTask.setObjectName("KolomDescriptionTask")
+        self.LabelDescription = QtWidgets.QLabel(self.KolomDescriptionTask)
+        self.LabelDescription.setGeometry(QtCore.QRect(90, 5, 91, 20))
+        self.LabelDescription.setStyleSheet("#LabelDescription{\n"
 "font-family: \"Roboto\";\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "    color: #0E49B5;\n"
 "}")
-        self.label_5.setObjectName("label_5")
-        self.AddingProject = QtWidgets.QWidget(self.MainSection)
-        self.AddingProject.setGeometry(QtCore.QRect(625, 365, 281, 451))
-        self.AddingProject.setStyleSheet("#AddingProject{\n"
+        self.LabelDescription.setObjectName("LabelDescription")
+        self.AddingNewTask = QtWidgets.QWidget(self.MainSection)
+        self.AddingNewTask.setGeometry(QtCore.QRect(625, 365, 281, 451))
+        self.AddingNewTask.setStyleSheet("#AddingNewTask{\n"
 "    border: 0.5px solid #052659;\n"
 "    background-color: #87ceeb;\n"
 "    border-radius: 17px;\n"
 "}")
-        self.AddingProject.setObjectName("AddingProject")
-        self.BoardTitle = QtWidgets.QLabel(self.AddingProject)
-        self.BoardTitle.setGeometry(QtCore.QRect(20, 20, 101, 21))
-        self.BoardTitle.setStyleSheet("#BoardTitle{\n"
+        self.AddingNewTask.setObjectName("AddingNewTask")
+        self.TaskTitle = QtWidgets.QLabel(self.AddingNewTask)
+        self.TaskTitle.setGeometry(QtCore.QRect(20, 20, 101, 21))
+        self.TaskTitle.setStyleSheet("#TaskTitle{\n"
 "    font-family: Rubik;\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.BoardTitle.setObjectName("BoardTitle")
-        self.inputBoardtitle = QtWidgets.QLineEdit(self.AddingProject)
-        self.inputBoardtitle.setGeometry(QtCore.QRect(10, 50, 251, 31))
-        self.inputBoardtitle.setStyleSheet("#inputBoardtitle{\n"
+        self.TaskTitle.setObjectName("TaskTitle")
+        self.inputTasktitle = QtWidgets.QLineEdit(self.AddingNewTask)
+        self.inputTasktitle.setGeometry(QtCore.QRect(10, 50, 251, 31))
+        self.inputTasktitle.setStyleSheet("#inputTasktitle{\n"
 "    border-radius : 10px;\n"
 "    font-family : Roboto;\n"
 "     color: #052659;\n"
 "}")
-        self.inputBoardtitle.setObjectName("inputBoardtitle")
-        self.CreateBoard = QtWidgets.QPushButton(self.AddingProject)
-        self.CreateBoard.setGeometry(QtCore.QRect(20, 350, 251, 41))
-        self.CreateBoard.setStyleSheet("#CreateBoard{\n"
+        self.inputTasktitle.setObjectName("inputTasktitle")
+        self.CreateTask = QtWidgets.QPushButton(self.AddingNewTask)
+        self.CreateTask.setGeometry(QtCore.QRect(20, 350, 251, 41))
+        self.CreateTask.setStyleSheet("#CreateTask{\n"
 "    font-family: Rubik;\n"
 "    font-size: 12px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.CreateBoard.setObjectName("CreateBoard")
-        self.BoardTitle_5 = QtWidgets.QLabel(self.AddingProject)
-        self.BoardTitle_5.setGeometry(QtCore.QRect(20, 100, 101, 21))
-        self.BoardTitle_5.setStyleSheet("#BoardTitle_5{\n"
+        self.CreateTask.setObjectName("CreateTask")
+        self.DeadlineInputTask = QtWidgets.QLabel(self.AddingNewTask)
+        self.DeadlineInputTask.setGeometry(QtCore.QRect(20, 100, 101, 21))
+        self.DeadlineInputTask.setStyleSheet("#DeadlineInputTask{\n"
 "    font-family: Rubik;\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.BoardTitle_5.setObjectName("BoardTitle_5")
-        self.dateEdit = QtWidgets.QDateEdit(self.AddingProject)
-        self.dateEdit.setGeometry(QtCore.QRect(20, 130, 101, 31))
-        self.dateEdit.setStyleSheet("#dateEdit { \n"
+        self.DeadlineInputTask.setObjectName("DeadlineInputTask")
+        self.dateEditDeadlineInput = QtWidgets.QDateEdit(self.AddingNewTask)
+        self.dateEditDeadlineInput.setGeometry(QtCore.QRect(20, 130, 101, 31))
+        self.dateEditDeadlineInput.setStyleSheet("#dateEditDeadlineInput{ \n"
 "    font-family : Roboto;\n"
 "     color: #052659;\n"
 "}")
-        self.dateEdit.setObjectName("dateEdit")
-        self.CreateBoard_2 = QtWidgets.QPushButton(self.AddingProject)
-        self.CreateBoard_2.setGeometry(QtCore.QRect(20, 400, 251, 41))
-        self.CreateBoard_2.setStyleSheet("#CreateBoard_2{\n"
+        self.dateEditDeadlineInput.setObjectName("dateEditDeadlineInput")
+        self.CancelCreationTask = QtWidgets.QPushButton(self.AddingNewTask)
+        self.CancelCreationTask.setGeometry(QtCore.QRect(20, 400, 251, 41))
+        self.CancelCreationTask.setStyleSheet("#CancelCreationTask{\n"
 "    font-family: Rubik;\n"
 "    font-size: 12px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.CreateBoard_2.setObjectName("CreateBoard_2")
-        self.BoardTitle_6 = QtWidgets.QLabel(self.AddingProject)
-        self.BoardTitle_6.setGeometry(QtCore.QRect(20, 175, 101, 21))
-        self.BoardTitle_6.setStyleSheet("#BoardTitle_6{\n"
+        self.CancelCreationTask.setObjectName("CancelCreationTask")
+        self.DescriptionInputTask = QtWidgets.QLabel(self.AddingNewTask)
+        self.DescriptionInputTask.setGeometry(QtCore.QRect(20, 175, 101, 21))
+        self.DescriptionInputTask.setStyleSheet("#DescriptionInputTask{\n"
 "    font-family: Rubik;\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.BoardTitle_6.setObjectName("BoardTitle_6")
-        self.BoardTitle_7 = QtWidgets.QLabel(self.AddingProject)
-        self.BoardTitle_7.setGeometry(QtCore.QRect(160, 100, 101, 21))
-        self.BoardTitle_7.setStyleSheet("#BoardTitle_7{\n"
+        self.DescriptionInputTask.setObjectName("DescriptionInputTask")
+        self.CategoryInputTask = QtWidgets.QLabel(self.AddingNewTask)
+        self.CategoryInputTask.setGeometry(QtCore.QRect(160, 100, 101, 21))
+        self.CategoryInputTask.setStyleSheet("#CategoryInputTask{\n"
 "    font-family: Rubik;\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.BoardTitle_7.setObjectName("BoardTitle_7")
-        self.comboBox = QtWidgets.QComboBox(self.AddingProject)
-        self.comboBox.setGeometry(QtCore.QRect(160, 130, 101, 31))
-        self.comboBox.setStyleSheet("#comboBox{\n"
+        self.CategoryInputTask.setObjectName("CategoryInputTask")
+        self.CategoryInputBox = QtWidgets.QComboBox(self.AddingNewTask)
+        self.CategoryInputBox.setGeometry(QtCore.QRect(160, 130, 101, 31))
+        self.CategoryInputBox.setStyleSheet("#CategoryInputBox{\n"
 "    font-family : Roboto;\n"
 "     color: #052659; }")
-        self.comboBox.setObjectName("comboBox")
-        self.textEdit = QtWidgets.QTextEdit(self.AddingProject)
-        self.textEdit.setGeometry(QtCore.QRect(10, 200, 261, 131))
-        self.textEdit.setStyleSheet("#textEdit{\n"
+        self.CategoryInputBox.setObjectName("CategoryInputBox")
+        self.BoxInputDescription = QtWidgets.QTextEdit(self.AddingNewTask)
+        self.BoxInputDescription.setGeometry(QtCore.QRect(10, 200, 261, 131))
+        self.BoxInputDescription.setStyleSheet("#BoxInputDescription{\n"
 "    border-radius : 10px;\n"
 "    font-family : Roboto;\n"
 "     color: #052659;\n"
 "}")
-        self.textEdit.setObjectName("textEdit")
+        self.BoxInputDescription.setObjectName("BoxInputDescription")
         self.SortingOption = QtWidgets.QWidget(self.MainSection)
         self.SortingOption.setGeometry(QtCore.QRect(50, 405, 271, 121))
         self.SortingOption.setStyleSheet("#SortingOption\n"
@@ -496,9 +496,9 @@ class Ui_Ergo(object):
 "    border-radius: 17px;\n"
 "}")
         self.SortingOption.setObjectName("SortingOption")
-        self.Sort1 = QtWidgets.QPushButton(self.SortingOption)
-        self.Sort1.setGeometry(QtCore.QRect(10, 60, 251, 41))
-        self.Sort1.setStyleSheet("#Sort1{\n"
+        self.SortDescending = QtWidgets.QPushButton(self.SortingOption)
+        self.SortDescending.setGeometry(QtCore.QRect(10, 60, 251, 41))
+        self.SortDescending.setStyleSheet("#SortDescending{\n"
 "    font-family: Rubik;\n"
 "    font-size: 12px;\n"
 "    font-weight: bold;\n"
@@ -506,11 +506,11 @@ class Ui_Ergo(object):
 "}")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("../../../Downloads/down (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.Sort1.setIcon(icon)
-        self.Sort1.setObjectName("Sort1")
-        self.Sort2 = QtWidgets.QPushButton(self.SortingOption)
-        self.Sort2.setGeometry(QtCore.QRect(10, 10, 251, 41))
-        self.Sort2.setStyleSheet("#Sort2{\n"
+        self.SortDescending.setIcon(icon)
+        self.SortDescending.setObjectName("SortDescending")
+        self.SortAscending = QtWidgets.QPushButton(self.SortingOption)
+        self.SortAscending.setGeometry(QtCore.QRect(10, 10, 251, 41))
+        self.SortAscending.setStyleSheet("#SortAscending{\n"
 "    font-family: Rubik;\n"
 "    font-size: 12px;\n"
 "    font-weight: bold;\n"
@@ -518,23 +518,23 @@ class Ui_Ergo(object):
 "}")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("../../../Downloads/top.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.Sort2.setIcon(icon1)
-        self.Sort2.setObjectName("Sort2")
-        self.BoardName_2 = QtWidgets.QLabel(self.MainSection)
-        self.BoardName_2.setGeometry(QtCore.QRect(840, 40, 561, 71))
-        self.BoardName_2.setStyleSheet("#BoardName_2{\n"
+        self.SortAscending.setIcon(icon1)
+        self.SortAscending.setObjectName("SortAscending")
+        self.ProgressBar = QtWidgets.QLabel(self.MainSection)
+        self.ProgressBar.setGeometry(QtCore.QRect(840, 40, 561, 71))
+        self.ProgressBar.setStyleSheet("#ProgressBar{\n"
 "    font: 45px \"Roboto\";\n"
 "    color: #0E49B5;\n"
 "    font-weight: bold;\n"
 "}")
-        self.BoardName_2.setObjectName("BoardName_2")
-        self.WelcomeProject_2 = QtWidgets.QLabel(self.MainSection)
-        self.WelcomeProject_2.setGeometry(QtCore.QRect(840, 120, 591, 31))
-        self.WelcomeProject_2.setStyleSheet("#WelcomeProject_2 {\n"
+        self.ProgressBar.setObjectName("ProgressBar")
+        self.SemangatTitle = QtWidgets.QLabel(self.MainSection)
+        self.SemangatTitle.setGeometry(QtCore.QRect(840, 120, 591, 31))
+        self.SemangatTitle.setStyleSheet("#SemangatTitle{\n"
 "    font: bold 18px \"Roboto\";\n"
 "    color: #0E49B5;\n"
 "}")
-        self.WelcomeProject_2.setObjectName("WelcomeProject_2")
+        self.SemangatTitle.setObjectName("SemangatTitle")
         self.progressBar = QtWidgets.QProgressBar(self.MainSection)
         self.progressBar.setGeometry(QtCore.QRect(840, 170, 681, 41))
         self.progressBar.setStyleSheet("#progressBar{\n"
@@ -545,134 +545,134 @@ class Ui_Ergo(object):
 "}")
         self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
-        self.AddingProject_2 = QtWidgets.QWidget(self.MainSection)
-        self.AddingProject_2.setGeometry(QtCore.QRect(1190, 250, 481, 451))
-        self.AddingProject_2.setStyleSheet("#AddingProject_2{\n"
+        self.EditTask = QtWidgets.QWidget(self.MainSection)
+        self.EditTask.setGeometry(QtCore.QRect(1190, 250, 481, 451))
+        self.EditTask.setStyleSheet("#EditTask{\n"
 "    border: 0.5px solid #052659;\n"
 "    background-color: #87ceeb;\n"
 "    border-radius: 17px;\n"
 "}")
-        self.AddingProject_2.setObjectName("AddingProject_2")
-        self.BoardTitle_3 = QtWidgets.QLabel(self.AddingProject_2)
-        self.BoardTitle_3.setGeometry(QtCore.QRect(20, 20, 101, 21))
-        self.BoardTitle_3.setStyleSheet("#BoardTitle_3{\n"
+        self.EditTask.setObjectName("EditTask")
+        self.TaskTitleEdit = QtWidgets.QLabel(self.EditTask)
+        self.TaskTitleEdit.setGeometry(QtCore.QRect(20, 20, 101, 21))
+        self.TaskTitleEdit.setStyleSheet("#TaskTitleEdit{\n"
 "    font-family: Rubik;\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.BoardTitle_3.setObjectName("BoardTitle_3")
-        self.inputBoardtitle_3 = QtWidgets.QLineEdit(self.AddingProject_2)
-        self.inputBoardtitle_3.setGeometry(QtCore.QRect(10, 50, 381, 31))
-        self.inputBoardtitle_3.setStyleSheet("#inputBoardtitle_3{\n"
+        self.TaskTitleEdit.setObjectName("TaskTitleEdit")
+        self.InputEditTaskBox = QtWidgets.QLineEdit(self.EditTask)
+        self.InputEditTaskBox.setGeometry(QtCore.QRect(10, 50, 381, 31))
+        self.InputEditTaskBox.setStyleSheet("#InputEditTaskBox{\n"
 "    border-radius : 10px;\n"
 "    font-family : Roboto;\n"
 "     color: #052659;\n"
 "}")
-        self.inputBoardtitle_3.setObjectName("inputBoardtitle_3")
-        self.CreateBoard_5 = QtWidgets.QPushButton(self.AddingProject_2)
-        self.CreateBoard_5.setGeometry(QtCore.QRect(20, 350, 441, 41))
-        self.CreateBoard_5.setStyleSheet("#CreateBoard_5{\n"
+        self.InputEditTaskBox.setObjectName("InputEditTaskBox")
+        self.ApplyChangesButton = QtWidgets.QPushButton(self.EditTask)
+        self.ApplyChangesButton.setGeometry(QtCore.QRect(20, 350, 441, 41))
+        self.ApplyChangesButton.setStyleSheet("#ApplyChangesButton{\n"
 "    font-family: Rubik;\n"
 "    font-size: 12px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.CreateBoard_5.setObjectName("CreateBoard_5")
-        self.BoardTitle_11 = QtWidgets.QLabel(self.AddingProject_2)
-        self.BoardTitle_11.setGeometry(QtCore.QRect(20, 100, 101, 21))
-        self.BoardTitle_11.setStyleSheet("#BoardTitle_11{\n"
+        self.ApplyChangesButton.setObjectName("ApplyChangesButton")
+        self.DeadlineEditInput = QtWidgets.QLabel(self.EditTask)
+        self.DeadlineEditInput.setGeometry(QtCore.QRect(20, 100, 101, 21))
+        self.DeadlineEditInput.setStyleSheet("#DeadlineEditInput{\n"
 "    font-family: Rubik;\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.BoardTitle_11.setObjectName("BoardTitle_11")
-        self.dateEdit_3 = QtWidgets.QDateEdit(self.AddingProject_2)
-        self.dateEdit_3.setGeometry(QtCore.QRect(20, 130, 101, 31))
-        self.dateEdit_3.setStyleSheet("#dateEdit_3 { \n"
+        self.DeadlineEditInput.setObjectName("DeadlineEditInput")
+        self.DateEditDeadline = QtWidgets.QDateEdit(self.EditTask)
+        self.DateEditDeadline.setGeometry(QtCore.QRect(20, 130, 101, 31))
+        self.DateEditDeadline.setStyleSheet("#DateEditDeadline{ \n"
 "    font-family : Roboto;\n"
 "     color: #052659;\n"
 "}")
-        self.dateEdit_3.setObjectName("dateEdit_3")
-        self.CreateBoard_6 = QtWidgets.QPushButton(self.AddingProject_2)
-        self.CreateBoard_6.setGeometry(QtCore.QRect(20, 400, 441, 41))
-        self.CreateBoard_6.setStyleSheet("#CreateBoard_6{\n"
+        self.DateEditDeadline.setObjectName("DateEditDeadline")
+        self.CancelingEdit = QtWidgets.QPushButton(self.EditTask)
+        self.CancelingEdit.setGeometry(QtCore.QRect(20, 400, 441, 41))
+        self.CancelingEdit.setStyleSheet("#CancelingEdit{\n"
 "    font-family: Rubik;\n"
 "    font-size: 12px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.CreateBoard_6.setObjectName("CreateBoard_6")
-        self.BoardTitle_12 = QtWidgets.QLabel(self.AddingProject_2)
-        self.BoardTitle_12.setGeometry(QtCore.QRect(20, 175, 101, 21))
-        self.BoardTitle_12.setStyleSheet("#BoardTitle_12{\n"
+        self.CancelingEdit.setObjectName("CancelingEdit")
+        self.DescriptionTitle = QtWidgets.QLabel(self.EditTask)
+        self.DescriptionTitle.setGeometry(QtCore.QRect(20, 175, 101, 21))
+        self.DescriptionTitle.setStyleSheet("#DescriptionTitle{\n"
 "    font-family: Rubik;\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.BoardTitle_12.setObjectName("BoardTitle_12")
-        self.BoardTitle_13 = QtWidgets.QLabel(self.AddingProject_2)
-        self.BoardTitle_13.setGeometry(QtCore.QRect(160, 100, 101, 21))
-        self.BoardTitle_13.setStyleSheet("#BoardTitle_13{\n"
+        self.DescriptionTitle.setObjectName("DescriptionTitle")
+        self.CategoryTitle = QtWidgets.QLabel(self.EditTask)
+        self.CategoryTitle.setGeometry(QtCore.QRect(160, 100, 101, 21))
+        self.CategoryTitle.setStyleSheet("#CategoryTitle{\n"
 "    font-family: Rubik;\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.BoardTitle_13.setObjectName("BoardTitle_13")
-        self.comboBox_3 = QtWidgets.QComboBox(self.AddingProject_2)
-        self.comboBox_3.setGeometry(QtCore.QRect(160, 130, 101, 31))
-        self.comboBox_3.setStyleSheet("#comboBox_3{\n"
+        self.CategoryTitle.setObjectName("CategoryTitle")
+        self.CategoryEditComboBox = QtWidgets.QComboBox(self.EditTask)
+        self.CategoryEditComboBox.setGeometry(QtCore.QRect(160, 130, 101, 31))
+        self.CategoryEditComboBox.setStyleSheet("#CategoryEditComboBox{\n"
 "    font-family : Roboto;\n"
 "     color: #052659; }")
-        self.comboBox_3.setObjectName("comboBox_3")
-        self.textEdit_3 = QtWidgets.QTextEdit(self.AddingProject_2)
-        self.textEdit_3.setGeometry(QtCore.QRect(10, 200, 451, 131))
-        self.textEdit_3.setStyleSheet("#textEdit_3{\n"
+        self.CategoryEditComboBox.setObjectName("CategoryEditComboBox")
+        self.DescriptionEditBox = QtWidgets.QTextEdit(self.EditTask)
+        self.DescriptionEditBox.setGeometry(QtCore.QRect(10, 200, 451, 131))
+        self.DescriptionEditBox.setStyleSheet("#DescriptionEditBox{\n"
 "    border-radius : 10px;\n"
 "    font-family : Roboto;\n"
 "     color: #052659;\n"
 "}")
-        self.textEdit_3.setObjectName("textEdit_3")
-        self.BoardTitle_14 = QtWidgets.QLabel(self.AddingProject_2)
-        self.BoardTitle_14.setGeometry(QtCore.QRect(290, 100, 101, 21))
-        self.BoardTitle_14.setStyleSheet("#BoardTitle_14{\n"
+        self.DescriptionEditBox.setObjectName("DescriptionEditBox")
+        self.StatusTitle = QtWidgets.QLabel(self.EditTask)
+        self.StatusTitle.setGeometry(QtCore.QRect(290, 100, 101, 21))
+        self.StatusTitle.setStyleSheet("#StatusTitle{\n"
 "    font-family: Rubik;\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.BoardTitle_14.setObjectName("BoardTitle_14")
-        self.comboBox_4 = QtWidgets.QComboBox(self.AddingProject_2)
-        self.comboBox_4.setGeometry(QtCore.QRect(290, 130, 171, 31))
-        self.comboBox_4.setStyleSheet("#comboBox_4{\n"
+        self.StatusTitle.setObjectName("StatusTitle")
+        self.StatusComboBox = QtWidgets.QComboBox(self.EditTask)
+        self.StatusComboBox.setGeometry(QtCore.QRect(290, 130, 171, 31))
+        self.StatusComboBox.setStyleSheet("#StatusComboBox{\n"
 "    font-family : Roboto;\n"
 "     color: #052659; }")
-        self.comboBox_4.setObjectName("comboBox_4")
+        self.StatusComboBox.setObjectName("StatusComboBox")
         self.Containerforwords.raise_()
-        self.YourProject.raise_()
-        self.AddProjectButton.raise_()
-        self.BoardName.raise_()
+        self.YourTask.raise_()
+        self.AddNewTaskButton.raise_()
+        self.TaskNameTitle.raise_()
         self.Sorting.raise_()
-        self.namaboard.raise_()
-        self.back.raise_()
-        self.widget.raise_()
-        self.namaboard_2.raise_()
-        self.Sorting_2.raise_()
-        self.widget_3.raise_()
-        self.widget_4.raise_()
-        self.widget_5.raise_()
-        self.widget_6.raise_()
-        self.widget_7.raise_()
-        self.SortingOption_2.raise_()
-        self.AddingProject.raise_()
+        self.BackToBoardUpper.raise_()
+        self.BackToDashboardUpper.raise_()
+        self.widgetContainerTask.raise_()
+        self.CurrentTaskUpper.raise_()
+        self.Grouping.raise_()
+        self.KolomNameTask.raise_()
+        self.KolomStatusTask.raise_()
+        self.KolomCategory.raise_()
+        self.KolomDeadlineTask.raise_()
+        self.KolomDescriptionTask.raise_()
+        self.GroupingOption.raise_()
+        self.AddingNewTask.raise_()
         self.SortingOption.raise_()
-        self.BoardName_2.raise_()
-        self.WelcomeProject_2.raise_()
+        self.ProgressBar.raise_()
+        self.SemangatTitle.raise_()
         self.progressBar.raise_()
-        self.AddingProject_2.raise_()
+        self.EditTask.raise_()
         self.Searchbar = QtWidgets.QWidget(Ergo)
         self.Searchbar.setGeometry(QtCore.QRect(200, 0, 1721, 61))
         self.Searchbar.setStyleSheet("#Searchbar{\n"
@@ -722,21 +722,21 @@ class Ui_Ergo(object):
     def retranslateUi(self, Ergo):
         _translate = QtCore.QCoreApplication.translate
         Ergo.setWindowTitle(_translate("Ergo", "Ergo"))
-        self.back_2.setText(_translate("Ergo", "Dashboard"))
-        self.back_3.setText(_translate("Ergo", "Your Board"))
-        self.BoardName.setText(_translate("Ergo", "Build UI"))
+        self.BackToDashboard.setText(_translate("Ergo", "Dashboard"))
+        self.BackToYourBoard.setText(_translate("Ergo", "Your Board"))
+        self.TaskNameTitle.setText(_translate("Ergo", "Build UI"))
         self.Welcome.setText(_translate("Ergo", "Welcome!"))
-        self.WelcomeProject.setText(_translate("Ergo", "This is your work space to track all of your task and project"))
-        self.YourProject.setText(_translate("Ergo", "Your Task"))
-        self.AddProjectButton.setText(_translate("Ergo", "+ Add New Task"))
+        self.WelcomingTitle.setText(_translate("Ergo", "This is your work space to track all of your task and project"))
+        self.YourTask.setText(_translate("Ergo", "Your Task"))
+        self.AddNewTaskButton.setText(_translate("Ergo", "+ Add New Task"))
         self.Sorting.setText(_translate("Ergo", "Sort By"))
-        self.namaboard.setText(_translate("Ergo", "> Mobile Development"))
-        self.back.setText(_translate("Ergo", "Dashboard"))
-        self.label_6.setText(_translate("Ergo", "Inserting Image"))
-        self.label_7.setText(_translate("Ergo", "Not Started"))
-        self.label_8.setText(_translate("Ergo", "High"))
-        self.label_9.setText(_translate("Ergo", "2023-01-01 / 07.00"))
-        self.textBrowser.setHtml(_translate("Ergo", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.BackToBoardUpper.setText(_translate("Ergo", "> Mobile Development"))
+        self.BackToDashboardUpper.setText(_translate("Ergo", "Dashboard"))
+        self.Task1Name.setText(_translate("Ergo", "Inserting Image"))
+        self.Task1Status.setText(_translate("Ergo", "Not Started"))
+        self.Task1Category.setText(_translate("Ergo", "High"))
+        self.Task1Deadline.setText(_translate("Ergo", "2023-01-01 / 07.00"))
+        self.Task1Description.setHtml(_translate("Ergo", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
@@ -744,11 +744,11 @@ class Ui_Ergo(object):
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Roboto\'; font-size:13px; font-weight:700; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:15px;\">Memasukkan gambar serta memberikan deskripsi gambar yang tertera </span></p></body></html>"))
-        self.label_11.setText(_translate("Ergo", "Inserting Image"))
-        self.label_12.setText(_translate("Ergo", "Not Started"))
-        self.label_13.setText(_translate("Ergo", "High"))
-        self.label_14.setText(_translate("Ergo", "2023-01-01 / 07.00"))
-        self.textBrowser_2.setHtml(_translate("Ergo", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.Task2Name.setText(_translate("Ergo", "Inserting Image"))
+        self.Task2Status.setText(_translate("Ergo", "Not Started"))
+        self.Task2Category.setText(_translate("Ergo", "High"))
+        self.Task2Deadline.setText(_translate("Ergo", "2023-01-01 / 07.00"))
+        self.Task2Description.setHtml(_translate("Ergo", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
@@ -756,32 +756,32 @@ class Ui_Ergo(object):
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Roboto\'; font-size:13px; font-weight:700; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:15px;\">Memasukkan gambar serta memberikan deskripsi gambar yang tertera </span></p></body></html>"))
-        self.namaboard_2.setText(_translate("Ergo", "> Build UI"))
-        self.Sorting_2.setText(_translate("Ergo", "Group By"))
-        self.Sort1_2.setText(_translate("Ergo", "Group by Category"))
-        self.Sort2_2.setText(_translate("Ergo", "Group by Status"))
-        self.label.setText(_translate("Ergo", "Task Name"))
-        self.label_2.setText(_translate("Ergo", "Status"))
-        self.label_3.setText(_translate("Ergo", "Category"))
-        self.label_4.setText(_translate("Ergo", "Due Date / Time"))
-        self.label_5.setText(_translate("Ergo", "Description"))
-        self.BoardTitle.setText(_translate("Ergo", "Task Title"))
-        self.CreateBoard.setText(_translate("Ergo", "Create Task"))
-        self.BoardTitle_5.setText(_translate("Ergo", "Deadline"))
-        self.CreateBoard_2.setText(_translate("Ergo", "Cancel"))
-        self.BoardTitle_6.setText(_translate("Ergo", "Description"))
-        self.BoardTitle_7.setText(_translate("Ergo", "Category"))
-        self.Sort1.setText(_translate("Ergo", "Sort Descending"))
-        self.Sort2.setText(_translate("Ergo", "Sort Ascending"))
-        self.BoardName_2.setText(_translate("Ergo", "Progress Bar"))
-        self.WelcomeProject_2.setText(_translate("Ergo", "Keep it up, you\'re almost there :D"))
-        self.BoardTitle_3.setText(_translate("Ergo", "Task Title"))
-        self.CreateBoard_5.setText(_translate("Ergo", "Apply Changes"))
-        self.BoardTitle_11.setText(_translate("Ergo", "Deadline"))
-        self.CreateBoard_6.setText(_translate("Ergo", "Cancel"))
-        self.BoardTitle_12.setText(_translate("Ergo", "Description"))
-        self.BoardTitle_13.setText(_translate("Ergo", "Category"))
-        self.BoardTitle_14.setText(_translate("Ergo", "Status"))
+        self.CurrentTaskUpper.setText(_translate("Ergo", "> Build UI"))
+        self.Grouping.setText(_translate("Ergo", "Group By"))
+        self.GroupByCategory.setText(_translate("Ergo", "Group by Category"))
+        self.GroupByStatus.setText(_translate("Ergo", "Group by Status"))
+        self.LabelNamaTask.setText(_translate("Ergo", "Task Name"))
+        self.LabelStatus.setText(_translate("Ergo", "Status"))
+        self.LabelCategory.setText(_translate("Ergo", "Category"))
+        self.LabelDeadline.setText(_translate("Ergo", "Due Date / Time"))
+        self.LabelDescription.setText(_translate("Ergo", "Description"))
+        self.TaskTitle.setText(_translate("Ergo", "Task Title"))
+        self.CreateTask.setText(_translate("Ergo", "Create Task"))
+        self.DeadlineInputTask.setText(_translate("Ergo", "Deadline"))
+        self.CancelCreationTask.setText(_translate("Ergo", "Cancel"))
+        self.DescriptionInputTask.setText(_translate("Ergo", "Description"))
+        self.CategoryInputTask.setText(_translate("Ergo", "Category"))
+        self.SortDescending.setText(_translate("Ergo", "Sort Descending"))
+        self.SortAscending.setText(_translate("Ergo", "Sort Ascending"))
+        self.ProgressBar.setText(_translate("Ergo", "Progress Bar"))
+        self.SemangatTitle.setText(_translate("Ergo", "Keep it up, you\'re almost there :D"))
+        self.TaskTitleEdit.setText(_translate("Ergo", "Task Title"))
+        self.ApplyChangesButton.setText(_translate("Ergo", "Apply Changes"))
+        self.DeadlineEditInput.setText(_translate("Ergo", "Deadline"))
+        self.CancelingEdit.setText(_translate("Ergo", "Cancel"))
+        self.DescriptionTitle.setText(_translate("Ergo", "Description"))
+        self.CategoryTitle.setText(_translate("Ergo", "Category"))
+        self.StatusTitle.setText(_translate("Ergo", "Status"))
         self.SearchBoard.setText(_translate("Ergo", "          Search Your Board"))
         self.UserErgo.setText(_translate("Ergo", "  User Ergo"))
 
