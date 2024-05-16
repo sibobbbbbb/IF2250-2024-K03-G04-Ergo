@@ -545,6 +545,112 @@ class Ui_Ergo(object):
 "}")
         self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
+        self.AddingProject_2 = QtWidgets.QWidget(self.MainSection)
+        self.AddingProject_2.setGeometry(QtCore.QRect(1190, 250, 481, 451))
+        self.AddingProject_2.setStyleSheet("#AddingProject_2{\n"
+"    border: 0.5px solid #052659;\n"
+"    background-color: #87ceeb;\n"
+"    border-radius: 17px;\n"
+"}")
+        self.AddingProject_2.setObjectName("AddingProject_2")
+        self.BoardTitle_3 = QtWidgets.QLabel(self.AddingProject_2)
+        self.BoardTitle_3.setGeometry(QtCore.QRect(20, 20, 101, 21))
+        self.BoardTitle_3.setStyleSheet("#BoardTitle_3{\n"
+"    font-family: Rubik;\n"
+"    font-size: 15px;\n"
+"    font-weight: bold;\n"
+"   color: #052659;\n"
+"}")
+        self.BoardTitle_3.setObjectName("BoardTitle_3")
+        self.inputBoardtitle_3 = QtWidgets.QLineEdit(self.AddingProject_2)
+        self.inputBoardtitle_3.setGeometry(QtCore.QRect(10, 50, 381, 31))
+        self.inputBoardtitle_3.setStyleSheet("#inputBoardtitle_3{\n"
+"    border-radius : 10px;\n"
+"    font-family : Roboto;\n"
+"     color: #052659;\n"
+"}")
+        self.inputBoardtitle_3.setObjectName("inputBoardtitle_3")
+        self.CreateBoard_5 = QtWidgets.QPushButton(self.AddingProject_2)
+        self.CreateBoard_5.setGeometry(QtCore.QRect(20, 350, 441, 41))
+        self.CreateBoard_5.setStyleSheet("#CreateBoard_5{\n"
+"    font-family: Rubik;\n"
+"    font-size: 12px;\n"
+"    font-weight: bold;\n"
+"   color: #052659;\n"
+"}")
+        self.CreateBoard_5.setObjectName("CreateBoard_5")
+        self.BoardTitle_11 = QtWidgets.QLabel(self.AddingProject_2)
+        self.BoardTitle_11.setGeometry(QtCore.QRect(20, 100, 101, 21))
+        self.BoardTitle_11.setStyleSheet("#BoardTitle_11{\n"
+"    font-family: Rubik;\n"
+"    font-size: 15px;\n"
+"    font-weight: bold;\n"
+"   color: #052659;\n"
+"}")
+        self.BoardTitle_11.setObjectName("BoardTitle_11")
+        self.dateEdit_3 = QtWidgets.QDateEdit(self.AddingProject_2)
+        self.dateEdit_3.setGeometry(QtCore.QRect(20, 130, 101, 31))
+        self.dateEdit_3.setStyleSheet("#dateEdit_3 { \n"
+"    font-family : Roboto;\n"
+"     color: #052659;\n"
+"}")
+        self.dateEdit_3.setObjectName("dateEdit_3")
+        self.CreateBoard_6 = QtWidgets.QPushButton(self.AddingProject_2)
+        self.CreateBoard_6.setGeometry(QtCore.QRect(20, 400, 441, 41))
+        self.CreateBoard_6.setStyleSheet("#CreateBoard_6{\n"
+"    font-family: Rubik;\n"
+"    font-size: 12px;\n"
+"    font-weight: bold;\n"
+"   color: #052659;\n"
+"}")
+        self.CreateBoard_6.setObjectName("CreateBoard_6")
+        self.BoardTitle_12 = QtWidgets.QLabel(self.AddingProject_2)
+        self.BoardTitle_12.setGeometry(QtCore.QRect(20, 175, 101, 21))
+        self.BoardTitle_12.setStyleSheet("#BoardTitle_12{\n"
+"    font-family: Rubik;\n"
+"    font-size: 15px;\n"
+"    font-weight: bold;\n"
+"   color: #052659;\n"
+"}")
+        self.BoardTitle_12.setObjectName("BoardTitle_12")
+        self.BoardTitle_13 = QtWidgets.QLabel(self.AddingProject_2)
+        self.BoardTitle_13.setGeometry(QtCore.QRect(160, 100, 101, 21))
+        self.BoardTitle_13.setStyleSheet("#BoardTitle_13{\n"
+"    font-family: Rubik;\n"
+"    font-size: 15px;\n"
+"    font-weight: bold;\n"
+"   color: #052659;\n"
+"}")
+        self.BoardTitle_13.setObjectName("BoardTitle_13")
+        self.comboBox_3 = QtWidgets.QComboBox(self.AddingProject_2)
+        self.comboBox_3.setGeometry(QtCore.QRect(160, 130, 101, 31))
+        self.comboBox_3.setStyleSheet("#comboBox_3{\n"
+"    font-family : Roboto;\n"
+"     color: #052659; }")
+        self.comboBox_3.setObjectName("comboBox_3")
+        self.textEdit_3 = QtWidgets.QTextEdit(self.AddingProject_2)
+        self.textEdit_3.setGeometry(QtCore.QRect(10, 200, 451, 131))
+        self.textEdit_3.setStyleSheet("#textEdit_3{\n"
+"    border-radius : 10px;\n"
+"    font-family : Roboto;\n"
+"     color: #052659;\n"
+"}")
+        self.textEdit_3.setObjectName("textEdit_3")
+        self.BoardTitle_14 = QtWidgets.QLabel(self.AddingProject_2)
+        self.BoardTitle_14.setGeometry(QtCore.QRect(290, 100, 101, 21))
+        self.BoardTitle_14.setStyleSheet("#BoardTitle_14{\n"
+"    font-family: Rubik;\n"
+"    font-size: 15px;\n"
+"    font-weight: bold;\n"
+"   color: #052659;\n"
+"}")
+        self.BoardTitle_14.setObjectName("BoardTitle_14")
+        self.comboBox_4 = QtWidgets.QComboBox(self.AddingProject_2)
+        self.comboBox_4.setGeometry(QtCore.QRect(290, 130, 171, 31))
+        self.comboBox_4.setStyleSheet("#comboBox_4{\n"
+"    font-family : Roboto;\n"
+"     color: #052659; }")
+        self.comboBox_4.setObjectName("comboBox_4")
         self.Containerforwords.raise_()
         self.YourProject.raise_()
         self.AddProjectButton.raise_()
@@ -566,6 +672,7 @@ class Ui_Ergo(object):
         self.BoardName_2.raise_()
         self.WelcomeProject_2.raise_()
         self.progressBar.raise_()
+        self.AddingProject_2.raise_()
         self.Searchbar = QtWidgets.QWidget(Ergo)
         self.Searchbar.setGeometry(QtCore.QRect(200, 0, 1721, 61))
         self.Searchbar.setStyleSheet("#Searchbar{\n"
@@ -668,6 +775,13 @@ class Ui_Ergo(object):
         self.Sort2.setText(_translate("Ergo", "Sort Ascending"))
         self.BoardName_2.setText(_translate("Ergo", "Progress Bar"))
         self.WelcomeProject_2.setText(_translate("Ergo", "Keep it up, you\'re almost there :D"))
+        self.BoardTitle_3.setText(_translate("Ergo", "Task Title"))
+        self.CreateBoard_5.setText(_translate("Ergo", "Apply Changes"))
+        self.BoardTitle_11.setText(_translate("Ergo", "Deadline"))
+        self.CreateBoard_6.setText(_translate("Ergo", "Cancel"))
+        self.BoardTitle_12.setText(_translate("Ergo", "Description"))
+        self.BoardTitle_13.setText(_translate("Ergo", "Category"))
+        self.BoardTitle_14.setText(_translate("Ergo", "Status"))
         self.SearchBoard.setText(_translate("Ergo", "          Search Your Board"))
         self.UserErgo.setText(_translate("Ergo", "  User Ergo"))
 
