@@ -982,7 +982,131 @@
          <normaloff>../if2250-2024-k03-g04-ergo/img/3dot.png</normaloff>../if2250-2024-k03-g04-ergo/img/3dot.png</iconset>
        </property>
       </widget>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>550</x>
+         <y>10</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#pushButton_3{
+	background-color: #F6F6F6;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 20px;
+    font-weight: bold;
+   color: #5483B3;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../if2250-2024-k03-g04-ergo/img/3dot.png</normaloff>../if2250-2024-k03-g04-ergo/img/3dot.png</iconset>
+       </property>
+      </widget>
      </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Actions_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1410</x>
+      <y>440</y>
+      <width>271</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#Actions_3{
+	border: 0.5px solid #052659;
+	background-color: #87ceeb;
+	border-radius: 17px;
+}</string>
+    </property>
+    <widget class="QLabel" name="BoardTitle_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#BoardTitle_6{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Actions</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Favorite_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Favorite_3{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string> Add to Favorite</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../if2250-2024-k03-g04-ergo/img/star.png</normaloff>../if2250-2024-k03-g04-ergo/img/star.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="DeleteProject_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="toolTipDuration">
+      <number>-1</number>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#DeleteProject_3{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string> Delete Project</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../if2250-2024-k03-g04-ergo/img/trashcan.png</normaloff>../if2250-2024-k03-g04-ergo/img/trashcan.png</iconset>
+     </property>
     </widget>
    </widget>
    <zorder>Containerforwords</zorder>
@@ -1001,6 +1125,7 @@
    <zorder>QuickAccess</zorder>
    <zorder>widget_2</zorder>
    <zorder>SortingOption</zorder>
+   <zorder>Actions_3</zorder>
   </widget>
   <widget class="QWidget" name="Searchbar" native="true">
    <property name="geometry">
