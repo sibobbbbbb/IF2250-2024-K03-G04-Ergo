@@ -34,14 +34,14 @@ class Ui_Ergo(object):
 "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #FFFFFF, stop:1 #97C9ED);\n"
 "}")
         self.MainSection.setObjectName("MainSection")
-        self.BoardName = QtWidgets.QLabel(self.MainSection)
-        self.BoardName.setGeometry(QtCore.QRect(40, 20, 561, 71))
-        self.BoardName.setStyleSheet("#BoardName{\n"
+        self.HiUser = QtWidgets.QLabel(self.MainSection)
+        self.HiUser.setGeometry(QtCore.QRect(40, 20, 181, 71))
+        self.HiUser.setStyleSheet("#HiUser{\n"
 "    font: 45px \"Roboto\";\n"
 "    color: #0E49B5;\n"
 "    font-weight: bold;\n"
 "}")
-        self.BoardName.setObjectName("BoardName")
+        self.HiUser.setObjectName("HiUser")
         self.Containerforwords = QtWidgets.QWidget(self.MainSection)
         self.Containerforwords.setGeometry(QtCore.QRect(30, 100, 381, 111))
         self.Containerforwords.setStyleSheet("#Containerforwords{\n"
@@ -56,24 +56,24 @@ class Ui_Ergo(object):
 "    color: #FFFFFF;\n"
 "}")
         self.Welcome.setObjectName("Welcome")
-        self.WelcomeProject = QtWidgets.QLabel(self.Containerforwords)
-        self.WelcomeProject.setGeometry(QtCore.QRect(20, 70, 591, 31))
-        self.WelcomeProject.setStyleSheet("#WelcomeProject {\n"
+        self.ChooseBoard = QtWidgets.QLabel(self.Containerforwords)
+        self.ChooseBoard.setGeometry(QtCore.QRect(20, 70, 351, 31))
+        self.ChooseBoard.setStyleSheet("#ChooseBoard {\n"
 "    font: bold 18px \"Roboto\";\n"
 "    color: #FFFFFF\n"
 "}")
-        self.WelcomeProject.setObjectName("WelcomeProject")
-        self.YourProject = QtWidgets.QLabel(self.MainSection)
-        self.YourProject.setGeometry(QtCore.QRect(50, 290, 291, 51))
-        self.YourProject.setStyleSheet("#YourProject{\n"
+        self.ChooseBoard.setObjectName("ChooseBoard")
+        self.YourBoard = QtWidgets.QLabel(self.MainSection)
+        self.YourBoard.setGeometry(QtCore.QRect(50, 290, 291, 51))
+        self.YourBoard.setStyleSheet("#YourBoard{\n"
 "    font: 40px \"Roboto\";\n"
 "    color: #0E49B5;\n"
 "    font-weight: bold;\n"
 "}")
-        self.YourProject.setObjectName("YourProject")
-        self.AddProjectButton = QtWidgets.QPushButton(self.MainSection)
-        self.AddProjectButton.setGeometry(QtCore.QRect(50, 370, 171, 31))
-        self.AddProjectButton.setStyleSheet("#AddProjectButton{\n"
+        self.YourBoard.setObjectName("YourBoard")
+        self.AddBoardButton = QtWidgets.QPushButton(self.MainSection)
+        self.AddBoardButton.setGeometry(QtCore.QRect(50, 370, 171, 31))
+        self.AddBoardButton.setStyleSheet("#AddBoardButton{\n"
 "    border : 1px solid #0047ab;\n"
 "    background-color: #FFFFFF;\n"
 "    border-radius: 10px;\n"
@@ -82,7 +82,7 @@ class Ui_Ergo(object):
 "    font-weight: bold;\n"
 "    color: #0197F6;\n"
 "}")
-        self.AddProjectButton.setObjectName("AddProjectButton")
+        self.AddBoardButton.setObjectName("AddBoardButton")
         self.widget = QtWidgets.QWidget(self.MainSection)
         self.widget.setGeometry(QtCore.QRect(30, 430, 631, 581))
         self.widget.setStyleSheet("#widget{\n"
@@ -90,20 +90,20 @@ class Ui_Ergo(object):
 "    border-radius : 10px;\n"
 "}")
         self.widget.setObjectName("widget")
-        self.scrollArea = QtWidgets.QScrollArea(self.widget)
-        self.scrollArea.setGeometry(QtCore.QRect(10, 10, 601, 561))
-        self.scrollArea.setStyleSheet("#scrollArea, QScrollArea QWidget{\n"
+        self.ContainerForBoards = QtWidgets.QScrollArea(self.widget)
+        self.ContainerForBoards.setGeometry(QtCore.QRect(10, 10, 601, 561))
+        self.ContainerForBoards.setStyleSheet("#ContainerForBoards, QScrollArea QWidget{\n"
 "    border-radius: 10px;\n"
 "     background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);\n"
 "}")
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setObjectName("scrollArea")
-        self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 601, 561))
-        self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
-        self.Project1 = QtWidgets.QPushButton(self.scrollAreaWidgetContents_3)
-        self.Project1.setGeometry(QtCore.QRect(10, 10, 271, 91))
-        self.Project1.setStyleSheet("#Project1{\n"
+        self.ContainerForBoards.setWidgetResizable(True)
+        self.ContainerForBoards.setObjectName("ContainerForBoards")
+        self.scrollAreaWidgetContents = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 601, 561))
+        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
+        self.Board1 = QtWidgets.QPushButton(self.scrollAreaWidgetContents)
+        self.Board1.setGeometry(QtCore.QRect(10, 10, 271, 91))
+        self.Board1.setStyleSheet("#Board1{\n"
 "    background-color: #F6F6F6;\n"
 "    border-radius: 10px;\n"
 "    font-family: \"Roboto\";\n"
@@ -112,10 +112,10 @@ class Ui_Ergo(object):
 "    padding-bottom:15 px;\n"
 "   color: #5483B3;\n"
 "}")
-        self.Project1.setObjectName("Project1")
-        self.Project1_3 = QtWidgets.QPushButton(self.scrollAreaWidgetContents_3)
-        self.Project1_3.setGeometry(QtCore.QRect(310, 10, 271, 91))
-        self.Project1_3.setStyleSheet("#Project1_3{\n"
+        self.Board1.setObjectName("Board1")
+        self.Board2 = QtWidgets.QPushButton(self.scrollAreaWidgetContents)
+        self.Board2.setGeometry(QtCore.QRect(310, 10, 271, 91))
+        self.Board2.setStyleSheet("#Board2{\n"
 "    background-color: #F6F6F6;\n"
 "    border-radius: 10px;\n"
 "    font-family: \"Roboto\";\n"
@@ -124,17 +124,17 @@ class Ui_Ergo(object):
 "    padding-bottom:15 px;\n"
 "   color: #5483B3;\n"
 "}")
-        self.Project1_3.setObjectName("Project1_3")
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents_3)
-        self.AddingProject = QtWidgets.QWidget(self.MainSection)
-        self.AddingProject.setGeometry(QtCore.QRect(225, 370, 271, 161))
-        self.AddingProject.setStyleSheet("#AddingProject{\n"
+        self.Board2.setObjectName("Board2")
+        self.ContainerForBoards.setWidget(self.scrollAreaWidgetContents)
+        self.AddingBoard = QtWidgets.QWidget(self.MainSection)
+        self.AddingBoard.setGeometry(QtCore.QRect(225, 370, 271, 161))
+        self.AddingBoard.setStyleSheet("#AddingBoard{\n"
 "    border: 0.5px solid #052659;\n"
 "    background-color: #87ceeb;\n"
 "    border-radius: 17px;\n"
 "}")
-        self.AddingProject.setObjectName("AddingProject")
-        self.BoardTitle = QtWidgets.QLabel(self.AddingProject)
+        self.AddingBoard.setObjectName("AddingBoard")
+        self.BoardTitle = QtWidgets.QLabel(self.AddingBoard)
         self.BoardTitle.setGeometry(QtCore.QRect(20, 20, 101, 21))
         self.BoardTitle.setStyleSheet("#BoardTitle{\n"
 "    font-family: Rubik;\n"
@@ -143,13 +143,13 @@ class Ui_Ergo(object):
 "   color: #052659;\n"
 "}")
         self.BoardTitle.setObjectName("BoardTitle")
-        self.inputBoardtitle = QtWidgets.QLineEdit(self.AddingProject)
+        self.inputBoardtitle = QtWidgets.QLineEdit(self.AddingBoard)
         self.inputBoardtitle.setGeometry(QtCore.QRect(10, 50, 251, 31))
         self.inputBoardtitle.setStyleSheet("#inputBoardtitle{\n"
 "    border-radius : 10px;\n"
 "}")
         self.inputBoardtitle.setObjectName("inputBoardtitle")
-        self.CreateBoard = QtWidgets.QPushButton(self.AddingProject)
+        self.CreateBoard = QtWidgets.QPushButton(self.AddingBoard)
         self.CreateBoard.setGeometry(QtCore.QRect(10, 110, 251, 41))
         self.CreateBoard.setStyleSheet("#CreateBoard{\n"
 "    font-family: Rubik;\n"
@@ -158,14 +158,14 @@ class Ui_Ergo(object):
 "   color: #052659;\n"
 "}")
         self.CreateBoard.setObjectName("CreateBoard")
-        self.YourProject_2 = QtWidgets.QLabel(self.MainSection)
-        self.YourProject_2.setGeometry(QtCore.QRect(760, 300, 351, 51))
-        self.YourProject_2.setStyleSheet("#YourProject_2{\n"
+        self.FavoriteBoard = QtWidgets.QLabel(self.MainSection)
+        self.FavoriteBoard.setGeometry(QtCore.QRect(760, 300, 351, 51))
+        self.FavoriteBoard.setStyleSheet("#FavoriteBoard{\n"
 "    font: 40px \"Roboto\";\n"
 "    color: #0E49B5;\n"
 "    font-weight: bold;\n"
 "}")
-        self.YourProject_2.setObjectName("YourProject_2")
+        self.FavoriteBoard.setObjectName("FavoriteBoard")
         self.QuickAccess = QtWidgets.QLabel(self.MainSection)
         self.QuickAccess.setGeometry(QtCore.QRect(770, 370, 661, 31))
         self.QuickAccess.setStyleSheet("#QuickAccess\n"
@@ -183,20 +183,20 @@ class Ui_Ergo(object):
 "    border-radius : 10px;\n"
 "}")
         self.widget_2.setObjectName("widget_2")
-        self.scrollArea_2 = QtWidgets.QScrollArea(self.widget_2)
-        self.scrollArea_2.setGeometry(QtCore.QRect(10, 10, 601, 561))
-        self.scrollArea_2.setStyleSheet("#scrollArea_2, QScrollArea QWidget{\n"
+        self.ContainerForBoards_2 = QtWidgets.QScrollArea(self.widget_2)
+        self.ContainerForBoards_2.setGeometry(QtCore.QRect(10, 10, 601, 561))
+        self.ContainerForBoards_2.setStyleSheet("#ContainerForBoards_2, QScrollArea QWidget{\n"
 "    border-radius: 10px;\n"
 "     background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);\n"
 "}")
-        self.scrollArea_2.setWidgetResizable(True)
-        self.scrollArea_2.setObjectName("scrollArea_2")
-        self.scrollAreaWidgetContents_4 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 601, 561))
-        self.scrollAreaWidgetContents_4.setObjectName("scrollAreaWidgetContents_4")
-        self.Project1_2 = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
-        self.Project1_2.setGeometry(QtCore.QRect(10, 10, 271, 91))
-        self.Project1_2.setStyleSheet("#Project1_2{\n"
+        self.ContainerForBoards_2.setWidgetResizable(True)
+        self.ContainerForBoards_2.setObjectName("ContainerForBoards_2")
+        self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 601, 561))
+        self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
+        self.Favboard1 = QtWidgets.QPushButton(self.scrollAreaWidgetContents_2)
+        self.Favboard1.setGeometry(QtCore.QRect(10, 10, 271, 91))
+        self.Favboard1.setStyleSheet("#Favboard1{\n"
 "    background-color: #F6F6F6;\n"
 "    border-radius: 10px;\n"
 "    font-family: \"Roboto\";\n"
@@ -205,10 +205,10 @@ class Ui_Ergo(object):
 "    padding-bottom:15 px;\n"
 "   color: #5483B3;\n"
 "}")
-        self.Project1_2.setObjectName("Project1_2")
-        self.Project1_6 = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
-        self.Project1_6.setGeometry(QtCore.QRect(320, 10, 271, 91))
-        self.Project1_6.setStyleSheet("#Project1_6{\n"
+        self.Favboard1.setObjectName("Favboard1")
+        self.Favboard2 = QtWidgets.QPushButton(self.scrollAreaWidgetContents_2)
+        self.Favboard2.setGeometry(QtCore.QRect(320, 10, 271, 91))
+        self.Favboard2.setStyleSheet("#Favboard2{\n"
 "    background-color: #F6F6F6;\n"
 "    border-radius: 10px;\n"
 "    font-family: \"Roboto\";\n"
@@ -217,15 +217,15 @@ class Ui_Ergo(object):
 "    padding-bottom:15 px;\n"
 "   color: #5483B3;\n"
 "}")
-        self.Project1_6.setObjectName("Project1_6")
-        self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_4)
+        self.Favboard2.setObjectName("Favboard2")
+        self.ContainerForBoards_2.setWidget(self.scrollAreaWidgetContents_2)
         self.Containerforwords.raise_()
-        self.YourProject.raise_()
-        self.AddProjectButton.raise_()
-        self.BoardName.raise_()
+        self.YourBoard.raise_()
+        self.AddBoardButton.raise_()
+        self.HiUser.raise_()
         self.widget.raise_()
-        self.AddingProject.raise_()
-        self.YourProject_2.raise_()
+        self.AddingBoard.raise_()
+        self.FavoriteBoard.raise_()
         self.QuickAccess.raise_()
         self.widget_2.raise_()
         self.Searchbar = QtWidgets.QWidget(Ergo)
@@ -277,19 +277,19 @@ class Ui_Ergo(object):
     def retranslateUi(self, Ergo):
         _translate = QtCore.QCoreApplication.translate
         Ergo.setWindowTitle(_translate("Ergo", "Ergo"))
-        self.BoardName.setText(_translate("Ergo", "Hi User"))
+        self.HiUser.setText(_translate("Ergo", "Hi User"))
         self.Welcome.setText(_translate("Ergo", "Welcome!"))
-        self.WelcomeProject.setText(_translate("Ergo", "Choose a board to begin your journey"))
-        self.YourProject.setText(_translate("Ergo", "Your Boards"))
-        self.AddProjectButton.setText(_translate("Ergo", "+ Add New Board"))
-        self.Project1.setText(_translate("Ergo", "Build UI"))
-        self.Project1_3.setText(_translate("Ergo", "Dummy"))
+        self.ChooseBoard.setText(_translate("Ergo", "Choose a board to begin your journey"))
+        self.YourBoard.setText(_translate("Ergo", "Your Boards"))
+        self.AddBoardButton.setText(_translate("Ergo", "+ Add New Board"))
+        self.Board1.setText(_translate("Ergo", "Build UI"))
+        self.Board2.setText(_translate("Ergo", "Dummy"))
         self.BoardTitle.setText(_translate("Ergo", "Board Title"))
         self.CreateBoard.setText(_translate("Ergo", "Create Project"))
-        self.YourProject_2.setText(_translate("Ergo", "Favorite Boards"))
+        self.FavoriteBoard.setText(_translate("Ergo", "Favorite Boards"))
         self.QuickAccess.setText(_translate("Ergo", "Get quick access to your favorite boards by giving a star on them"))
-        self.Project1_2.setText(_translate("Ergo", "Build UI"))
-        self.Project1_6.setText(_translate("Ergo", "Dummy"))
+        self.Favboard1.setText(_translate("Ergo", "Build UI"))
+        self.Favboard2.setText(_translate("Ergo", "Dummy"))
         self.SearchBoard.setText(_translate("Ergo", "          Search Your Board"))
         self.UserErgo.setText(_translate("Ergo", "  User Ergo"))
 

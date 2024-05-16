@@ -158,43 +158,6 @@ class Ui_Ergo(object):
         icon2.addPixmap(QtGui.QPixmap("../if2250-2024-k03-g04-ergo/img/trashcan.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.DeleteProject_2.setIcon(icon2)
         self.DeleteProject_2.setObjectName("DeleteProject_2")
-        self.Actions = QtWidgets.QWidget(self.MainSection)
-        self.Actions.setGeometry(QtCore.QRect(1060, 440, 271, 171))
-        self.Actions.setStyleSheet("#Actions{\n"
-"    border: 0.5px solid #052659;\n"
-"        background-color: #87ceeb;\n"
-"    border-radius: 17px;\n"
-"}")
-        self.Actions.setObjectName("Actions")
-        self.BoardTitle_3 = QtWidgets.QLabel(self.Actions)
-        self.BoardTitle_3.setGeometry(QtCore.QRect(20, 20, 101, 21))
-        self.BoardTitle_3.setStyleSheet("#BoardTitle_3{\n"
-"    font-family: Rubik;\n"
-"    font-size: 15px;\n"
-"    font-weight: bold;\n"
-"   color: #052659;\n"
-"}")
-        self.BoardTitle_3.setObjectName("BoardTitle_3")
-        self.Favorite = QtWidgets.QPushButton(self.Actions)
-        self.Favorite.setGeometry(QtCore.QRect(10, 50, 251, 41))
-        self.Favorite.setStyleSheet("#Favorite{\n"
-"    font-family: Rubik;\n"
-"    font-size: 12px;\n"
-"    font-weight: bold;\n"
-"   color: #052659;\n"
-"}")
-        self.Favorite.setIcon(icon1)
-        self.Favorite.setObjectName("Favorite")
-        self.DeleteProject = QtWidgets.QPushButton(self.Actions)
-        self.DeleteProject.setGeometry(QtCore.QRect(10, 100, 251, 41))
-        self.DeleteProject.setStyleSheet("#DeleteProject{\n"
-"    font-family: Rubik;\n"
-"    font-size: 12px;\n"
-"    font-weight: bold;\n"
-"   color: #052659;\n"
-"}")
-        self.DeleteProject.setIcon(icon2)
-        self.DeleteProject.setObjectName("DeleteProject")
         self.namaboard = QtWidgets.QLabel(self.MainSection)
         self.namaboard.setGeometry(QtCore.QRect(130, 5, 161, 21))
         self.namaboard.setStyleSheet("#namaboard {\n"
@@ -359,14 +322,14 @@ class Ui_Ergo(object):
         self.dateEdit.setStyleSheet("#dateEdit { \n"
 "}")
         self.dateEdit.setObjectName("dateEdit")
-        self.YourProject_2 = QtWidgets.QLabel(self.MainSection)
-        self.YourProject_2.setGeometry(QtCore.QRect(760, 300, 351, 51))
-        self.YourProject_2.setStyleSheet("#YourProject_2{\n"
+        self.FavoriteProject = QtWidgets.QLabel(self.MainSection)
+        self.FavoriteProject.setGeometry(QtCore.QRect(760, 300, 351, 51))
+        self.FavoriteProject.setStyleSheet("#FavoriteProject{\n"
 "    font: 40px \"Roboto\";\n"
 "    color: #0E49B5;\n"
 "    font-weight: bold;\n"
 "}")
-        self.YourProject_2.setObjectName("YourProject_2")
+        self.FavoriteProject.setObjectName("FavoriteProject")
         self.QuickAccess = QtWidgets.QLabel(self.MainSection)
         self.QuickAccess.setGeometry(QtCore.QRect(770, 370, 661, 31))
         self.QuickAccess.setStyleSheet("#QuickAccess\n"
@@ -461,44 +424,44 @@ class Ui_Ergo(object):
         self.pushButton_3.setIcon(icon5)
         self.pushButton_3.setObjectName("pushButton_3")
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_4)
-        self.Actions_3 = QtWidgets.QWidget(self.MainSection)
-        self.Actions_3.setGeometry(QtCore.QRect(1410, 440, 271, 171))
-        self.Actions_3.setStyleSheet("#Actions_3{\n"
+        self.Actions = QtWidgets.QWidget(self.MainSection)
+        self.Actions.setGeometry(QtCore.QRect(1410, 440, 271, 171))
+        self.Actions.setStyleSheet("#Actions{\n"
 "    border: 0.5px solid #052659;\n"
 "    background-color: #87ceeb;\n"
 "    border-radius: 17px;\n"
 "}")
-        self.Actions_3.setObjectName("Actions_3")
-        self.BoardTitle_6 = QtWidgets.QLabel(self.Actions_3)
-        self.BoardTitle_6.setGeometry(QtCore.QRect(20, 20, 101, 21))
-        self.BoardTitle_6.setStyleSheet("#BoardTitle_6{\n"
+        self.Actions.setObjectName("Actions")
+        self.BoardTitle_3 = QtWidgets.QLabel(self.Actions)
+        self.BoardTitle_3.setGeometry(QtCore.QRect(20, 20, 101, 21))
+        self.BoardTitle_3.setStyleSheet("#BoardTitle_3{\n"
 "    font-family: Rubik;\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.BoardTitle_6.setObjectName("BoardTitle_6")
-        self.Favorite_3 = QtWidgets.QPushButton(self.Actions_3)
-        self.Favorite_3.setGeometry(QtCore.QRect(10, 50, 251, 41))
-        self.Favorite_3.setStyleSheet("#Favorite_3{\n"
+        self.BoardTitle_3.setObjectName("BoardTitle_3")
+        self.Favorite = QtWidgets.QPushButton(self.Actions)
+        self.Favorite.setGeometry(QtCore.QRect(10, 50, 251, 41))
+        self.Favorite.setStyleSheet("#Favorite{\n"
 "    font-family: Rubik;\n"
 "    font-size: 12px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.Favorite_3.setIcon(icon1)
-        self.Favorite_3.setObjectName("Favorite_3")
-        self.DeleteProject_3 = QtWidgets.QPushButton(self.Actions_3)
-        self.DeleteProject_3.setGeometry(QtCore.QRect(10, 100, 251, 41))
-        self.DeleteProject_3.setToolTipDuration(-1)
-        self.DeleteProject_3.setStyleSheet("#DeleteProject_3{\n"
+        self.Favorite.setIcon(icon1)
+        self.Favorite.setObjectName("Favorite")
+        self.DeleteProject = QtWidgets.QPushButton(self.Actions)
+        self.DeleteProject.setGeometry(QtCore.QRect(10, 100, 251, 41))
+        self.DeleteProject.setToolTipDuration(-1)
+        self.DeleteProject.setStyleSheet("#DeleteProject{\n"
 "    font-family: Rubik;\n"
 "    font-size: 12px;\n"
 "    font-weight: bold;\n"
 "   color: #052659;\n"
 "}")
-        self.DeleteProject_3.setIcon(icon2)
-        self.DeleteProject_3.setObjectName("DeleteProject_3")
+        self.DeleteProject.setIcon(icon2)
+        self.DeleteProject.setObjectName("DeleteProject")
         self.Containerforwords.raise_()
         self.YourProject.raise_()
         self.AddProjectButton.raise_()
@@ -506,16 +469,15 @@ class Ui_Ergo(object):
         self.Sorting.raise_()
         self.MainSettings.raise_()
         self.Actions_2.raise_()
-        self.Actions.raise_()
         self.namaboard.raise_()
         self.back.raise_()
         self.widget.raise_()
         self.AddingProject.raise_()
-        self.YourProject_2.raise_()
+        self.FavoriteProject.raise_()
         self.QuickAccess.raise_()
         self.widget_2.raise_()
         self.SortingOption.raise_()
-        self.Actions_3.raise_()
+        self.Actions.raise_()
         self.Searchbar = QtWidgets.QWidget(Ergo)
         self.Searchbar.setGeometry(QtCore.QRect(200, 0, 1721, 61))
         self.Searchbar.setStyleSheet("#Searchbar{\n"
@@ -575,9 +537,6 @@ class Ui_Ergo(object):
         self.BoardTitle_4.setText(_translate("Ergo", "Actions"))
         self.Favorite_2.setText(_translate("Ergo", " Add to Favorite"))
         self.DeleteProject_2.setText(_translate("Ergo", " Delete Board"))
-        self.BoardTitle_3.setText(_translate("Ergo", "Actions"))
-        self.Favorite.setText(_translate("Ergo", " Add to Favorite"))
-        self.DeleteProject.setText(_translate("Ergo", " Delete Project"))
         self.namaboard.setText(_translate("Ergo", "> board name"))
         self.back.setText(_translate("Ergo", "Dashboard"))
         self.Sort1.setText(_translate("Ergo", "Sort Descending"))
@@ -588,14 +547,14 @@ class Ui_Ergo(object):
         self.BoardTitle.setText(_translate("Ergo", "Project Title"))
         self.CreateBoard.setText(_translate("Ergo", "Create Project"))
         self.BoardTitle_5.setText(_translate("Ergo", "Deadline"))
-        self.YourProject_2.setText(_translate("Ergo", "Favorite Projects"))
+        self.FavoriteProject.setText(_translate("Ergo", "Favorite Projects"))
         self.QuickAccess.setText(_translate("Ergo", "Get quick access to your favorite project by giving a star on them"))
         self.Project1_2.setText(_translate("Ergo", "Build UI"))
         self.Project1_6.setText(_translate("Ergo", "Dummy"))
         self.label1_2.setText(_translate("Ergo", "Due to :"))
-        self.BoardTitle_6.setText(_translate("Ergo", "Actions"))
-        self.Favorite_3.setText(_translate("Ergo", " Add to Favorite"))
-        self.DeleteProject_3.setText(_translate("Ergo", " Delete Project"))
+        self.BoardTitle_3.setText(_translate("Ergo", "Actions"))
+        self.Favorite.setText(_translate("Ergo", " Add to Favorite"))
+        self.DeleteProject.setText(_translate("Ergo", " Delete Project"))
         self.SearchBoard.setText(_translate("Ergo", "          Search Your Board"))
         self.UserErgo.setText(_translate("Ergo", "  User Ergo"))
 

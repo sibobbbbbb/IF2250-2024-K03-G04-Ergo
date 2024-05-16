@@ -64,17 +64,17 @@
 	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #FFFFFF, stop:1 #97C9ED);
 }</string>
    </property>
-   <widget class="QLabel" name="BoardName">
+   <widget class="QLabel" name="HiUser">
     <property name="geometry">
      <rect>
       <x>40</x>
       <y>20</y>
-      <width>561</width>
+      <width>181</width>
       <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#BoardName{
+     <string notr="true">#HiUser{
 	font: 45px &quot;Roboto&quot;;
 	color: #0E49B5;
 	font-weight: bold;
@@ -118,17 +118,17 @@
       <string>Welcome!</string>
      </property>
     </widget>
-    <widget class="QLabel" name="WelcomeProject">
+    <widget class="QLabel" name="ChooseBoard">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>70</y>
-       <width>591</width>
+       <width>351</width>
        <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#WelcomeProject {
+      <string notr="true">#ChooseBoard {
 	font: bold 18px &quot;Roboto&quot;;
 	color: #FFFFFF
 }</string>
@@ -138,7 +138,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="YourProject">
+   <widget class="QLabel" name="YourBoard">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -148,7 +148,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#YourProject{
+     <string notr="true">#YourBoard{
 	font: 40px &quot;Roboto&quot;;
 	color: #0E49B5;
 	font-weight: bold;
@@ -158,7 +158,7 @@
      <string>Your Boards</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="AddProjectButton">
+   <widget class="QPushButton" name="AddBoardButton">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -168,7 +168,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#AddProjectButton{
+     <string notr="true">#AddBoardButton{
 	border : 1px solid #0047ab;
 	background-color: #FFFFFF;
 	border-radius: 10px;
@@ -197,7 +197,7 @@
 	border-radius : 10px;
 }</string>
     </property>
-    <widget class="QScrollArea" name="scrollArea">
+    <widget class="QScrollArea" name="ContainerForBoards">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -207,7 +207,7 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#scrollArea, QScrollArea QWidget{
+      <string notr="true">#ContainerForBoards, QScrollArea QWidget{
     border-radius: 10px;
  	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);
 }</string>
@@ -215,7 +215,7 @@
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents_3">
+     <widget class="QWidget" name="scrollAreaWidgetContents">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -224,7 +224,7 @@
         <height>561</height>
        </rect>
       </property>
-      <widget class="QPushButton" name="Project1">
+      <widget class="QPushButton" name="Board1">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -234,7 +234,7 @@
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">#Project1{
+        <string notr="true">#Board1{
 	background-color: #F6F6F6;
 	border-radius: 10px;
 	font-family: &quot;Roboto&quot;;
@@ -248,7 +248,7 @@
         <string>Build UI</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="Project1_3">
+      <widget class="QPushButton" name="Board2">
        <property name="geometry">
         <rect>
          <x>310</x>
@@ -258,7 +258,7 @@
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">#Project1_3{
+        <string notr="true">#Board2{
 	background-color: #F6F6F6;
 	border-radius: 10px;
 	font-family: &quot;Roboto&quot;;
@@ -275,7 +275,7 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QWidget" name="AddingProject" native="true">
+   <widget class="QWidget" name="AddingBoard" native="true">
     <property name="geometry">
      <rect>
       <x>225</x>
@@ -285,7 +285,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#AddingProject{
+     <string notr="true">#AddingBoard{
 	border: 0.5px solid #052659;
 	background-color: #87ceeb;
 	border-radius: 17px;
@@ -349,7 +349,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="YourProject_2">
+   <widget class="QLabel" name="FavoriteBoard">
     <property name="geometry">
      <rect>
       <x>760</x>
@@ -359,7 +359,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#YourProject_2{
+     <string notr="true">#FavoriteBoard{
 	font: 40px &quot;Roboto&quot;;
 	color: #0E49B5;
 	font-weight: bold;
@@ -406,7 +406,7 @@
 	border-radius : 10px;
 }</string>
     </property>
-    <widget class="QScrollArea" name="scrollArea_2">
+    <widget class="QScrollArea" name="ContainerForBoards_2">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -416,7 +416,7 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#scrollArea_2, QScrollArea QWidget{
+      <string notr="true">#ContainerForBoards_2, QScrollArea QWidget{
     border-radius: 10px;
  	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);
 }</string>
@@ -424,7 +424,7 @@
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents_4">
+     <widget class="QWidget" name="scrollAreaWidgetContents_2">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -433,7 +433,7 @@
         <height>561</height>
        </rect>
       </property>
-      <widget class="QPushButton" name="Project1_2">
+      <widget class="QPushButton" name="Favboard1">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -443,7 +443,7 @@
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">#Project1_2{
+        <string notr="true">#Favboard1{
 	background-color: #F6F6F6;
 	border-radius: 10px;
 	font-family: &quot;Roboto&quot;;
@@ -457,7 +457,7 @@
         <string>Build UI</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="Project1_6">
+      <widget class="QPushButton" name="Favboard2">
        <property name="geometry">
         <rect>
          <x>320</x>
@@ -467,7 +467,7 @@
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">#Project1_6{
+        <string notr="true">#Favboard2{
 	background-color: #F6F6F6;
 	border-radius: 10px;
 	font-family: &quot;Roboto&quot;;
@@ -485,12 +485,12 @@
     </widget>
    </widget>
    <zorder>Containerforwords</zorder>
-   <zorder>YourProject</zorder>
-   <zorder>AddProjectButton</zorder>
-   <zorder>BoardName</zorder>
+   <zorder>YourBoard</zorder>
+   <zorder>AddBoardButton</zorder>
+   <zorder>HiUser</zorder>
    <zorder>widget</zorder>
-   <zorder>AddingProject</zorder>
-   <zorder>YourProject_2</zorder>
+   <zorder>AddingBoard</zorder>
+   <zorder>FavoriteBoard</zorder>
    <zorder>QuickAccess</zorder>
    <zorder>widget_2</zorder>
   </widget>
