@@ -775,9 +775,9 @@ class Ui_Ergo(object):
         self.CancelCreationTask.setText(_translate("Ergo", "Cancel"))
         self.DescriptionInputTask.setText(_translate("Ergo", "Description"))
         self.CategoryInputTask.setText(_translate("Ergo", "Category"))
-        self.CategoryInputBox.setItemText(0, _translate("Ergo", "Not Yet Started"))
-        self.CategoryInputBox.setItemText(1, _translate("Ergo", "On Progress"))
-        self.CategoryInputBox.setItemText(2, _translate("Ergo", "Completed"))
+        self.CategoryInputBox.setItemText(0, _translate("Ergo", "High"))
+        self.CategoryInputBox.setItemText(1, _translate("Ergo", "Medium"))
+        self.CategoryInputBox.setItemText(2, _translate("Ergo", "Low"))
         self.SortDescending.setText(_translate("Ergo", "Sort Descending"))
         self.SortAscending.setText(_translate("Ergo", "Sort Ascending"))
         self.ProgressBar.setText(_translate("Ergo", "Progress Bar"))
@@ -796,7 +796,7 @@ class Ui_Ergo(object):
         self.StatusComboBox.setItemText(1, _translate("Ergo", "On Progress"))
         self.StatusComboBox.setItemText(2, _translate("Ergo", "Completed"))
         self.BackToBoardUpper.setText(_translate("Ergo", "> Mobile Development"))
-        self.SearchBoard.setPlaceholderText(_translate("Ergo", "Search Your Board"))
+        self.SearchBoard.setText(_translate("Ergo", "          Search Your Board"))
         self.UserErgo.setText(_translate("Ergo", "  User Ergo"))
 
 
