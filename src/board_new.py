@@ -112,7 +112,7 @@ class Board(QtWidgets.QMainWindow):
             more_button.setGeometry(QtCore.QRect(240, 10, 41, 31))
             more_button.setStyleSheet(common_stylesheet)
             more_button.setIcon(QtGui.QIcon("img//3dot.png"))
-            more_button.setObjectName(f"MoreButton{i+1}")
+            more_button.setObjectName(f"{project.idProject}")
 
             label = QtWidgets.QLabel(f"Due to: {project.deadlineProject}", parent=project_frame)
             label.setGeometry(QtCore.QRect(20, 75, 201, 16))
@@ -160,7 +160,7 @@ class Board(QtWidgets.QMainWindow):
             fav_project_button = QtWidgets.QPushButton(project.namaProject, parent=fav_project_frame)
             fav_project_button.setGeometry(QtCore.QRect(10, 10, 271, 91))
             fav_project_button.setStyleSheet(common_stylesheet)
-            fav_project_button.setObjectName("FavProjectButton")
+            fav_project_button.setObjectName("{project.idProject}")
             fav_project_button.clicked.connect(lambda _, project_id=project.idProject: self.switch_scene(2, project_id))
 
             more_button = QtWidgets.QPushButton(parent=fav_project_frame)
@@ -197,8 +197,8 @@ class Board(QtWidgets.QMainWindow):
             self.displayProjects(projects)
             self.displayFavProjects(projects)
         else:
-            self.displayProjects(self.dbm.get_all_projects())
-            self.displayFavProjects(self.dbm.get_all_projects())
+            self.displayProjects(self.dbm.get_all_project_by_board(self.data))
+            self.displayFavProjects(self.dbm.get_all_project_by_board(self.data))
 
     def clear_fav_project_frames(self):
         contents = self.ui.scrollArea_2.widget()
