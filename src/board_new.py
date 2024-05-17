@@ -38,7 +38,8 @@ class Board(QtWidgets.QMainWindow):
         self.ui.SearchBoard.textChanged.connect(self.search_project)
         
         self.ui.back.clicked.connect(lambda: self.switch_scene(0, self))  # Modifikasi ini
-
+        self.ui.back_2.clicked.connect(lambda: self.switch_scene(0, self))  # Modifikasi ini
+        
         # DISPLAY PROJECTS LOGIC 
         self.displayProjects(self.dbm.get_projects_by_board(self.data))
         self.displayFavProjects(self.dbm.get_projects_by_board(self.data))
@@ -82,6 +83,15 @@ class Board(QtWidgets.QMainWindow):
     def displayProjects(self, projects):
         self.clear_project_frames()
 
+        common_stylesheet = (
+        "background-color: #F6F6F6;\n"
+        "border-radius: 10px;\n"
+        "font-family: \"Roboto\";\n"
+        "font-size: 20px;\n"
+        "font-weight: bold;\n"
+        "color: #5483B3;\n"
+    )
+
         project_container = QtWidgets.QWidget()
         project_layout = QtWidgets.QGridLayout(project_container)
 
@@ -94,48 +104,27 @@ class Board(QtWidgets.QMainWindow):
 
             project_button = QtWidgets.QPushButton(project.namaProject, parent=project_frame)
             project_button.setGeometry(QtCore.QRect(10, 10, 271, 91))
-            project_button.setStyleSheet(
-                "#ProjectButton{"
-                "    background-color: #F6F6F6;"
-                "    border-radius: 10px;"
-                "    font-family: \"Roboto\";"
-                "    font-size: 20px;"
-                "    font-weight: bold;"
-                "    padding-bottom: 15px;"
-                "    color: #5483B3;"
-                "}"
-            )
-            project_button.setObjectName("ProjectButton")
+            project_button.setStyleSheet(common_stylesheet)
+            project_button.setObjectName(f"ProjectButton{i+1}")
             project_button.clicked.connect(lambda _, project_id=project.idProject: self.switch_scene(2, project_id))
 
             more_button = QtWidgets.QPushButton(parent=project_frame)
             more_button.setGeometry(QtCore.QRect(240, 10, 41, 31))
-            more_button.setStyleSheet(
-                "#MoreButton{"
-                "    background-color: #F6F6F6;"
-                "    border-radius: 10px;"
-                "    font-family: \"Roboto\";"
-                "    font-size: 20px;"
-                "    font-weight: bold;"
-                "    color: #5483B3;"
-                "}"
-            )
+            more_button.setStyleSheet(common_stylesheet)
             more_button.setIcon(QtGui.QIcon("img//3dot.png"))
-            more_button.setObjectName(f"{project.idProject}")
+            more_button.setObjectName(f"MoreButton{i+1}")
 
             label = QtWidgets.QLabel(f"Due to: {project.deadlineProject}", parent=project_frame)
             label.setGeometry(QtCore.QRect(20, 75, 201, 16))
             label.setStyleSheet(
-                "#Label{"
-                "    background-color: #F6F6F6;"
-                "    border-radius: 10px;"
-                "    font-family: \"Roboto\";"
-                "    font-size: 15px;"
-                "    font-weight: bold;"
-                "    color: #5483B3;"
-                "}"
+                "background-color: #F6F6F6;\n"
+                "border-radius: 10px;\n"
+                "font-family: \"Roboto\";\n"
+                "font-size: 15px;\n"
+                "font-weight: bold;\n"
+                "color: #5483B3;\n"
             )
-            label.setObjectName("Label")
+            label.setObjectName(f"Label{i+1}")
 
             project_layout.addWidget(project_frame, i // 2, i % 2)
             more_button.clicked.connect(self.showActions)
@@ -146,7 +135,16 @@ class Board(QtWidgets.QMainWindow):
     
     def displayFavProjects(self, projects):
         self.clear_fav_project_frames()
-
+        
+        common_stylesheet = (
+        "background-color: #F6F6F6;\n"
+        "border-radius: 10px;\n"
+        "font-family: \"Roboto\";\n"
+        "font-size: 20px;\n"
+        "font-weight: bold;\n"
+        "color: #5483B3;\n"
+        )
+        
         fav_project_container = QtWidgets.QWidget()
         fav_project_layout = QtWidgets.QGridLayout(fav_project_container)
 
@@ -161,32 +159,13 @@ class Board(QtWidgets.QMainWindow):
 
             fav_project_button = QtWidgets.QPushButton(project.namaProject, parent=fav_project_frame)
             fav_project_button.setGeometry(QtCore.QRect(10, 10, 271, 91))
-            fav_project_button.setStyleSheet(
-                "#FavProjectButton{"
-                "    background-color: #F6F6F6;"
-                "    border-radius: 10px;"
-                "    font-family: \"Roboto\";"
-                "    font-size: 20px;"
-                "    font-weight: bold;"
-                "    padding-bottom: 15px;"
-                "    color: #5483B3;"
-                "}"
-            )
+            fav_project_button.setStyleSheet(common_stylesheet)
             fav_project_button.setObjectName("FavProjectButton")
             fav_project_button.clicked.connect(lambda _, project_id=project.idProject: self.switch_scene(2, project_id))
 
             more_button = QtWidgets.QPushButton(parent=fav_project_frame)
             more_button.setGeometry(QtCore.QRect(240, 10, 41, 31))
-            more_button.setStyleSheet(
-                "#FavMoreButton{"
-                "    background-color: #F6F6F6;"
-                "    border-radius: 10px;"
-                "    font-family: \"Roboto\";"
-                "    font-size: 20px;"
-                "    font-weight: bold;"
-                "    color: #5483B3;"
-                "}"
-            )
+            more_button.setStyleSheet(common_stylesheet)
             more_button.setIcon(QtGui.QIcon("img//3dot.png"))
             more_button.setObjectName(f"{project.idProject}")
             more_button.clicked.connect(self.showActions)

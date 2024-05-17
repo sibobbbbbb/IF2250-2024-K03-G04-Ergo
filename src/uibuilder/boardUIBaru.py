@@ -214,50 +214,48 @@ class Ui_Ergo(object):
         self.widget.setObjectName("widget")
         self.scrollArea = QtWidgets.QScrollArea(self.widget)
         self.scrollArea.setGeometry(QtCore.QRect(10, 10, 601, 561))
-        self.scrollArea.setStyleSheet("#scrollArea, QScrollArea QWidget{\n"
-"    border-radius: 10px;\n"
-"     background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);\n"
-"}")
+        self.scrollArea.setStyleSheet(
+        "border-radius: 10px;\n"
+        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);\n"
+        )
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
         self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 601, 561))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
+
+        # Stylesheet for buttons and labels
+        common_stylesheet = (
+        "background-color: #F6F6F6;\n"
+        "border-radius: 10px;\n"
+        "font-family: \"Roboto\";\n"
+        "font-size: 20px;\n"
+        "font-weight: bold;\n"
+        "color: #5483B3;\n"
+        )
+
         self.Project1 = QtWidgets.QPushButton(self.scrollAreaWidgetContents_3)
         self.Project1.setGeometry(QtCore.QRect(10, 10, 271, 91))
-        self.Project1.setStyleSheet("#Project1{\n"
-"    background-color: #F6F6F6;\n"
-"    border-radius: 10px;\n"
-"    font-family: \"Roboto\";\n"
-"    font-size: 20px;\n"
-"    font-weight: bold;\n"
-"    padding-bottom:15 px;\n"
-"   color: #5483B3;\n"
-"}")
+        self.Project1.setStyleSheet(common_stylesheet)
         self.Project1.setObjectName("Project1")
+
         self.label1 = QtWidgets.QLabel(self.scrollAreaWidgetContents_3)
         self.label1.setGeometry(QtCore.QRect(20, 75, 201, 16))
-        self.label1.setStyleSheet("#label1{\n"
-"    background-color: #F6F6F6;\n"
-"    border-radius: 10px;\n"
-"    font-family: \"Roboto\";\n"
-"    font-size: 15px;\n"
-"    font-weight: bold;\n"
-"   color: #5483B3;\n"
-"}")
+        self.label1.setStyleSheet(
+        "background-color: #F6F6F6;\n"
+        "border-radius: 10px;\n"
+        "font-family: \"Roboto\";\n"
+        "font-size: 15px;\n"
+        "font-weight: bold;\n"
+        "color: #5483B3;\n"
+        )
         self.label1.setObjectName("label1")
+
         self.pushButton = QtWidgets.QPushButton(self.scrollAreaWidgetContents_3)
         self.pushButton.setEnabled(True)
         self.pushButton.setGeometry(QtCore.QRect(240, 10, 41, 31))
         self.pushButton.setAutoFillBackground(False)
-        self.pushButton.setStyleSheet("#pushButton{\n"
-"    background-color: #F6F6F6;\n"
-"    border-radius: 10px;\n"
-"    font-family: \"Roboto\";\n"
-"    font-size: 20px;\n"
-"    font-weight: bold;\n"
-"    color: #5483B3;\n"
-"}")
+        self.pushButton.setStyleSheet(common_stylesheet)
         self.pushButton.setText("")
         icon5 = QtGui.QIcon()
         icon5.addPixmap(QtGui.QPixmap("../if2250-2024-k03-g04-ergo/img/3dot.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -341,23 +339,38 @@ class Ui_Ergo(object):
         self.QuickAccess.setObjectName("QuickAccess")
         self.widget_2 = QtWidgets.QWidget(self.MainSection)
         self.widget_2.setGeometry(QtCore.QRect(770, 430, 631, 581))
-        self.widget_2.setStyleSheet("#widget_2\n"
-"{\n"
-"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);\n"
-"    border-radius : 10px;\n"
-"}")
+        self.widget_2.setStyleSheet(
+        "#widget_2 {\n"
+        "    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);\n"
+        "    border-radius : 10px;\n"
+        "}"
+        )
         self.widget_2.setObjectName("widget_2")
+
         self.scrollArea_2 = QtWidgets.QScrollArea(self.widget_2)
         self.scrollArea_2.setGeometry(QtCore.QRect(10, 10, 601, 561))
-        self.scrollArea_2.setStyleSheet("#scrollArea_2, QScrollArea QWidget{\n"
-"    border-radius: 10px;\n"
-"     background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);\n"
-"}")
+        self.scrollArea_2.setStyleSheet(
+        "#scrollArea_2, QScrollArea QWidget {\n"
+        "    border-radius: 10px;\n"
+        "    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);\n"
+        "}"
+        )
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollArea_2.setObjectName("scrollArea_2")
+
         self.scrollAreaWidgetContents_4 = QtWidgets.QWidget()
         self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 601, 561))
         self.scrollAreaWidgetContents_4.setObjectName("scrollAreaWidgetContents_4")
+
+        # Stylesheet for buttons and labels
+        common_stylesheet = (
+        "background-color: #F6F6F6;\n"
+        "border-radius: 10px;\n"
+        "font-family: \"Roboto\";\n"
+        "font-size: 20px;\n"
+        "font-weight: bold;\n"
+        "color: #5483B3;\n"
+        )
         self.Project1_2 = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
         self.Project1_2.setGeometry(QtCore.QRect(10, 10, 271, 91))
         self.Project1_2.setStyleSheet("#Project1_2{\n"
@@ -397,14 +410,7 @@ class Ui_Ergo(object):
         self.pushButton_2.setEnabled(True)
         self.pushButton_2.setGeometry(QtCore.QRect(240, 10, 41, 31))
         self.pushButton_2.setAutoFillBackground(False)
-        self.pushButton_2.setStyleSheet("#pushButton_2{\n"
-"    background-color: #F6F6F6;\n"
-"    border-radius: 10px;\n"
-"    font-family: \"Roboto\";\n"
-"    font-size: 20px;\n"
-"    font-weight: bold;\n"
-"   color: #5483B3;\n"
-"}")
+        self.pushButton_2.setStyleSheet(common_stylesheet)
         self.pushButton_2.setText("")
         self.pushButton_2.setIcon(icon5)
         self.pushButton_2.setObjectName("pushButton_2")
