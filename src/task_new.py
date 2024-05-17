@@ -23,6 +23,9 @@ class Task(QtWidgets.QMainWindow):
         self.ui.AddNewTaskButton.clicked.connect(self.show_widget)
         self.ui.EditTask.setVisible(False)
 
+        self.ui.ContainerForSingleTask.setVisible(False)
+        self.ui.ContainerForSingleTask_2.setVisible(False)
+
         # Display task logic
         self.displayTask(self.dbm.get_tasks_by_project(self.data))
         
@@ -67,7 +70,7 @@ class Task(QtWidgets.QMainWindow):
         #kalo namaboard dipencet
         self.ui.BackToBoardUpper.setText(f"> {self.dbm.get_board(self.idBoard)[1]}")
         #set agar namaboard geometry sesuai dengan ukuran text nya tetapi tetap di x dan y yang sama
-        self.ui.BackToBoardUpper.setGeometry(100, 0, self.ui.BackToBoardUpper.fontMetrics().boundingRect(self.ui.BackToBoardUpper.text()).width(), 31)
+        self.ui.BackToBoardUpper.setGeometry(101, 5, self.ui.BackToBoardUpper.fontMetrics().boundingRect(self.ui.BackToBoardUpper.text()).width(), 21)
 
         #kalo back dipencet
         # Tambahkan ini di __init__ method
@@ -80,7 +83,7 @@ class Task(QtWidgets.QMainWindow):
         namaproject_x = namaboard_x + namaboard_width
 
         # Set geometry untuk namaproject
-        self.ui.CurrentTaskUpper.setGeometry(namaproject_x + 10, 0, self.ui.BackToBoardUpper.fontMetrics().boundingRect(self.ui.BackToBoardUpper.text()).width(), 31)
+        self.ui.CurrentTaskUpper.setGeometry(namaproject_x + 10, 5, self.ui.BackToBoardUpper.fontMetrics().boundingRect(self.ui.BackToBoardUpper.text()).width(), 21)
 
         self.ui.BackToDashboardUpper.clicked.connect(lambda _, kosong=0 : self.switch_scene(0, kosong))
         self.ui.BackToDashboard.clicked.connect(lambda _, kosong=0 : self.switch_scene(0, kosong))
@@ -89,25 +92,31 @@ class Task(QtWidgets.QMainWindow):
         # self.ui.BackToYourBoard.setText(f"> {self.dbm.get_board(self.idBoard)[1]}"
         self.ui.TaskNameTitle.setText(f"{self.dbm.get_projectName_by_id(self.data)}")
 
+    def check_progress_bar(self):
+        if self.ui.progressBar.value() == 100:
+            self.ui.SemangatTitle.setText("Good Job! You've finished all your tasks! XD <3")
+        #jika belum 100% tampilkan "Keep it up, you're almost there :D"
+        else:
+            self.ui.SemangatTitle.setText("Keep it up, you're almost there :D")
+
     def show_tambahTask(self):
         self.ui.AddingNewTask.setVisible(True)
     
     def dontshow_tambahTask(self):
         self.ui.AddingNewTask.setVisible(False)
-
-    def show_editTask(self, event):
-        self.ui.EditTask.setVisible(True)
     
     def dontshow_editTask(self):
         self.ui.EditTask.setVisible(False)
 
     def add_new_task(self):
         #cek apakah textEdit_2 kosong
-        if self.ui.inputTasktitle.toPlainText():
+        if self.ui.inputTasktitle.text() == "":
+            self.ui.inputTasktitle.setPlaceholderText("Task title cannot be empty")
+        else:
             self.dontshow_tambahTask()
             # memasukkan input ke dalam database
             self.ui.AddingNewTask.setVisible(False)
-            task_title = self.ui.inputTasktitle.toPlainText()
+            task_title = self.ui.inputTasktitle.text()
             deadline = self.ui.dateEditDeadlineInput.dateTime().toString("yyyy-MM-dd hh:mm")
             desc = self.ui.BoxInputDescription.toPlainText()
             category = self.ui.CategoryInputBox.currentText()
@@ -115,20 +124,30 @@ class Task(QtWidgets.QMainWindow):
             new_task = db.Task(self.dbm.getLastIdTask()+1, self.data ,task_title,status ,category, desc,deadline)
             self.dbm.create_task(new_task)
             self.displayTask(self.dbm.get_tasks_by_project(self.data))
+            self.check_progress_bar()
 
     def edit_selected_task(self):
-        #cek apakah textEdit_2 kosong
-        if self.ui.InputEditTaskBox.toPlainText():
+    # cek apakah InputEditTaskBox kosong
+        if self.ui.InputEditTaskBox.text() == "":
+            self.ui.InputEditTaskBox.setPlaceholderText("Task title cannot be empty")
+        else:
             self.dontshow_editTask()
-            task_title = self.ui.InputEditTaskBox.toPlainText()
+            task_title = self.ui.InputEditTaskBox.text()
             deadline = self.ui.DateEditDeadline.dateTime().toString("yyyy-MM-dd hh:mm")
             desc = self.ui.DescriptionEditBox.toPlainText()
             category = self.ui.CategoryEditComboBox.currentText()
             status = self.ui.StatusComboBox.currentText()
-            edited_task = db.Task(int(self.idTask), self.data, task_title, status, category, desc, deadline)
-            self.dbm.update_task(edited_task)
-            self.displayTask(self.dbm.get_tasks_by_project(self.data))
-            self.update_progress_bar()
+
+            # Pastikan self.idTask tidak None sebelum melanjutkan
+            if self.idTask is not None:
+                edited_task = db.Task(self.idTask, self.data, task_title, status, category, desc, deadline)
+                self.dbm.update_task(edited_task)
+                self.displayTask(self.dbm.get_tasks_by_project(self.data))
+                self.update_progress_bar()
+                self.check_progress_bar()
+            else:
+                print("Error: idTask is not set.")
+
     
     def displaySort(self):
         self.ui.SortingOption.setVisible(not self.ui.SortingOption.isVisible())        
@@ -174,38 +193,62 @@ class Task(QtWidgets.QMainWindow):
     def show_widget(self):
         self.ui.AddingNewTask.setVisible(not self.ui.AddingNewTask.isVisible())
 
-    def show_editTask(self, task_widget ,event):
-        self.ui.EditTask.setVisible(not self.ui.EditTask.isVisible())
-        self.idTask = task_widget.objectName()  
-        task = self.dbm.get_task(int(self.idTask))
-        self.ui.InputEditTaskBox.setPlainText(task[2])
-        self.ui.DateEditDeadline.setDateTime(QtCore.QDateTime.fromString(task[6], "yyyy-MM-dd hh:mm"))
+    def show_editTask(self, widget, event):
+        self.ui.EditTask.setVisible(True)
+
+        # Ambil ID tugas dari nama objek widget
+        task_id_str = widget.objectName() 
+        self.idTask = task_id_str
+        # Konversi ID tugas ke integer
+        task_id = int(self.idTask)
+
+        # Ambil tugas dari database
+        task = self.dbm.get_task(task_id)
+
+        # Set teks untuk InputEditTaskBox
+        self.ui.InputEditTaskBox.setText(task[2])
+
+        # Set tanggal dan waktu untuk DateEditDeadline
+        self.ui.DateEditDeadline.setDateTime(QtCore.QDateTime.fromString(task[6], "yyyy-MM-dd hh:mm:ss"))
+
+        # Set teks untuk DescriptionEditBox
         self.ui.DescriptionEditBox.setPlainText(task[5])
+
+        # Set teks untuk StatusComboBox
         self.ui.StatusComboBox.setCurrentText(task[3])
+
+        # Set teks untuk CategoryEditComboBox
         self.ui.CategoryEditComboBox.setCurrentText(task[4])
-        
         
     def displayTask(self, tasks):
         # Bersihkan isi scroll area sebelum menampilkan task baru
         self.clear_layout(self.ui.scrollAreaWidgetContents.layout())
 
-        layout = QtWidgets.QVBoxLayout(self.ui.scrollAreaWidgetContents)
-        self.ui.scrollAreaWidgetContents.setLayout(layout)
+        if self.ui.scrollAreaWidgetContents.layout() is None:
+            layout = QtWidgets.QVBoxLayout()  # Membuat objek QVBoxLayout
 
-        # Tampilkan setiap task
-        for task in tasks:
-            self.add_task_to_layout(task, layout)
+            # Tambahkan widget Anda ke layout
+            for task in tasks:
+                task_widget = self.add_task_to_layout(task)
+                layout.addWidget(task_widget)
+
+            # Set layout ke scrollAreaWidgetContents
+            self.ui.scrollAreaWidgetContents.setLayout(layout)
+        else:
+            layout = self.ui.scrollAreaWidgetContents.layout()
+            for task in tasks:
+                task_widget = self.add_task_to_layout(task)
+                layout.addWidget(task_widget)
 
         # Set minimum height of the scroll area content to allow scrolling
         self.ui.scrollAreaWidgetContents.setMinimumHeight(len(tasks) * 71)  # Adjust height based on task widget height
 
         self.update_progress_bar()
 
-    def add_task_to_layout(self, task, layout):
+    def add_task_to_layout(self, task):
         widget = QtWidgets.QWidget(self.ui.scrollAreaWidgetContents)
-        widget.setFixedSize(1101, 71)  # Set the fixed size for each task widget
-        widget.setStyleSheet("")
-        widget.setObjectName(f"Task{task.idTask}")
+        widget.setFixedSize(1101, 71)
+        widget.setObjectName(f"{task.idTask}")
 
         # Menambahkan event handler mouseDoubleClickEvent
         widget.mouseDoubleClickEvent = lambda event: self.show_editTask(widget, event)
@@ -213,71 +256,53 @@ class Task(QtWidgets.QMainWindow):
         checkBox = QtWidgets.QCheckBox(widget)
         checkBox.setGeometry(QtCore.QRect(10, 25, 21, 24))
         checkBox.setText("")
-        checkBox.setObjectName("checkBox")
+        checkBox.setObjectName(f"checkBoxTask{task.idTask}")
         checkBox.setChecked(task.status == "Completed")
-        checkBox.stateChanged.connect(lambda state: self.update_task_status(task, state))
+        checkBox.stateChanged.connect(lambda state, t=task: self.update_task_status(t, state))
 
         task_name = QtWidgets.QLabel(widget)
         task_name.setGeometry(QtCore.QRect(40, 25, 191, 20))
         task_name.setText(task.namaTask)
-        task_name.setStyleSheet("#Task1Name{"
-                                "    background-color : none;"
-                                "    font-family: \"Roboto\";"
-                                "    font-size: 15px;"
-                                "    font-weight: bold;"
-                                "    color: #0E49B5;"
-                                "}")
-        task_name.setObjectName("TaskName")
+        task_name.setObjectName(f"TaskName{task.idTask}")
 
         task_status = QtWidgets.QLabel(widget)
         task_status.setGeometry(QtCore.QRect(260, 25, 181, 20))
         task_status.setText(task.status)
-        task_status.setStyleSheet("#Task1Status{"
-                                "    background-color : none;"
-                                "    font-family: \"Roboto\";"
-                                "    font-size: 15px;"
-                                "    font-weight: bold;"
-                                "    color: #0E49B5;"
-                                "}")
-        task_status.setObjectName("TaskStatus")
+        task_status.setObjectName(f"TaskStatus{task.idTask}")
 
         task_category = QtWidgets.QLabel(widget)
         task_category.setGeometry(QtCore.QRect(450, 25, 161, 20))
         task_category.setText(task.kategori)
-        task_category.setStyleSheet("#Task1Category{"
-                                    "    background-color : none;"
-                                    "    font-family: \"Roboto\";"
-                                    "    font-size: 15px;"
-                                    "    font-weight: bold;"
-                                    "    color: #0E49B5;"
-                                    "}")
-        task_category.setObjectName("TaskCategory")
+        task_category.setObjectName(f"TaskCategory{task.idTask}")
 
         task_deadline = QtWidgets.QLabel(widget)
         task_deadline.setGeometry(QtCore.QRect(620, 25, 221, 20))
         task_deadline.setText(task.deadlineTask)
-        task_deadline.setStyleSheet("#Task1Deadline{"
-                                    "    background-color : none;"
-                                    "    font-family: \"Roboto\";"
-                                    "    font-size: 15px;"
-                                    "    font-weight: bold;"
-                                    "    color: #0E49B5;"
-                                    "}")
-        task_deadline.setObjectName("TaskDeadline")
+        task_deadline.setObjectName(f"TaskDeadline{task.idTask}")
 
         task_description = QtWidgets.QTextBrowser(widget)
         task_description.setGeometry(QtCore.QRect(825, 0, 261, 71))
         task_description.setText(task.deskripsi)
-        task_description.setStyleSheet("#Task1Description{"
-                                    "    background-color : none;"
-                                    "    font-family: \"Roboto\";"
-                                    "    font-size: 13px;"
-                                    "    font-weight: bold;"
-                                    "    color: #0E49B5;"
-                                    "}")
-        task_description.setObjectName("TaskDescription")
+        task_description.setObjectName(f"TaskDescription{task.idTask}")
 
-        layout.addWidget(widget)
+        # Terapkan stylesheet ke widget secara keseluruhan
+        widget.setStyleSheet(f"""
+            QWidget#{task.idTask} {{
+                background-color: #FFFFFF;
+            }}
+            QLabel#TaskName{task.idTask}, QLabel#TaskStatus{task.idTask}, QLabel#TaskCategory{task.idTask}, QLabel#TaskDeadline{task.idTask}, QTextBrowser#TaskDescription{task.idTask} {{
+                background-color: none;
+                font-family: "Roboto";
+                font-size: 15px;
+                font-weight: bold;
+                color: #0E49B5;
+            }}
+            QTextBrowser#TaskDescription{task.idTask} {{
+                font-size: 13px;
+            }}
+        """)
+
+        return widget
 
     def clear_layout(self, layout):
         if layout is not None:
@@ -286,15 +311,23 @@ class Task(QtWidgets.QMainWindow):
                 if child.widget():
                     child.widget().deleteLater()
 
-
     def update_task_status(self, task, state):
         if state == QtCore.Qt.Checked:
             task.status = "Completed"
         else:
             task.status = "Not Yet Started"
         self.dbm.update_task(task)
-        self.displayTask(self.dbm.get_tasks_by_project(self.data))
         self.update_progress_bar()
+        
+        # Update the status label directly
+        task_widget = self.ui.scrollAreaWidgetContents.findChild(QtWidgets.QWidget, f"Task{task.idTask}")
+        if task_widget:
+            task_status_label = task_widget.findChild(QtWidgets.QLabel, "Task1Status")
+            self.check_progress_bar()
+            if task_status_label:
+                task_status_label.setText(task.status)
+                self.check_progress_bar()
+
 
     def update_progress_bar(self):
         tasks = self.dbm.get_tasks_by_project(self.data)
@@ -304,11 +337,15 @@ class Task(QtWidgets.QMainWindow):
             complete = (len(completed_tasks) / len(tasks)) * 100
             progressing = ((len(on_progress_tasks) / len(tasks)) * 100) // 2
             self.ui.progressBar.setValue(int(complete + progressing))
+            self.check_progress_bar()
         else:
             self.ui.progressBar.setValue(0)
+            self.check_progress_bar()
+        
+
             
     def search_bar_task(self):
-        search_text = self.ui.lineEdit.text()
+        search_text = self.ui.SearchBoard.text()
         if search_text and not search_text == "Search Your Board":
             tasks = [task for task in self.dbm.get_tasks_by_project(self.data) if search_text.lower() in task.namaTask.lower()] 
             self.displayTask(tasks)

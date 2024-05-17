@@ -117,14 +117,8 @@ class Ui_Ergo(object):
 "    color: #0197F6;\n"
 "}")
         self.Sorting.setObjectName("Sorting")
-        self.BackToBoardUpper = QtWidgets.QLabel(self.MainSection)
-        self.BackToBoardUpper.setGeometry(QtCore.QRect(130, 5, 161, 21))
-        self.BackToBoardUpper.setStyleSheet("#BackToBoardUpper{\n"
-"    color : #5483B3\n"
-"}")
-        self.BackToBoardUpper.setObjectName("BackToBoardUpper")
         self.BackToDashboardUpper = QtWidgets.QPushButton(self.MainSection)
-        self.BackToDashboardUpper.setGeometry(QtCore.QRect(50, 0, 71, 31))
+        self.BackToDashboardUpper.setGeometry(QtCore.QRect(50, 0, 41, 31))
         self.BackToDashboardUpper.setStyleSheet("#BackToDashboardUpper{\n"
 "    border: none;\n"
 "    background-color: transparent;\n"
@@ -277,7 +271,7 @@ class Ui_Ergo(object):
         self.Task2Description.setObjectName("Task2Description")
         self.ContainerForTask.setWidget(self.scrollAreaWidgetContents)
         self.CurrentTaskUpper = QtWidgets.QLabel(self.MainSection)
-        self.CurrentTaskUpper.setGeometry(QtCore.QRect(290, 5, 71, 21))
+        self.CurrentTaskUpper.setGeometry(QtCore.QRect(191, 5, 71, 21))
         self.CurrentTaskUpper.setStyleSheet("#CurrentTaskUpper{\n"
 "    color : #5483B3\n"
 "}")
@@ -479,6 +473,9 @@ class Ui_Ergo(object):
 "    font-family : Roboto;\n"
 "     color: #052659; }")
         self.CategoryInputBox.setObjectName("CategoryInputBox")
+        self.CategoryInputBox.addItem("")
+        self.CategoryInputBox.addItem("")
+        self.CategoryInputBox.addItem("")
         self.BoxInputDescription = QtWidgets.QTextEdit(self.AddingNewTask)
         self.BoxInputDescription.setGeometry(QtCore.QRect(10, 200, 261, 131))
         self.BoxInputDescription.setStyleSheet("#BoxInputDescription{\n"
@@ -628,6 +625,9 @@ class Ui_Ergo(object):
 "    font-family : Roboto;\n"
 "     color: #052659; }")
         self.CategoryEditComboBox.setObjectName("CategoryEditComboBox")
+        self.CategoryEditComboBox.addItem("")
+        self.CategoryEditComboBox.addItem("")
+        self.CategoryEditComboBox.addItem("")
         self.DescriptionEditBox = QtWidgets.QTextEdit(self.EditTask)
         self.DescriptionEditBox.setGeometry(QtCore.QRect(10, 200, 451, 131))
         self.DescriptionEditBox.setStyleSheet("#DescriptionEditBox{\n"
@@ -651,12 +651,22 @@ class Ui_Ergo(object):
 "    font-family : Roboto;\n"
 "     color: #052659; }")
         self.StatusComboBox.setObjectName("StatusComboBox")
+        self.StatusComboBox.addItem("")
+        self.StatusComboBox.addItem("")
+        self.StatusComboBox.addItem("")
+        self.BackToBoardUpper = QtWidgets.QPushButton(self.MainSection)
+        self.BackToBoardUpper.setGeometry(QtCore.QRect(101, 5, 81, 21))
+        self.BackToBoardUpper.setStyleSheet("#BackToBoardUpper{\n"
+"    border: none;\n"
+"    background-color: transparent;\n"
+"    color:  #0E49B5;;\n"
+"}")
+        self.BackToBoardUpper.setObjectName("BackToBoardUpper")
         self.Containerforwords.raise_()
         self.YourTask.raise_()
         self.AddNewTaskButton.raise_()
         self.TaskNameTitle.raise_()
         self.Sorting.raise_()
-        self.BackToBoardUpper.raise_()
         self.BackToDashboardUpper.raise_()
         self.widgetContainerTask.raise_()
         self.CurrentTaskUpper.raise_()
@@ -673,6 +683,7 @@ class Ui_Ergo(object):
         self.SemangatTitle.raise_()
         self.progressBar.raise_()
         self.EditTask.raise_()
+        self.BackToBoardUpper.raise_()
         self.Searchbar = QtWidgets.QWidget(Ergo)
         self.Searchbar.setGeometry(QtCore.QRect(200, 0, 1721, 61))
         self.Searchbar.setStyleSheet("#Searchbar{\n"
@@ -730,32 +741,25 @@ class Ui_Ergo(object):
         self.YourTask.setText(_translate("Ergo", "Your Task"))
         self.AddNewTaskButton.setText(_translate("Ergo", "+ Add New Task"))
         self.Sorting.setText(_translate("Ergo", "Sort By"))
-        self.BackToBoardUpper.setText(_translate("Ergo", "> Mobile Development"))
         self.BackToDashboardUpper.setText(_translate("Ergo", "Dashboard"))
         self.Task1Name.setText(_translate("Ergo", "Inserting Image"))
         self.Task1Status.setText(_translate("Ergo", "Not Started"))
         self.Task1Category.setText(_translate("Ergo", "High"))
         self.Task1Deadline.setText(_translate("Ergo", "2023-01-01 / 07.00"))
         self.Task1Description.setHtml(_translate("Ergo", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:\'Roboto\'; font-size:13px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:15px;\">Memasukkan gambar serta memberikan deskripsi gambar yang tertera </span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Roboto\'; font-size:13px; font-weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:15px; font-weight:696;\">Memasukkan gambar serta memberikan deskripsi gambar yang tertera </span></p></body></html>"))
         self.Task2Name.setText(_translate("Ergo", "Inserting Image"))
         self.Task2Status.setText(_translate("Ergo", "Not Started"))
         self.Task2Category.setText(_translate("Ergo", "High"))
         self.Task2Deadline.setText(_translate("Ergo", "2023-01-01 / 07.00"))
         self.Task2Description.setHtml(_translate("Ergo", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:\'Roboto\'; font-size:13px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:15px;\">Memasukkan gambar serta memberikan deskripsi gambar yang tertera </span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Roboto\'; font-size:13px; font-weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:15px; font-weight:696;\">Memasukkan gambar serta memberikan deskripsi gambar yang tertera </span></p></body></html>"))
         self.CurrentTaskUpper.setText(_translate("Ergo", "> Build UI"))
         self.Grouping.setText(_translate("Ergo", "Group By"))
         self.GroupByCategory.setText(_translate("Ergo", "Group by Category"))
@@ -771,6 +775,9 @@ class Ui_Ergo(object):
         self.CancelCreationTask.setText(_translate("Ergo", "Cancel"))
         self.DescriptionInputTask.setText(_translate("Ergo", "Description"))
         self.CategoryInputTask.setText(_translate("Ergo", "Category"))
+        self.CategoryInputBox.setItemText(0, _translate("Ergo", "Not Yet Started"))
+        self.CategoryInputBox.setItemText(1, _translate("Ergo", "On Progress"))
+        self.CategoryInputBox.setItemText(2, _translate("Ergo", "Completed"))
         self.SortDescending.setText(_translate("Ergo", "Sort Descending"))
         self.SortAscending.setText(_translate("Ergo", "Sort Ascending"))
         self.ProgressBar.setText(_translate("Ergo", "Progress Bar"))
@@ -781,8 +788,15 @@ class Ui_Ergo(object):
         self.CancelingEdit.setText(_translate("Ergo", "Cancel"))
         self.DescriptionTitle.setText(_translate("Ergo", "Description"))
         self.CategoryTitle.setText(_translate("Ergo", "Category"))
+        self.CategoryEditComboBox.setItemText(0, _translate("Ergo", "High"))
+        self.CategoryEditComboBox.setItemText(1, _translate("Ergo", "Medium"))
+        self.CategoryEditComboBox.setItemText(2, _translate("Ergo", "Low"))
         self.StatusTitle.setText(_translate("Ergo", "Status"))
-        self.SearchBoard.setText(_translate("Ergo", "          Search Your Board"))
+        self.StatusComboBox.setItemText(0, _translate("Ergo", "Not Yet Started"))
+        self.StatusComboBox.setItemText(1, _translate("Ergo", "On Progress"))
+        self.StatusComboBox.setItemText(2, _translate("Ergo", "Completed"))
+        self.BackToBoardUpper.setText(_translate("Ergo", "> Mobile Development"))
+        self.SearchBoard.setPlaceholderText(_translate("Ergo", "Search Your Board"))
         self.UserErgo.setText(_translate("Ergo", "  User Ergo"))
 
 
