@@ -290,7 +290,6 @@ class Ui_Ergo(object):
         self.QuickAccess.setText(_translate("Ergo", "Get quick access to your favorite boards by giving a star on them"))
         self.Favboard1.setText(_translate("Ergo", "Build UI"))
         self.Favboard2.setText(_translate("Ergo", "Dummy"))
-        self.SearchBoard.setText(_translate("Ergo", "          Search Your Board"))
         self.UserErgo.setText(_translate("Ergo", "  User Ergo"))
 
 

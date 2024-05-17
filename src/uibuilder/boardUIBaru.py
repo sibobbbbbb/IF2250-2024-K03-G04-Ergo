@@ -555,7 +555,6 @@ class Ui_Ergo(object):
         self.BoardTitle_3.setText(_translate("Ergo", "Actions"))
         self.Favorite.setText(_translate("Ergo", " Add to Favorite"))
         self.DeleteProject.setText(_translate("Ergo", " Delete Project"))
-        self.SearchBoard.setText(_translate("Ergo", "          Search Your Board"))
         self.UserErgo.setText(_translate("Ergo", "  User Ergo"))
 
 

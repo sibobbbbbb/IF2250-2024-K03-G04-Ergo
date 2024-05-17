@@ -202,3 +202,13 @@ class DatabaseManager:
             return result[0]
         else:
             return None
+        
+    def get_all_project_by_board(self, idboard):
+        query = '''SELECT * FROM Projects WHERE idBoard = ?'''
+        params = (idboard,)
+        projects_data = self.database.execute_query(query, params).fetchall()
+        projects = []
+        for project_data in projects_data:
+            project = Project(*project_data)
+            projects.append(project)
+        return projects
