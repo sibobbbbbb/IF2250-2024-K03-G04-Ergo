@@ -300,6 +300,9 @@ class Task(QtWidgets.QMainWindow):
             QTextBrowser#TaskDescription{task.idTask} {{
                 font-size: 13px;
             }}
+            QCheckBox#checkBoxTask{task.idTask} {{
+                background-color : none;
+            }}
         """)
 
         return widget
