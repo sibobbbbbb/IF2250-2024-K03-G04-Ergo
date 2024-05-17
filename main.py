@@ -1,6 +1,6 @@
 import src.dashboard_new as dashboard
 import src.board_new as board
-import src.task as task
+import src.task_new as task
 import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import QIcon

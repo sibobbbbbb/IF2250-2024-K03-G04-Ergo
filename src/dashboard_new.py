@@ -121,7 +121,7 @@ class Dashboard(QtWidgets.QMainWindow):
     def add_new_board(self):
         board_title = self.ui.inputBoardtitle.text()
         new_board = db.Board(self.dbm.getLastIdBoard()+1, board_title, 0)
-        if board_title and not self.dbm.isInDatabase(board_title):
+        if board_title:
             self.dbm.create_board(new_board)
             self.ui.AddingBoard.setVisible(False)
             self.displayBoards(self.dbm.get_all_boards())
