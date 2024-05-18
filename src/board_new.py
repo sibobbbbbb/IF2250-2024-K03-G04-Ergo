@@ -25,6 +25,9 @@ class Board(QtWidgets.QMainWindow):
         self.ui.SortingOption.setVisible(False)
         self.ui.Actions.setVisible(False)
         self.ui.Actions_2.setVisible(False)
+        
+        self.ui.back.setGeometry(50, 0, self.ui.back.fontMetrics().boundingRect(self.ui.back.text()).width(), 31)
+        
 
         self.ui.AddProjectButton.clicked.connect(self.showAddProject)
         self.ui.Sorting.clicked.connect(self.showSortingOption)
