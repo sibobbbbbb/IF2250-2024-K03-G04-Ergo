@@ -46,7 +46,7 @@ class Ui_Ergo(object):
 "}")
         self.MainSection.setObjectName("MainSection")
         self.BoardName = QtWidgets.QLabel(self.MainSection)
-        self.BoardName.setGeometry(QtCore.QRect(40, 40, 561, 71))
+        self.BoardName.setGeometry(QtCore.QRect(40, 40, 601, 71))
         self.BoardName.setStyleSheet("#BoardName{\n"
 "    font: 45px \"Roboto\";\n"
 "    color: #0E49B5;\n"

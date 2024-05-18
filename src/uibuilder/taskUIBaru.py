@@ -57,7 +57,7 @@ class Ui_Ergo(object):
 "}")
         self.MainSection.setObjectName("MainSection")
         self.TaskNameTitle = QtWidgets.QLabel(self.MainSection)
-        self.TaskNameTitle.setGeometry(QtCore.QRect(40, 40, 201, 71))
+        self.TaskNameTitle.setGeometry(QtCore.QRect(40, 40, 601, 71))
         self.TaskNameTitle.setStyleSheet("#TaskNameTitle{\n"
 "    font: 45px \"Roboto\";\n"
 "    color: #0E49B5;\n"
@@ -118,7 +118,7 @@ class Ui_Ergo(object):
 "}")
         self.Sorting.setObjectName("Sorting")
         self.BackToDashboardUpper = QtWidgets.QPushButton(self.MainSection)
-        self.BackToDashboardUpper.setGeometry(QtCore.QRect(50, 0, 41, 31))
+        self.BackToDashboardUpper.setGeometry(QtCore.QRect(10, 0, 81, 31))
         self.BackToDashboardUpper.setStyleSheet("#BackToDashboardUpper{\n"
 "    border: none;\n"
 "    background-color: transparent;\n"
