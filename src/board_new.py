@@ -111,6 +111,7 @@ class Board(QtWidgets.QMainWindow):
         for i, project in enumerate(projects):
             project_frame = QtWidgets.QFrame()
             project_frame.setGeometry(QtCore.QRect(0, 0, 271, 91))
+            project_frame.setStyleSheet("background-color: none;\n")
             project_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
             project_frame.setFrameShadow(QtWidgets.QFrame.Raised)
             project_frame.setObjectName(f"Project{i+1}f")
@@ -166,6 +167,7 @@ class Board(QtWidgets.QMainWindow):
         for i, project in enumerate(favProjects):
             fav_project_frame = QtWidgets.QFrame()
             fav_project_frame.setGeometry(QtCore.QRect(0, 0, 271, 91))
+            fav_project_frame.setStyleSheet("background-color: none;")
             fav_project_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
             fav_project_frame.setFrameShadow(QtWidgets.QFrame.Raised)
             fav_project_frame.setObjectName(f"FavProject{i+1}f")
