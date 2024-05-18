@@ -30,6 +30,10 @@ class Dashboard(QtWidgets.QMainWindow):
         self.ui.SearchButton.clicked.connect(self.search_boards)
         self.ui.SearchBoard.textChanged.connect(self.search_boards)
 
+        # ADD BOARD BUTTON STYLE
+        self.is_button_clicked = False
+        self.ui.AddBoardButton.clicked.connect(self.toggle_button_style)    
+
     def search_boards(self):
         search_text = self.ui.SearchBoard.text()
         if search_text and not search_text == "Search Your Board":
@@ -126,6 +130,42 @@ class Dashboard(QtWidgets.QMainWindow):
             self.ui.AddingBoard.setVisible(False)
             self.displayBoards(self.dbm.get_all_boards())
             self.displayFavBoards(self.dbm.get_all_boards())
+            if self.is_button_clicked:
+                self.reset_button_style()
+                self.is_button_clicked = False
+
+    def change_button_style(self):
+        self.ui.AddBoardButton.setStyleSheet(
+            "border: 1px solid #0047ab;"
+            "background-color: #1560bd;"
+            "border-radius: 10px;"
+            "font-family: \"Roboto\";"
+            "font-size: 15px;"
+            "font-weight: bold;"
+            "color: #FFFFFF;"
+        )
+
+    def reset_button_style(self):
+        # Replace with the original style sheet
+        self.ui.AddBoardButton.setStyleSheet(
+            "border: 1px solid #0047ab;"
+            "background-color: #FFFFFF;"
+            "border-radius: 10px;"
+            "font-family: \"Roboto\";"
+            "font-size: 15px;"
+            "font-weight: bold;"
+            "color: #0197F6;"
+        )
+
+    def toggle_button_style(self):
+        # If the button was not clicked before, change its style and set the flag to True
+        if not self.is_button_clicked:
+            self.change_button_style()
+            self.is_button_clicked = True
+        # If the button was clicked before, reset its style and set the flag back to False
+        else:
+            self.reset_button_style()
+            self.is_button_clicked = False
             
 if __name__ == "__main__":
     import sys

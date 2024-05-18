@@ -92,6 +92,18 @@ class Task(QtWidgets.QMainWindow):
         # self.ui.BackToYourBoard.setText(f"> {self.dbm.get_board(self.idBoard)[1]}"
         self.ui.TaskNameTitle.setText(f"{self.dbm.get_projectName_by_id(self.data)}")
 
+        # ADD PROJECT BUTTON STYLE
+        self.is_AddTaskbutton_clicked = False
+        self.ui.AddNewTaskButton.clicked.connect(self.toggle_AddNewTaskButton_style)
+        
+        # SORT PROJECT BUTTON STYLE
+        self.is_Sortbutton_clicked = False
+        self.ui.Sorting.clicked.connect(self.toggle_Sortbutton_style)
+
+        # GROUP PROJECT BUTTON STYLE
+        self.is_Groupbutton_clicked = False
+        self.ui.Grouping.clicked.connect(self.toggle_Groupbutton_style)
+
     def check_progress_bar(self):
         if self.ui.progressBar.value() == 100:
             self.ui.SemangatTitle.setText("Good Job! You've finished all your tasks! XD <3")
@@ -104,6 +116,9 @@ class Task(QtWidgets.QMainWindow):
     
     def dontshow_tambahTask(self):
         self.ui.AddingNewTask.setVisible(False)
+        if self.is_AddTaskbutton_clicked:
+                self.reset_AddTaskbutton_style()
+                self.is_AddTaskbutton_clicked = False
     
     def dontshow_editTask(self):
         self.ui.EditTask.setVisible(False)
@@ -125,6 +140,9 @@ class Task(QtWidgets.QMainWindow):
             self.dbm.create_task(new_task)
             self.displayTask(self.dbm.get_tasks_by_project(self.data))
             self.check_progress_bar()
+            if self.is_AddTaskbutton_clicked:
+                self.reset_AddTaskbutton_style()
+                self.is_AddTaskbutton_clicked = False
 
     def edit_selected_task(self):
     # cek apakah InputEditTaskBox kosong
@@ -156,11 +174,18 @@ class Task(QtWidgets.QMainWindow):
         self.ui.SortingOption.setVisible(False)
         tasks = self.dbm.get_tasks_by_project(self.data)
         self.displayTask(sorted(tasks, key=lambda x: x.deadlineTask))
+        if self.is_Sortbutton_clicked:
+            self.reset_Sortbutton_style()
+            self.is_Sortbutton_clicked = False
         
     def sort_task_D(self):
         self.ui.SortingOption.setVisible(False)
         tasks = self.dbm.get_tasks_by_project(self.data)
         self.displayTask(sorted(tasks, key=lambda x: x.deadlineTask, reverse=True))
+        if self.is_Sortbutton_clicked:
+            self.reset_Sortbutton_style()
+            self.is_Sortbutton_clicked = False
+        
     
     def displayGroup(self):
         self.ui.GroupingOption.setVisible(not self.ui.GroupingOption.isVisible())
@@ -176,6 +201,9 @@ class Task(QtWidgets.QMainWindow):
             
         result = [task for kategori in urutan for task in grouped_tasks[kategori]]
         self.displayTask(result)
+        if self.is_Groupbutton_clicked:
+            self.reset_Groupbutton_style()
+            self.is_Groupbutton_clicked = False
             
     def group_by_task_S(self):
         self.ui.GroupingOption.setVisible(False)
@@ -188,6 +216,9 @@ class Task(QtWidgets.QMainWindow):
             
         result = [task for status in urutan for task in grouped_tasks[status]]
         self.displayTask(result)
+        if self.is_Groupbutton_clicked:
+            self.reset_Groupbutton_style()
+            self.is_Groupbutton_clicked = False
         
 
     def show_widget(self):
@@ -354,6 +385,93 @@ class Task(QtWidgets.QMainWindow):
             self.displayTask(tasks)
         else:
             self.displayTask(self.dbm.get_tasks_by_project(self.data))
+
+    def change_Sortbutton_style(self):
+        self.ui.Sorting.setStyleSheet(
+            "border: 1px solid #0047ab;"
+            "background-color: #1560bd;"
+            "border-radius: 10px;"
+            "font-family: \"Roboto\";"
+            "font-size: 15px;"
+            "font-weight: bold;"
+            "color: #FFFFFF;"
+        )
+
+    def reset_Sortbutton_style(self):
+        self.ui.Sorting.setStyleSheet(
+            "border: 1px solid #0047ab;"
+            "background-color: #FFFFFF;"
+            "border-radius: 10px;"
+            "font-family: \"Roboto\";"
+            "font-size: 15px;"
+            "font-weight: bold;"
+            "color: #0197F6;"
+        )
+
+    def toggle_Sortbutton_style(self):
+        if self.is_Sortbutton_clicked:
+            self.reset_Sortbutton_style()
+        else:
+            self.change_Sortbutton_style()
+        self.is_Sortbutton_clicked = not self.is_Sortbutton_clicked
+
+    def change_Groupbutton_style(self):
+        self.ui.Grouping.setStyleSheet(
+            "border: 1px solid #0047ab;"
+            "background-color: #1560bd;"
+            "border-radius: 10px;"
+            "font-family: \"Roboto\";"
+            "font-size: 15px;"
+            "font-weight: bold;"
+            "color: #FFFFFF;"
+        )
+
+    def reset_Groupbutton_style(self):
+        self.ui.Grouping.setStyleSheet(
+            "border: 1px solid #0047ab;"
+            "background-color: #FFFFFF;"
+            "border-radius: 10px;"
+            "font-family: \"Roboto\";"
+            "font-size: 15px;"
+            "font-weight: bold;"
+            "color: #0197F6;"
+        )
+
+    def toggle_Groupbutton_style(self):
+        if self.is_Groupbutton_clicked:
+            self.reset_Groupbutton_style()
+        else:
+            self.change_Groupbutton_style()
+        self.is_Groupbutton_clicked = not self.is_Groupbutton_clicked
+
+    def change_AddTaskbutton_style(self):
+        self.ui.AddNewTaskButton.setStyleSheet(
+            "border: 1px solid #0047ab;"
+            "background-color: #1560bd;"
+            "border-radius: 10px;"
+            "font-family: \"Roboto\";"
+            "font-size: 15px;"
+            "font-weight: bold;"
+            "color: #FFFFFF;"
+        )
+
+    def reset_AddTaskbutton_style(self):
+        self.ui.AddNewTaskButton.setStyleSheet(
+            "border: 1px solid #0047ab;"
+            "background-color: #FFFFFF;"
+            "border-radius: 10px;"
+            "font-family: \"Roboto\";"
+            "font-size: 15px;"
+            "font-weight: bold;"
+            "color: #0197F6;"
+        )
+
+    def toggle_AddNewTaskButton_style(self):
+        if self.is_AddTaskbutton_clicked:
+            self.reset_AddTaskbutton_style()
+        else:
+            self.change_AddTaskbutton_style()
+        self.is_AddTaskbutton_clicked = not self.is_AddTaskbutton_clicked
             
     
 if __name__ == "__main__":

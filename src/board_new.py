@@ -47,8 +47,15 @@ class Board(QtWidgets.QMainWindow):
         # SORT PROJECTS LOGIC
         self.ui.Sort2.clicked.connect(self.sort_ascending)
         self.ui.Sort1.clicked.connect(self.sort_descending)
+
+        # ADD PROJECT BUTTON STYLE
+        self.is_Addbutton_clicked = False
+        self.ui.AddProjectButton.clicked.connect(self.toggle_Addbutton_style)
         
-        
+        # SORT PROJECT BUTTON STYLE
+        self.is_Sortbutton_clicked = False
+        self.ui.Sorting.clicked.connect(self.toggle_Sortbutton_style)
+
         
     def sort_ascending(self):
         self.ui.SortingOption.setVisible(False)
@@ -64,7 +71,10 @@ class Board(QtWidgets.QMainWindow):
 
         objects_sorted = sorted(projects, key=lambda x: parse_date(x.deadlineProject))
         self.displayProjects(objects_sorted)
-        
+        if self.is_Sortbutton_clicked:
+            self.reset_Sortbutton_style()
+            self.is_Sortbutton_clicked = False
+
     def sort_descending(self):
         self.ui.SortingOption.setVisible(False)
         projects = self.dbm.get_projects_by_board(self.data)
@@ -79,6 +89,9 @@ class Board(QtWidgets.QMainWindow):
 
         objects_sorted = sorted(projects, key=lambda x: parse_date(x.deadlineProject), reverse=True)
         self.displayProjects(objects_sorted)
+        if self.is_Sortbutton_clicked:
+            self.reset_Sortbutton_style()
+            self.is_Sortbutton_clicked = False
 
     def displayProjects(self, projects):
         self.clear_project_frames()
@@ -247,6 +260,9 @@ class Board(QtWidgets.QMainWindow):
         self.dbm.create_project(newProject)
         self.ui.AddingProject.setVisible(False)
         self.displayProjects(self.dbm.get_projects_by_board(self.data))
+        if self.is_Addbutton_clicked:
+            self.reset_Addbutton_style()
+            self.is_Addbutton_clicked = False
 
     def showAddProject(self):
         self.ui.AddingProject.setVisible(not self.ui.AddingProject.isVisible())
@@ -264,6 +280,64 @@ class Board(QtWidgets.QMainWindow):
     def showActions2(self):
         self.ui.Actions_2.setVisible(not self.ui.Actions_2.isVisible())
         self.ui.Actions_2.raise_()
+
+    def change_Addbutton_style(self):
+        self.ui.AddProjectButton.setStyleSheet(
+            "border: 1px solid #0047ab;"
+            "background-color: #1560bd;"
+            "border-radius: 10px;"
+            "font-family: \"Roboto\";"
+            "font-size: 15px;"
+            "font-weight: bold;"
+            "color: #FFFFFF;"
+        )
+
+    def reset_Addbutton_style(self):
+        self.ui.AddProjectButton.setStyleSheet(
+            "border: 1px solid #0047ab;"
+            "background-color: #FFFFFF;"
+            "border-radius: 10px;"
+            "font-family: \"Roboto\";"
+            "font-size: 15px;"
+            "font-weight: bold;"
+            "color: #0197F6;"
+        )
+
+    def toggle_Addbutton_style(self):
+        if self.is_Addbutton_clicked:
+            self.reset_Addbutton_style()
+        else:
+            self.change_Addbutton_style()
+        self.is_Addbutton_clicked = not self.is_Addbutton_clicked
+
+    def change_Sortbutton_style(self):
+        self.ui.Sorting.setStyleSheet(
+            "border: 1px solid #0047ab;"
+            "background-color: #1560bd;"
+            "border-radius: 10px;"
+            "font-family: \"Roboto\";"
+            "font-size: 15px;"
+            "font-weight: bold;"
+            "color: #FFFFFF;"
+        )
+
+    def reset_Sortbutton_style(self):
+        self.ui.Sorting.setStyleSheet(
+            "border: 1px solid #0047ab;"
+            "background-color: #FFFFFF;"
+            "border-radius: 10px;"
+            "font-family: \"Roboto\";"
+            "font-size: 15px;"
+            "font-weight: bold;"
+            "color: #0197F6;"
+        )
+
+    def toggle_Sortbutton_style(self):
+        if self.is_Sortbutton_clicked:
+            self.reset_Sortbutton_style()
+        else:
+            self.change_Sortbutton_style()
+        self.is_Sortbutton_clicked = not self.is_Sortbutton_clicked
 
 if __name__ == "__main__":
     import sys
