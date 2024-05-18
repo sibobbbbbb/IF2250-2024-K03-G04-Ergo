@@ -796,7 +796,6 @@ class Ui_Ergo(object):
         self.StatusComboBox.setItemText(1, _translate("Ergo", "On Progress"))
         self.StatusComboBox.setItemText(2, _translate("Ergo", "Completed"))
         self.BackToBoardUpper.setText(_translate("Ergo", "> Mobile Development"))
-        self.SearchBoard.setText(_translate("Ergo", "          Search Your Board"))
         self.UserErgo.setText(_translate("Ergo", "  User Ergo"))
 
 
