@@ -1,0 +1,1667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Ergo</class>
+ <widget class="QWidget" name="Ergo">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Ergo</string>
+  </property>
+  <widget class="QWidget" name="Navbar" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>201</width>
+     <height>1081</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#Navbar{
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #73c2fb, stop:1 #1560bd);
+}</string>
+   </property>
+   <widget class="QLabel" name="LogoErgo">
+    <property name="geometry">
+     <rect>
+      <x>-15</x>
+      <y>20</y>
+      <width>221</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../if2250-2024-k03-g04-ergo/img/logoergo.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BackToDashboard">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>230</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#BackToDashboard
+ {
+	font: 15px &quot;Roboto&quot;;
+	font-weight: bold;
+	border: none;
+    background-color: transparent;
+    color:  #FFFFFF;
+}</string>
+    </property>
+    <property name="text">
+     <string>Dashboard</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BackToYourBoard">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>270</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#BackToYourBoard
+ {
+	font: 15px &quot;Roboto&quot;;
+	font-weight: bold;
+	border: none;
+    background-color: transparent;
+    color:  #FFFFFF;
+}</string>
+    </property>
+    <property name="text">
+     <string>Your Board</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="MainSection" native="true">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>60</y>
+     <width>1811</width>
+     <height>1031</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#MainSection{
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #FFFFFF, stop:1 #97C9ED);
+}</string>
+   </property>
+   <widget class="QLabel" name="TaskNameTitle">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>40</y>
+      <width>201</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#TaskNameTitle{
+	font: 45px &quot;Roboto&quot;;
+	color: #0E49B5;
+	font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>Build UI</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="Containerforwords" native="true">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>130</y>
+      <width>621</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#Containerforwords{
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);
+	border-radius: 15px;
+}</string>
+    </property>
+    <widget class="QLabel" name="Welcome">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Welcome {
+	font: bold 25px &quot;Roboto&quot;;
+	color: #FFFFFF;
+}</string>
+     </property>
+     <property name="text">
+      <string>Welcome!</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="WelcomingTitle">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>591</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#WelcomingTitle{
+	font: bold 18px &quot;Roboto&quot;;
+	color: #FFFFFF
+}</string>
+     </property>
+     <property name="text">
+      <string>This is your work space to track all of your task and project</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="YourTask">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>300</y>
+      <width>291</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#YourTask{
+	font: 40px &quot;Roboto&quot;;
+	color: #0E49B5;
+	font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>Your Task</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="AddNewTaskButton">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>370</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#AddNewTaskButton{
+	border : 1px solid #0047ab;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0197F6;
+}</string>
+    </property>
+    <property name="text">
+     <string>+ Add New Task</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Sorting">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>370</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#Sorting{
+	border : 1px solid #0047ab;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0197F6;
+}</string>
+    </property>
+    <property name="text">
+     <string>Sort By</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BackToDashboardUpper">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>0</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#BackToDashboardUpper{
+	border: none;
+    background-color: transparent;
+    color:  #0E49B5;;
+}</string>
+    </property>
+    <property name="text">
+     <string>Dashboard</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widgetContainerTask" native="true">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>460</y>
+      <width>1121</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#widgetContainerTask{
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);
+	border-radius : 10px;
+}</string>
+    </property>
+    <widget class="QScrollArea" name="ContainerForTask">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>1101</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#ContainerForTask, QScrollArea QWidget{
+    border-radius: 10px;
+ 	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #73c2fb, stop:1 #1560bd);
+}</string>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1101</width>
+        <height>511</height>
+       </rect>
+      </property>
+      <widget class="QWidget" name="ContainerForSingleTask" native="true">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>1101</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#ContainerForSingleTask{
+	background-color : #FFFFFF
+}</string>
+       </property>
+       <widget class="QLabel" name="Task1Name">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>25</y>
+          <width>191</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#Task1Name{
+	background-color : none;
+font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+        </property>
+        <property name="text">
+         <string>Inserting Image</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Task1Status">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>25</y>
+          <width>181</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#Task1Status{
+	background-color : none;
+font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+        </property>
+        <property name="text">
+         <string>Not Started</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Task1Category">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>25</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#Task1Category{
+	background-color : none;
+font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+        </property>
+        <property name="text">
+         <string>High</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Task1Deadline">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>25</y>
+          <width>221</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#Task1Deadline{
+	background-color : none;
+font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+        </property>
+        <property name="text">
+         <string>2023-01-01 / 07.00</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxTask1">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>25</y>
+          <width>21</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#checkBoxTask1{
+	background-color : none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QTextBrowser" name="Task1Description">
+        <property name="geometry">
+         <rect>
+          <x>825</x>
+          <y>0</y>
+          <width>261</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#Task1Description{
+	background-color : none;
+font-family: &quot;Roboto&quot;;
+    font-size: 13px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Roboto'; font-size:13px; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:15px; font-weight:696;&quot;&gt;Memasukkan gambar serta memberikan deskripsi gambar yang tertera &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="ContainerForSingleTask_2" native="true">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>90</y>
+         <width>1101</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#ContainerForSingleTask_2{
+	background-color : #FFFFFF
+}</string>
+       </property>
+       <widget class="QLabel" name="Task2Name">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>25</y>
+          <width>181</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#Task2Name{
+	background-color : none;
+font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+        </property>
+        <property name="text">
+         <string>Inserting Image</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Task2Status">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>25</y>
+          <width>181</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#Task2Status{
+	background-color : none;
+font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+        </property>
+        <property name="text">
+         <string>Not Started</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Task2Category">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>25</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#Task2Category{
+	background-color : none;
+font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+        </property>
+        <property name="text">
+         <string>High</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Task2Deadline">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>25</y>
+          <width>221</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#Task2Deadline{
+	background-color : none;
+font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+        </property>
+        <property name="text">
+         <string>2023-01-01 / 07.00</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxTask2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>25</y>
+          <width>21</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#checkBoxTask2{
+	background-color : none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QTextBrowser" name="Task2Description">
+        <property name="geometry">
+         <rect>
+          <x>830</x>
+          <y>0</y>
+          <width>261</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#Task2Description{
+	background-color : none;
+font-family: &quot;Roboto&quot;;
+    font-size: 13px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Roboto'; font-size:13px; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:15px; font-weight:696;&quot;&gt;Memasukkan gambar serta memberikan deskripsi gambar yang tertera &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="CurrentTaskUpper">
+    <property name="geometry">
+     <rect>
+      <x>191</x>
+      <y>5</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#CurrentTaskUpper{
+	color : #5483B3
+}</string>
+    </property>
+    <property name="text">
+     <string>&gt; Build UI</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Grouping">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>370</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#Grouping{
+	border : 1px solid #0047ab;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0197F6;
+}</string>
+    </property>
+    <property name="text">
+     <string>Group By</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="GroupingOption" native="true">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>405</y>
+      <width>271</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#GroupingOption
+{
+	border: 0.5px solid #052659;
+	background-color: #87ceeb;
+	border-radius: 17px;
+}</string>
+    </property>
+    <widget class="QPushButton" name="GroupByCategory">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#GroupByCategory{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Group by Category</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="GroupByStatus">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#GroupByStatus{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Group by Status</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="KolomNameTask" native="true">
+    <property name="geometry">
+     <rect>
+      <x>39</x>
+      <y>430</y>
+      <width>261</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#KolomNameTask{
+	border : 1px solid #0047ab;
+}</string>
+    </property>
+    <widget class="QLabel" name="LabelNamaTask">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>5</y>
+       <width>81</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#LabelNamaTask{
+font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+     </property>
+     <property name="text">
+      <string>Task Name</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="KolomStatusTask" native="true">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>430</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#KolomStatusTask{
+	border : 1px solid #0047ab;
+}</string>
+    </property>
+    <widget class="QLabel" name="LabelStatus">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>5</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#LabelStatus{
+font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+     </property>
+     <property name="text">
+      <string>Status</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="KolomCategory" native="true">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>430</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#KolomCategory{
+	border : 1px solid #0047ab;
+}</string>
+    </property>
+    <widget class="QLabel" name="LabelCategory">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>5</y>
+       <width>71</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#LabelCategory{
+font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+     </property>
+     <property name="text">
+      <string>Category</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="KolomDeadlineTask" native="true">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>430</y>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#KolomDeadlineTask{
+	border : 1px solid #0047ab;
+}</string>
+    </property>
+    <widget class="QLabel" name="LabelDeadline">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>5</y>
+       <width>121</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#LabelDeadline{
+font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+     </property>
+     <property name="text">
+      <string>Due Date / Time</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="KolomDescriptionTask" native="true">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>430</y>
+      <width>281</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#KolomDescriptionTask{
+	border : 1px solid #0047ab;
+}</string>
+    </property>
+    <widget class="QLabel" name="LabelDescription">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>5</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#LabelDescription{
+font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+     </property>
+     <property name="text">
+      <string>Description</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="AddingNewTask" native="true">
+    <property name="geometry">
+     <rect>
+      <x>625</x>
+      <y>365</y>
+      <width>281</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#AddingNewTask{
+	border: 0.5px solid #052659;
+	background-color: #87ceeb;
+	border-radius: 17px;
+}</string>
+    </property>
+    <widget class="QLabel" name="TaskTitle">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#TaskTitle{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Task Title</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="inputTasktitle">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>251</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#inputTasktitle{
+	border-radius : 10px;
+	font-family : Roboto;
+	 color: #052659;
+}</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="CreateTask">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>350</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#CreateTask{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Create Task</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DeadlineInputTask">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#DeadlineInputTask{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Deadline</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="dateEditDeadlineInput">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#dateEditDeadlineInput{ 
+	font-family : Roboto;
+	 color: #052659;
+}</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="CancelCreationTask">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>400</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#CancelCreationTask{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Cancel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DescriptionInputTask">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>175</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#DescriptionInputTask{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Description</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="CategoryInputTask">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>100</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#CategoryInputTask{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Category</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="CategoryInputBox">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>130</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#CategoryInputBox{
+	font-family : Roboto;
+	 color: #052659; }</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Not Yet Started</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>On Progress</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Completed</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QTextEdit" name="BoxInputDescription">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>200</y>
+       <width>261</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#BoxInputDescription{
+	border-radius : 10px;
+	font-family : Roboto;
+	 color: #052659;
+}</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="SortingOption" native="true">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>405</y>
+      <width>271</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#SortingOption
+{
+	border: 0.5px solid #052659;
+	background-color: #87ceeb;
+	border-radius: 17px;
+}</string>
+    </property>
+    <widget class="QPushButton" name="SortDescending">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#SortDescending{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Sort Descending</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../Downloads/down (1).png</normaloff>../../../Downloads/down (1).png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="SortAscending">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#SortAscending{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Sort Ascending</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../Downloads/top.png</normaloff>../../../Downloads/top.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="ProgressBar">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>40</y>
+      <width>561</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#ProgressBar{
+	font: 45px &quot;Roboto&quot;;
+	color: #0E49B5;
+	font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>Progress Bar</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SemangatTitle">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>120</y>
+      <width>591</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#SemangatTitle{
+	font: bold 18px &quot;Roboto&quot;;
+	color: #0E49B5;
+}</string>
+    </property>
+    <property name="text">
+     <string>Keep it up, you're almost there :D</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>170</y>
+      <width>681</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#progressBar{
+	font-family: &quot;Roboto&quot;;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0E49B5;
+}</string>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QWidget" name="EditTask" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1190</x>
+      <y>250</y>
+      <width>481</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#EditTask{
+	border: 0.5px solid #052659;
+	background-color: #87ceeb;
+	border-radius: 17px;
+}</string>
+    </property>
+    <widget class="QLabel" name="TaskTitleEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#TaskTitleEdit{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Task Title</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="InputEditTaskBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>381</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#InputEditTaskBox{
+	border-radius : 10px;
+	font-family : Roboto;
+	 color: #052659;
+}</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ApplyChangesButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>350</y>
+       <width>441</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#ApplyChangesButton{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Apply Changes</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DeadlineEditInput">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#DeadlineEditInput{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Deadline</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="DateEditDeadline">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#DateEditDeadline{ 
+	font-family : Roboto;
+	 color: #052659;
+}</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="CancelingEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>400</y>
+       <width>441</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#CancelingEdit{
+	font-family: Rubik;
+    font-size: 12px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Cancel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DescriptionTitle">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>175</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#DescriptionTitle{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Description</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="CategoryTitle">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>100</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#CategoryTitle{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Category</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="CategoryEditComboBox">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>130</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#CategoryEditComboBox{
+	font-family : Roboto;
+	 color: #052659; }</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>High</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Medium</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Low</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QTextEdit" name="DescriptionEditBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>200</y>
+       <width>451</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#DescriptionEditBox{
+	border-radius : 10px;
+	font-family : Roboto;
+	 color: #052659;
+}</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="StatusTitle">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>100</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#StatusTitle{
+	font-family: Rubik;
+    font-size: 15px;
+    font-weight: bold;
+   color: #052659;
+}</string>
+     </property>
+     <property name="text">
+      <string>Status</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="StatusComboBox">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>130</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#StatusComboBox{
+	font-family : Roboto;
+	 color: #052659; }</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Not Yet Started</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>On Progress</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Completed</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="BackToBoardUpper">
+    <property name="geometry">
+     <rect>
+      <x>101</x>
+      <y>5</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#BackToBoardUpper{
+	border: none;
+    background-color: transparent;
+    color:  #0E49B5;;
+}</string>
+    </property>
+    <property name="text">
+     <string>&gt; Mobile Development</string>
+    </property>
+   </widget>
+   <zorder>Containerforwords</zorder>
+   <zorder>YourTask</zorder>
+   <zorder>AddNewTaskButton</zorder>
+   <zorder>TaskNameTitle</zorder>
+   <zorder>Sorting</zorder>
+   <zorder>BackToDashboardUpper</zorder>
+   <zorder>widgetContainerTask</zorder>
+   <zorder>CurrentTaskUpper</zorder>
+   <zorder>Grouping</zorder>
+   <zorder>KolomNameTask</zorder>
+   <zorder>KolomStatusTask</zorder>
+   <zorder>KolomCategory</zorder>
+   <zorder>KolomDeadlineTask</zorder>
+   <zorder>KolomDescriptionTask</zorder>
+   <zorder>GroupingOption</zorder>
+   <zorder>AddingNewTask</zorder>
+   <zorder>SortingOption</zorder>
+   <zorder>ProgressBar</zorder>
+   <zorder>SemangatTitle</zorder>
+   <zorder>progressBar</zorder>
+   <zorder>EditTask</zorder>
+   <zorder>BackToBoardUpper</zorder>
+  </widget>
+  <widget class="QWidget" name="Searchbar" native="true">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>0</y>
+     <width>1721</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#Searchbar{
+	background: qlineargradient(x1:0, y1:0, x2:2, y2:1, stop:0 #73c2fb, stop:1 #1560bd);
+	border : none;
+}</string>
+   </property>
+   <widget class="QLineEdit" name="SearchBoard">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>811</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#SearchBoard{
+	border-radius : 10px;
+	font-family : Rubik;
+	color : #6C6C6C;
+	font-size : 15px;
+}</string>
+    </property>
+    <property name="text">
+     <string>          Search Your Board</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SmileyFace">
+    <property name="geometry">
+     <rect>
+      <x>1530</x>
+      <y>10</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../if2250-2024-k03-g04-ergo/img/smileyface.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UserErgo">
+    <property name="geometry">
+     <rect>
+      <x>1580</x>
+      <y>20</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#UserErgo{
+	font-family : Rubik;
+	font-size : 13px;
+}</string>
+    </property>
+    <property name="text">
+     <string>  User Ergo</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SearchButton">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>20</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#SearchButton{
+	border : none;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../if2250-2024-k03-g04-ergo/img/search.png</normaloff>../if2250-2024-k03-g04-ergo/img/search.png</iconset>
+    </property>
+   </widget>
+  </widget>
+  <zorder>Searchbar</zorder>
+  <zorder>MainSection</zorder>
+  <zorder>Navbar</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
