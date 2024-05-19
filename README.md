@@ -44,17 +44,17 @@ python main.py
 <img src="doc/TampilanProject.png" alt="Lihat Task"><br>
 <img src="doc/TampilanProject_AddingTask.png" alt="Tambah Task"><br>
 <img src="doc/TampilanProject_EditTask.png" alt="Menghapus dan Mengubah Task"><br>
-<img src="doc/TampilanBoard_GroupingTask.png" alt="Melakukan Grouping Task"><br>
-<img src="doc/TampilanBoard_SortingTask.png" alt="Melakukan Sorting Task"><br>
+<img src="doc/TampilanProject_GroupingTask.png" alt="Melakukan Grouping Task"><br>
+<img src="doc/TampilanProject_SortingTask.png" alt="Melakukan Sorting Task"><br>
 
 Pembagian Tugas
 | NIM | Nama | Tugas |
 |-------|--------|-------|
 | 13522135 | Christian Justin Hendrawan | Database, Database manager, Design UI for all page |
 | 13522142 | Farhan Raditya Aji | Dasboard / Home page, Controller Dashboard|
-| 13522146 | M. Zaidan Sa’dun Robbani | Board page, Controller Board Page |
+| 13522146 | M. Zaidan Sa’dun Robbani | Integrating Between Scene | 
 | 13522155 | Axel Santadi Warih| Task Page, Controller Task Page |
-| 13522159 | Rafif Ardhinto Ichwantoro | Integrating Between Scene|
+| 13522159 | Rafif Ardhinto Ichwantoro | Board page, Controller Board Page  |
 
 ## Daftar Tabel Basis Data
 Tabel Boards<br>
