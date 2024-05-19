@@ -153,9 +153,15 @@ class DatabaseManager:
         if boards:
             return boards[-1].idBoard
         return 0
+    
+    def getLastIdProject(self):
+        projects = self.get_all_projects()
+        if projects:
+            return projects[-1].idProject
+        return 0
 
-    def getLastIdTask(self, idProject):
-        tasks = self.get_tasks_by_project(idProject)
+    def getLastIdTask(self):
+        tasks = self.get_all_tasks()
         if tasks:
             return tasks[-1].idTask
         return 0
@@ -168,3 +174,41 @@ class DatabaseManager:
             task = Task(*task_data)
             tasks.append(task)
         return tasks
+    
+    def get_board_by_project(self, idproject):
+        #dari idproject yang diberi, dicari idboardnya
+        query = '''SELECT idBoard FROM Projects WHERE idProject = ?'''
+        params = (idproject,)
+        result = self.database.execute_query(query, params).fetchone()
+        if result:
+            return result[0]
+        else:
+            return None
+        
+    def get_projectName_by_id(self, idproject):
+        query = '''SELECT namaProject FROM Projects WHERE idProject = ?'''
+        params = (idproject,)
+        result = self.database.execute_query(query, params).fetchone()
+        if result:
+            return result[0]
+        else:
+            return None
+        
+    def get_boardName_by_id(self, idboard):
+        query = '''SELECT namaBoard FROM Boards WHERE idBoard = ?'''
+        params = (idboard,)
+        result = self.database.execute_query(query, params).fetchone()
+        if result:
+            return result[0]
+        else:
+            return None
+        
+    def get_all_project_by_board(self, idboard):
+        query = '''SELECT * FROM Projects WHERE idBoard = ?'''
+        params = (idboard,)
+        projects_data = self.database.execute_query(query, params).fetchall()
+        projects = []
+        for project_data in projects_data:
+            project = Project(*project_data)
+            projects.append(project)
+        return projects
